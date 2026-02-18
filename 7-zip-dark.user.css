@@ -1,53 +1,44 @@
 /* ==UserStyle==
-@name           7-zip.org
+@name           7-zip.org Dark
 @namespace      github.com/tdanese/My-Stylus-Themes (https://github.com/tdanese/My-Stylus-Themes)
-@version        2026-02-18.0.2
-@description    Dark theme
+@version        2026-02-18.0.3
+@description    Dark
 @author         tdanese
 @homepageURL    https://github.com/tdanese/My-Stylus-Themes
 ==/UserStyle== */
-@-moz-document domain("7-zip.org")
-{
-  TABLE.News
-  {
+@-moz-document domain("7-zip.org") {
+  TABLE.News {
     background-color: transparent;
   }
 
-  TR.NewsHeader
-  {
+  TR.NewsHeader {
     background-color: hsl(280, 20%, 30%);
   }
 
-  TR.NewsHeader > td
-  {
+  TR.NewsHeader > td {
     color: silver;
   }
 
-  TH.Title
-  {
+  TH.Title {
     background-color: hsl(120, 60%, 25%);
   }
 
   TR.News,
-  TD.Item
-  {
+  TD.Item {
     background-color: hsl(0, 0%, 12%);
   }
 
-  body
-  {
+  body {
     background-color: hsl(0, 0%, 20%);
     color: hsl(0, 0%, 80%);
   }
 
-  TD.MenuColumn
-  {
+  TD.MenuColumn {
     background-color: hsl(0, 0%, 28%);
   }
 
   .MenuColumn a,
-  body > table > tbody > tr > td:last-child a
-  {
+  body > table > tbody > tr > td:last-child a {
     color: dodgerblue;
   }
 }

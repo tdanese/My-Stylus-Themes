@@ -1,118 +1,153 @@
 /* ==UserStyle==
 @name           Fixes
 @namespace      github.com/tdanese/My-Stylus-Themes (https://github.com/tdanese/My-Stylus-Themes)
-@version        2026-02-18.0.1
+@version        2026-02-18.0.2
 @description    Fixes that are too small to dedicate a whole file
 @author         tdanese
 @homepageURL    https://github.com/tdanese/My-Stylus-Themes
 ==/UserStyle== */
 @-moz-document domain("iview.abc.net.au") {
-    div[data-component="FeatureCarousel"] {
-        width: auto;
-    }
+  div[data-component="FeatureCarousel"] {
+    width: auto;
+  }
+}
+@-moz-document domain("canva.com") {
+.e3l6yA
+{
+  filter: none;
+  opacity: 1;
+  pointer-events: inherit;
+}
+
+.bfFHbg
+{
+  cursor: auto;
+}
 }
 
 @-moz-document domain("discord.com") {
-    div.channelTextArea_f75fb0 {
-        margin-bottom: 7px;
-    }
+  div.channelTextArea_f75fb0 {
+    margin-bottom: 7px;
+  }
 }
 
 @-moz-document domain("instagram.com") {
-    html[class] {
-        overflow-y: auto !important;
-    }
+  html[class] {
+    overflow-y: auto !important;
+  }
 
-    [data-pagelet="IGDOpenMessageList"] > div > div > div > div > div,
-    [aria-label="Chats"] > div > div > div {
-        scrollbar-width: thin;
-    }
+  [data-pagelet="IGDOpenMessageList"] > div > div > div > div > div,
+  [aria-label="Chats"] > div > div > div {
+    scrollbar-width: thin;
+  }
 }
 
 @-moz-document domain("jbhifi.com.au") {
-    .logo {
-        margin: 5px;
-    }
+  .logo {
+    margin: 5px;
+  }
 
-    a:hover {
-        text-decoration: none;
-    }
+  a:hover {
+    text-decoration: none;
+  }
 
-    #react-root-footer a:hover,
-    .footer a:not([href]):not([class]) {
-        text-decoration: underline !important;
-    }
+  #react-root-footer a:hover,
+  .footer a:not([href]):not([class]) {
+    text-decoration: underline !important;
+  }
 
-    #react-root-footer a,
-    .footer a:not([href]):not([class]):hover {
-        text-decoration: none !important;
-    }
+  #react-root-footer a,
+  .footer a:not([href]):not([class]):hover {
+    text-decoration: none !important;
+  }
 
-    #compare-bar {
-        border: none;
-    }
+  #compare-bar {
+    border: none;
+  }
 
-    div[data-testid="navigation-menu-dropdown-menu"] {
-        max-height: fit-content;
-    }
+  div[data-testid="navigation-menu-dropdown-menu"] {
+    max-height: fit-content;
+  }
 }
 
 @-moz-document domain("login.microsoftonline.com") {
-    html {
-        background-color: black !important
-    }
+  html {
+    background-color: black !important
+  }
 }
 
 @-moz-document domain("mathworks.com") {
-    #domainButton.btn_countrynav {
-        font-size: inherit;
-        margin: 0 !important;
-    }
+  #domainButton.btn_countrynav {
+    font-size: inherit;
+    margin: 0 !important;
+  }
 
-    #footer {
-        padding: 10px 0px;
-    }
+  #footer {
+    padding: 10px 0px;
+  }
 
-    .content_container {
-        background-color: transparent;
-    }
+  .content_container {
+    background-color: transparent;
+  }
 
-    .body_trail_container {
-        padding: unset;
-        background: unset;
-    }
+  .body_trail_container {
+    padding: unset;
+    background: unset;
+  }
 
-    body.-has_usernav #sticky_container .dropdown-menu {
-        padding: 2px 0 !important;
-    }
+  body.-has_usernav #sticky_container .dropdown-menu {
+    padding: 2px 0 !important;
+  }
 }
 
 @-moz-document domain("pcpartpicker.com") {
 
-    .wrapper__pageTitle > section,
-    footer .footer {
-        padding: 1rem 0;
-    }
+  .wrapper__pageTitle > section,
+  footer .footer {
+    padding: 1rem 0;
+  }
 
-    .img__part,
-    #products .productList--detailed .td__name .td__image,
-    #partlist .partlist table tbody tr td.td__image a {
-        padding: 1px;
-        border: none;
-    }
+  .img__part,
+  #products .productList--detailed .td__name .td__image,
+  #partlist .partlist table tbody tr td.td__image a {
+    padding: 1px;
+    border: none;
+  }
 
-    .button {
-        transition-property: background-color, border-color, color !important;
-    }
+  .button {
+    transition-property: background-color, border-color, color !important;
+  }
+}
+@-moz-document domain("store.steampowered.com") {
+body.v6 #footer
+{
+  padding: 0px;
+}
+
+body.v6 #footer_spacer
+{
+  height: 120px;
+}
+
+body.v6 #footer .footer_content
+{
+  padding-bottom: 16px;
+}
 }
 
 @-moz-document domain("winaero.com") {
-    #page {
-        margin: 0;
-    }
+  #page {
+    margin: 0;
+  }
 
-    body::before,
-    body::after {
-        display: none !important;
-    }
+  body::before,
+  body::after {
+    display: none !important;
+  }
+}
+
+@-moz-document domain("web.archive.org") {
+  .s4xx {
+    color: coral;
+  }
 }

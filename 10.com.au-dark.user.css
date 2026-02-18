@@ -1,240 +1,209 @@
 /* ==UserStyle==
 @name           10.com.au Dark
 @namespace      github.com/tdanese/My-Stylus-Themes (https://github.com/tdanese/My-Stylus-Themes)
-@version        2025-10-06.0.1
+@version        2025-10-06.0.2
 @description    Dark
 @author         tdanese
 @homepageURL    https://github.com/tdanese/My-Stylus-Themes
 ==/UserStyle== */
-
 @-moz-document domain("10.com.au"), domain("tenplay.com.au") {
-html
-{
-  --text: antiquewhite;
-  --text-darker: silver;
-  --grey-5: hsl(0, 0%, 5%);
-  --grey-10: hsl(0, 0%, 10%);
-  --theme-color-darker: hsl(210.5, 78.7%, 46.1%);
-  --theme-color-alt: darkgrey;
-}
+  html {
+    --text: antiquewhite;
+    --text-darker: silver;
+    --grey-5: hsl(0, 0%, 5%);
+    --grey-10: hsl(0, 0%, 10%);
+    --theme-color-darker: hsl(210.5, 78.7%, 46.1%);
+    --theme-color-alt: darkgrey;
+  }
 
-body,
-.member-login
-{
-  --theme-color: dodgerblue !important;
-  color: var(--text-darker);
-}
+  body,
+  .member-login {
+    --theme-color: dodgerblue !important;
+    color: var(--text-darker);
+  }
 
-.mytv--shows,
-.mytv--accounts
-{
-  --theme-color: dodgerblue !important;
-}
+  .mytv--shows,
+  .mytv--accounts {
+    --theme-color: dodgerblue !important;
+  }
 
-.global-header--show-page::before,
-.global-header--show-page,
-.page-title-bar
-{
-  background: hsl(from var(--theme-color) h s 12%);
-}
+  .global-header--show-page::before,
+  .global-header--show-page,
+  .page-title-bar {
+    background: hsl(from var(--theme-color) h s 12%);
+  }
 
-.member-login__login-form .form__input
-{
-  background: hsla(0, 0%, 50%, 0.12);
-}
+  .member-login__login-form .form__input {
+    background: hsla(0, 0%, 50%, 0.12);
+  }
 
-.mytv-tabs__tab--accounts.mytv-tabs__tab:hover
-{
-  border-bottom-color: var(--theme-color-darker);
-}
+  .mytv-tabs__tab--accounts.mytv-tabs__tab:hover {
+    border-bottom-color: var(--theme-color-darker);
+  }
 
-.mytv-tabs__tab--accounts.mytv-tabs__tab--active
-{
-  border-bottom-color: var(--theme-color)
-}
+  .mytv-tabs__tab--accounts.mytv-tabs__tab--active {
+    border-bottom-color: var(--theme-color)
+  }
 
-.mytv-tabs__tab--accounts.mytv-tabs__tab .mytv-icon-container .mytv-icon::before
-{
-  background: -webkit-linear-gradient(var(--theme-color-darker), var(--theme-color));
-  -webkit-background-clip: text;
-}
+  .mytv-tabs__tab--accounts.mytv-tabs__tab .mytv-icon-container .mytv-icon::before {
+    background: -webkit-linear-gradient(var(--theme-color-darker), var(--theme-color));
+    -webkit-background-clip: text;
+  }
 
-.mytv-tabs__tab--accounts.mytv-tabs__tab--active .mytv-tabs__tab-label,
-.form__input-icon,
-.mytv h3
-{
-  color: var(--theme-color-darker);
-}
+  .mytv-tabs__tab--accounts.mytv-tabs__tab--active .mytv-tabs__tab-label,
+  .form__input-icon,
+  .mytv h3 {
+    color: var(--theme-color-darker);
+  }
 
-.member-login__header,
-.member-login__intro,
-.btn,
-.mytv__form--button .form__btn
-{
-  background-color: var(--theme-color-darker);
-  background-image: none;
-}
+  .member-login__header,
+  .member-login__intro,
+  .btn,
+  .mytv__form--button .form__btn {
+    background-color: var(--theme-color-darker);
+    background-image: none;
+  }
 
-.member-login__link,
-.member-login__headline,
-.favourite-card__info .favourite-card__title:hover,
-.form__input-reveal-text,
-.form__dropdown-label,
-.form__input-label,
-.form__select-label,
-.card--liveNow:hover .card__wrapper .card__title
-{
-  color: var(--theme-color);
-}
+  .member-login__link,
+  .member-login__headline,
+  .favourite-card__info .favourite-card__title:hover,
+  .form__input-reveal-text,
+  .form__dropdown-label,
+  .form__input-label,
+  .form__select-label,
+  .card--liveNow:hover .card__wrapper .card__title {
+    color: var(--theme-color);
+  }
 
-.form__input
-{
-  color: var(--text);
-  background-color: transparent;
-  border-color: var(--theme-color-alt);
-}
+  .form__input {
+    color: var(--text);
+    background-color: transparent;
+    border-color: var(--theme-color-alt);
+  }
 
-.form__input:focus
-{
-  border-color: var(--theme-color);
-  background-color: transparent;
-}
+  .form__input:focus {
+    border-color: var(--theme-color);
+    background-color: transparent;
+  }
 
-.mytv-icon-container .mytv-icon
-{
-  filter: brightness(75%);
-  background-color: var(--grey-10) !important;
-}
+  .mytv-icon-container .mytv-icon {
+    filter: brightness(75%);
+    background-color: var(--grey-10) !important;
+  }
 
-img
-{
-  filter: brightness(75%) grayscale(25%);
-}
+  img {
+    filter: brightness(75%) grayscale(25%);
+  }
 
-.card--liveNow .card__wrapper .progressbar--progress
-{
-  background-color: hsl(from var(--channelColour) h calc(s * 0.75) calc(l * 0.75));
-}
+  .card--liveNow .card__wrapper .progressbar--progress {
+    background-color: hsl(from var(--channelColour) h calc(s * 0.75) calc(l * 0.75));
+  }
 
-.marquee .show__title::after
-{
-  filter: grayscale(25%);
-}
+  .marquee .show__title::after {
+    filter: grayscale(25%);
+  }
 
-.marquee .show__cta--primary
-{
-  background-color: hsl(from var(--banner-color) h calc(s * 0.75) calc(l * 0.75));
-  border-color: hsl(from var(--banner-color) h calc(s * 0.75) calc(l * 0.75));
-}
+  .marquee .show__cta--primary {
+    background-color: hsl(from var(--banner-color) h calc(s * 0.75) calc(l * 0.75));
+    border-color: hsl(from var(--banner-color) h calc(s * 0.75) calc(l * 0.75));
+  }
 
-.btn--featured
-{
-  background-color: var(--grey-10);
-  color: var(--text);
-}
+  .btn--featured {
+    background-color: var(--grey-10);
+    color: var(--text);
+  }
 
-.user-dropdown__menu,
-.btn--featured.btn--active,
-.btn--featured:hover
-{
-  background-color: hsl(0, 0%, 30%);
-  color: var(--text);
-}
+  .user-dropdown__menu,
+  .btn--featured.btn--active,
+  .btn--featured:hover {
+    background-color: hsl(0, 0%, 30%);
+    color: var(--text);
+  }
 
-html,
-body,
-.megamenu__menus,
-.global-header--default-page,
-.global-header.show:not(.global-header--show-page)::before
-{
-  background: var(--grey-5);
-}
+  html,
+  body,
+  .megamenu__menus,
+  .global-header--default-page,
+  .global-header.show:not(.global-header--show-page)::before {
+    background: var(--grey-5);
+  }
 
-#showPage > section.main__section > .tab__list,
-.global-modal__inner .member-login,
-.megamenu__search,
-.category-tree-item:nth-child(2n+1),
-.mytv,
-.mytv-tabs__nav-outer,
-.dropdown__active .dropdown__menu
-{
-  background-color: var(--grey-10);
-}
+  #showPage > section.main__section > .tab__list,
+  .global-modal__inner .member-login,
+  .megamenu__search,
+  .category-tree-item:nth-child(2n+1),
+  .mytv,
+  .mytv-tabs__nav-outer,
+  .dropdown__active .dropdown__menu {
+    background-color: var(--grey-10);
+  }
 
-.show-video,
-.show__about--mini,
-.megamenu__menu--white,
-.megamenu__menu--grey,
-.global-header--default-page::before,
-.mytv-icon-container,
-.mytv-icon,
-.member-login,
-.dropdown__active .dropdown__title,
-body.pageInitiated main > .content__wrapper > .content__wrapper--inner,
-.card--liveNow .card__wrapper
-{
-  background: none;
-}
+  .show-video,
+  .show__about--mini,
+  .megamenu__menu--white,
+  .megamenu__menu--grey,
+  .global-header--default-page::before,
+  .mytv-icon-container,
+  .mytv-icon,
+  .member-login,
+  .dropdown__active .dropdown__title,
+  body.pageInitiated main > .content__wrapper > .content__wrapper--inner,
+  .card--liveNow .card__wrapper {
+    background: none;
+  }
 
-.favourite-card
-{
-  border: none;
-  background: none;
-}
+  .favourite-card {
+    border: none;
+    background: none;
+  }
 
-.show-video__actions .btn,
-.show-video strong,
-.show-video h3 small,
-.show-video,
-#showPage > section.main__section > .tab__list .tab__list-item,
-.btn--gradient,
-.btn--gradient:hover,
-.marquee .show__cta,
-.marquee .show__title
-{
-  color: var(--text-darker) !important;
-}
+  .show-video__actions .btn,
+  .show-video strong,
+  .show-video h3 small,
+  .show-video,
+  #showPage > section.main__section > .tab__list .tab__list-item,
+  .btn--gradient,
+  .btn--gradient:hover,
+  .marquee .show__cta,
+  .marquee .show__title {
+    color: var(--text-darker) !important;
+  }
 
-.page-title-bar h1,
-.page-title-bar h2,
-.show-video h3,
-.favourite-card__info .favourite-card__title,
-.articles__link,
-.global-header--default-page .global-header__search button,
-.global-header--megamenu:not(.global-header--show-page) .icon-search,
-.global-header a,
-.global-header button,
-.marquee .show__description,
-.content__header h3,
-h4.card__title,
-.global-footer__headline,
-.mytv-tabs__tab,
-.form__dropdown .dropdown__title
-{
-  color: var(--text);
-}
+  .page-title-bar h1,
+  .page-title-bar h2,
+  .show-video h3,
+  .favourite-card__info .favourite-card__title,
+  .articles__link,
+  .global-header--default-page .global-header__search button,
+  .global-header--megamenu:not(.global-header--show-page) .icon-search,
+  .global-header a,
+  .global-header button,
+  .marquee .show__description,
+  .content__header h3,
+  h4.card__title,
+  .global-footer__headline,
+  .mytv-tabs__tab,
+  .form__dropdown .dropdown__title {
+    color: var(--text);
+  }
 
-.global-footer__navigation
-{
-  background-color: var(--grey-10);
-  border-bottom: none;
-}
+  .global-footer__navigation {
+    background-color: var(--grey-10);
+    border-bottom: none;
+  }
 
-.mytv-tabs__content
-{
-  border: none;
-  padding: 0px 10px;
-}
+  .mytv-tabs__content {
+    border: none;
+    padding: 0px 10px;
+  }
 
-.mytv__block
-{
-  background: transparent;
-  border: 1px solid dimgrey;
-}
+  .mytv__block {
+    background: transparent;
+    border: 1px solid dimgrey;
+  }
 
-.form__dropdown .dropdown__menu div
-{
-  border-color: dimgrey;
-  color: var(--text);
-}
+  .form__dropdown .dropdown__menu div {
+    border-color: dimgrey;
+    color: var(--text);
+  }
 }
