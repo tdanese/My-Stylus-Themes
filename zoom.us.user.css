@@ -1,0 +1,54 @@
+/* ==UserStyle==
+@name           Zoom Dark
+@namespace      github.com/tdanese/My-Stylus-Themes (https://github.com/tdanese/My-Stylus-Themes)
+@version        2026-02-18.0.1
+@description    Dark
+@author         tdanese
+@homepageURL    https://github.com/tdanese/My-Stylus-Themes
+==/UserStyle== */
+@-moz-document domain("zoom.us") {
+  body {
+    --zoom-color-bg-default: hsl(0, 3%, 10%);
+  }
+
+  #zoom-ui-frame {
+    padding: 0px;
+    min-height: auto;
+    background: transparent;
+  }
+
+  #header_container {
+    background-color: hsl(0, 4%, 15%);
+  }
+
+  #content_container,
+  body {
+    background-color: var(--zoom-color-bg-default);
+    color: silver;
+  }
+
+  h2 > a[role="button"],
+  a {
+    color: hsl(230, 80%, 60%);
+  }
+
+  div[role="button"] {
+    background: hsl(230, 70%, 30%);
+    color: silver;
+  }
+
+  h1 {
+    color: silver;
+  }
+
+  h2,
+  #footer_container {
+    color: grey !important;
+  }
+
+  .new-register-frame #header,
+  .mini-layout-body .need-password,
+  .component-wrapper {
+    background: none;
+  }
+}
