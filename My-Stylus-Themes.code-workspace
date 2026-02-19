@@ -1,14 +1,14 @@
 {
-	"folders": [
-		{
-			"path": "."
-		}
-	],
-	"settings": {
-		"files.defaultLanguage": "${activeEditorLanguage}",
-		"diffEditor.wordWrap": "off",
-		"editor.tabSize": 2,
+  "folders": [
+    {
+      "path": "."
+    }
+  ],
+  "settings": {
+    "files.defaultLanguage": "${activeEditorLanguage}",
+    "diffEditor.wordWrap": "off",
+    "editor.tabSize": 2,
     "editor.detectIndentation": false,
     "files.eol": "\n"
-	}
+  }
 }
