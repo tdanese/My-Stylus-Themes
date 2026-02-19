@@ -1,0 +1,384 @@
+/* ==UserStyle==
+@name           Canvas fixes
+@namespace      github.com/tdanese/My-Stylus-Themes (https://github.com/tdanese/My-Stylus-Themes)
+@version        2026-02-19.0.1
+@description    Fixes, increase useful screen area, slightly darker background colour
+@author         tdanese
+@homepageURL    https://github.com/tdanese/My-Stylus-Themes
+==/UserStyle== */
+@-moz-document domain("canvas.lms.unimelb.edu.au"), domain("instructure.com") {
+  :root {
+    --ic-brand-global-nav-bgd: seashell;
+    --ic-brand-global-nav-ic-icon-svg-fill: dimgrey;
+    --ic-brand-global-nav-menu-item__text-color: var(--ic-brand-global-nav-ic-icon-svg-fill);
+  }
+
+  a.btn.hide_time_link {
+    line-height: 1.8;
+  }
+
+  #right-side:has(> div > ul#question_list) {
+    position: sticky;
+    top: 0;
+  }
+
+  .global-nav-custom-tray,
+  .ic-DashboardCard,
+  .ic-DashboardCard__header_content,
+  body,
+  span.transition--slide-left-entered {
+    background-color: var(--ic-brand-global-nav-bgd) !important;
+  }
+
+  #header,
+  #main .global-nav-custom-tray,
+  #nav-tray-portal > span > span,
+  #question_list,
+  .Pages {
+    scrollbar-width: thin;
+  }
+
+  [data-testid="file-preview-modal"] :is(div, div > div[class$="-modalHeader"], div[class$="-modalFooter"]),
+  [data-testid="file-preview-modal"] {
+    border-radius: 0px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border: none;
+  }
+
+  [data-testid="file-preview-modal"] > div > div[class$="-modalHeader"],
+  [data-testid="file-preview-modal"] > div[class$="-modalFooter"] {
+    padding: 0.2rem 0.75rem;
+  }
+
+  .navigation-tray-container.profile-tray span[class$="-view--block-avatar"] {
+    height: 3rem;
+    width: 3rem;
+
+    & > span[class$="-avatar__initials"] {
+      font-size: 1.2rem;
+      line-height: 2.9rem;
+    }
+  }
+
+  .navigation-tray-container.profile-tray form[action="/logout"] {
+    margin-bottom: 0.5rem;
+
+    & > button {
+      margin-top: 0.5rem !important;
+    }
+  }
+
+  body #header {
+    transition-duration: 0.2s;
+    transition-property: width;
+    transition-timing-function: cubic-bezier(0, 0, 0, 1);
+  }
+
+  body.primary-nav-expanded {
+    & #header .menu-item__text {
+      margin: 3px auto 0;
+      max-width: 74px;
+      overflow-wrap: normal;
+      overflow: hidden;
+    }
+
+    & #header #global_nav_study_skills_link > .menu-item__text {
+      max-width: 54px;
+    }
+  }
+
+  .ef-file-preview-header {
+    flex-basis: 6vh;
+    height: 6vh;
+    overflow: hidden;
+  }
+
+  .ef-file-preview-header-buttons,
+  .ef-file-preview-header-filename {
+    border: none;
+    height: inherit;
+  }
+
+  .ef-file-preview-frame {
+    height: 94vh;
+  }
+
+  [aria-label="File Preview Overlay"] [class$="-mask"] {
+    align-items: flex-start;
+    border: none;
+    overflow: hidden;
+  }
+
+  span.transition--slide-right-entered,
+  span[data-id="submissions-comments-tray"] {
+    scrollbar-width: thin;
+  }
+
+  #discussion-drawer-layout > span#module_sequence_footer_container {
+    padding-top: 0.5rem;
+  }
+
+  .ic-discussion-row {
+    background-color: transparent;
+    box-shadow: none;
+  }
+
+  #discussion-drawer-layout > span > div:first-child,
+  .canvas-rce__skins--root,
+  .discussions-v2__container-image,
+  .discussions-v2__wrapper [data-testid="discussion-connected-container"],
+  table[data-testid="uploaded_files_table"],
+  table[data-testid="uploaded_files_table"] :is(tbody, tbody > tr, tbody > tr > td) {
+    background: transparent;
+  }
+
+  /* Imported from uB0 */
+  .module-sequence-footer-content {
+    background-color: transparent !important;
+    border-top: 0px !important;
+    height: 38px !important;
+    padding-top: 0px !important;
+  }
+
+  /* Imported from uB0 */
+  .module-sequence-footer {
+    height: 38px !important;
+  }
+
+  /* Imported from uB0 */
+  .react-rubric .graded-points {
+    text-align: left !important;
+    width: min-content !important;
+  }
+
+  /* Imported from uB0 */
+  h3.module-item-title {
+    margin-bottom: 0px !important;
+    margin-top: 0px !important;
+  }
+
+  /* Imported from uB0 */
+  tr[data-testid="rubric-criterion"] > td > div > span > span {
+    width: auto !important;
+  }
+
+  .item-group-condensed {
+    padding: 0;
+  }
+
+  .ig-list .ig-row {
+    background-color: hsla(0, 0%, 100%, 0.4);
+    padding: 6px;
+  }
+
+  .tool_content_wrapper {
+    height: calc(100vh - 3rem - 10px);
+    min-height: 500px;
+    overflow: hidden;
+    resize: vertical;
+  }
+
+  #doc_preview {
+    height: unset !important;
+
+    & > div {
+      overflow-y: hidden !important;
+    }
+
+    & iframe {
+      height: 100% !important;
+      min-height: 340px !important;
+    }
+  }
+
+  #discussion-drawer-layout,
+  #discussion-redesign-layout > div > div > div > span[class$="-view--block"] > div[class$="-drawerLayout"],
+  #discussion-redesign-layout > div > div > div > span[class$="-view--block"] {
+    height: unset !important;
+  }
+
+  #file-upload-container div[data-testid="upload-box"] > span[class$="-view--flex-flex"] > span[class$="-view-flexItem"]:last-child div[class$="-view"]:has(> button[class$="-view--block-baseButton"]),
+  #file-upload-container span[class$="-fileDrop__layout"] > span > div[class$="-view"] {
+    transition: outline-color 0.2s, outline-offset 0.25s, background-color 0.2s;
+  }
+
+  span[class$="-fileDrop__layout"] > span > div[class$="-view"]:hover,
+  [class$="-view--block-baseButton"]:hover > [class$="-baseButton__content"] {
+    background-color: linen;
+  }
+
+  .context_module_item.context_module_item_hover,
+  .item-group-container,
+  .question,
+  [aria-label="Assignment Weights"] > table.summary > tbody > tr :is(td, th),
+  #announcementWrapper [class*="-view-alert"],
+  #announcementWrapper > .ic-notification,
+  #files-table > [role="rowgroup"] > [role="row"] :is([role="cell"], [role="rowheader"]) #files-table > [role="rowgroup"] > [role="row"],
+  #files-table > [role="rowgroup"],
+  #files-table > tbody > tr > :is(td, th),
+  #files-table > tbody > tr,
+  #files-table > tbody,
+  #files-table > thead > tr > :is(td, th),
+  #files-table > thead > tr,
+  #files-table > thead,
+  #files-table,
+  #questions.assessing,
+  div[data-testid="attempt-tab"] > div[class*="-view-alert"],
+  nav#breadcrumbs {
+    background-color: transparent;
+  }
+
+  .header-bar {
+    background-color: transparent;
+    min-height: unset;
+    padding: 0px;
+  }
+
+  .pages .header-bar-outer-container {
+    min-height: unset;
+  }
+
+  #dashboard.ic-dashboard-app {
+    margin-top: 0;
+  }
+
+  .ic-Dashboard-header__layout,
+  .question_editing,
+  .quiz-submission {
+    background-color: transparent;
+    border: none;
+    min-height: unset;
+  }
+
+  #content,
+  #right-side-wrapper {
+    padding-bottom: 0px !important;
+    padding-top: 10px !important;
+  }
+
+  .calendar .fc-head thead .fc-widget-header {
+    line-height: normal;
+    padding: 5px 0;
+  }
+
+  #content-wrapper {
+    & .fc-basic-view .fc-body .fc-row {
+      height: 120px !important;
+    }
+
+    & .fc-day-grid-container {
+      height: fit-content !important;
+    }
+  }
+
+  #minical .fc-day-grid-container {
+    height: unset !important;
+    overflow: visible !important;
+  }
+
+  .rs-section {
+    margin-bottom: 20px;
+  }
+
+  #undated-events {
+    max-height: fit-content;
+  }
+
+  aside#right-side a.Button.button-sidebar-wide[href="/grades"] {
+    line-height: 24px;
+  }
+
+  .page-toolbar :is(.page-toolbar-end, .page-toolbar-start) > div,
+  .page-toolbar.header-bar,
+  .ViewerControls--download > div,
+  div[data-testid="upload-box"] > span > span,
+  span#file-upload-container > span {
+    padding: 0 !important;
+  }
+
+  #not_right_side {
+    position: relative;
+    top: 0;
+    width: 100%;
+  }
+
+  .with-left-side #left-side {
+    margin-left: -192px;
+  }
+
+  #sticky-container.ic-sticky-frame {
+    max-height: calc(100vh - 3rem);
+    padding: 12px 8px 8px 12px;
+  }
+
+  .ic-sticky-frame > #section-tabs-header-subtitle {
+    padding: 0 0 0px 8px;
+  }
+
+  nav > #section-tabs > .section > a {
+    padding: 14px 0 0px 8px;
+  }
+
+  .ic-app-nav-toggle-and-crumbs {
+    container: crumbs / size;
+    max-height: 4rem;
+    min-height: 3rem;
+  }
+
+  #breadcrumbs :is(ol, ul),
+  #breadcrumbs,
+  .ic-app-crumbs {
+    max-height: 4rem;
+    overflow: hidden;
+  }
+
+  #breadcrumbs a {
+    text-underline-offset: 3px;
+  }
+
+  #edit_calendar_event_form_holder > form[data-testid="calendar-event-form"],
+  div[data-testid="upload-box"] > span > span > span,
+  nav.AnnotationControls,
+  [data-testid="assignment-2-student-content-tabs"] > span > div {
+    margin: 0 !important;
+  }
+
+  [class$="-radioInput__label"] {
+    cursor: pointer;
+  }
+
+  #assignments-student-footer {
+    background: transparent !important;
+    border: none !important;
+    min-height: unset;
+  }
+
+  div[data-testid="attempt-tab"] > div:last-child,
+  div[data-testid="upload-box"] > span > div > div > span {
+    background-color: transparent !important;
+    border: none !important;
+  }
+
+  [data-testid="attempt-tab"] [data-testid="file-preview"] [data-testid="assignments_2_submission_preview"] {
+    min-height: 630px;
+    overflow: hidden;
+    resize: vertical;
+  }
+
+  [data-testid="assignments_2_submission_preview"] iframe {
+    border: none !important;
+  }
+
+  .ui-dialog .ui-dialog-titlebar.ui-widget-header {
+    padding: 0px 12px;
+  }
+
+  .btn {
+    line-height: 1.5;
+  }
+
+  body.primary-nav-expanded #header #global_nav_student_support_link > .menu-item-icon-container {
+    display: none;
+  }
+}

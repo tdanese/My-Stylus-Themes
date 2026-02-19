@@ -1,0 +1,771 @@
+/* ==UserStyle==
+@name           Canvas dark
+@namespace      github.com/tdanese/My-Stylus-Themes (https://github.com/tdanese/My-Stylus-Themes)
+@version        2026-02-19.0.1
+@description    Dark theme, including overrides for pages where styles are defined in the HTML
+@author         tdanese
+@homepageURL    https://github.com/tdanese/My-Stylus-Themes
+==/UserStyle== */
+@-moz-document domain("canvas.lms.unimelb.edu.au"), domain("instructure.com") {
+  :root {
+    --colour-success: hsl(105, 100%, 30%);
+    --global-bg-darker-20: hsl(from var(--ic-brand-global-nav-bgd) h s calc(l * 0.8));
+    /*hsl(0, 0%, 11.4%)*/
+    --global-bg-darker-25: hsl(from var(--ic-brand-global-nav-bgd) h s calc(l * 0.75));
+    /*hsl(0, 0%, 10.6%)*/
+    --global-bg-darker-30: hsl(from var(--ic-brand-global-nav-bgd) h s calc(l * 0.7));
+    /*hsl(0, 0%, 9.8%)*/
+    --global-bg-lighter-15: hsl(from var(--ic-brand-global-nav-bgd) h s calc(l * 1.15));
+    /*hsl(0, 0%, 16.1%)*/
+    --global-bg-lighter-50: hsl(from var(--ic-brand-global-nav-bgd) h s calc(l * 1.5));
+    /*hsl(0, 0%, 21%)*/
+    --global-bg-lighter-80: hsl(from var(--ic-brand-global-nav-bgd) h s calc(l * 1.8));
+    /*hsl(0, 0%, 25.1%)*/
+    --grey-35: hsl(from var(--ic-brand-global-nav-bgd) h s calc(l * 2.5));
+    --grey-40: hsl(from var(--ic-brand-global-nav-bgd) h s calc(l * 3));
+    --grey-55: hsl(from var(--ic-brand-global-nav-bgd) h s calc(l * 4));
+    --grey-65: hsl(0, 0%, 65%);
+    --grey-70: hsl(from var(--ic-brand-global-nav-bgd) h s calc(l * 5));
+    --ic-brand-font-color-dark-lightened-15: oldlace !important;
+    --ic-brand-font-color-dark: hsl(34.3, 30%, 80%) !important;
+    --ic-brand-global-nav-avatar-border: transparent !important;
+    --ic-brand-global-nav-bgd: hsl(0, 0%, 14%) !important;
+    --ic-brand-global-nav-ic-icon-svg-fill--active: var(--ic-link-color-darkened-10) !important;
+    --ic-brand-global-nav-ic-icon-svg-fill: dimgrey;
+    --ic-brand-global-nav-menu-item__text-color--active: var(--ic-link-color-darkened-10) !important;
+    --ic-brand-global-nav-menu-item__text-color: grey !important;
+    --ic-brand-primary-darkened-15: hsl(230, 40%, 10%);
+    --ic-brand-primary: hsl(222, 60%, 37%) !important;
+    --ic-link-color-darkened-10: hsl(217, 52%, 43%) !important;
+    --ic-link-color-lightened-10: hsl(from var(--ic-link-color) h s calc(l * 0.9)) !important;
+    --ic-link-color: hsl(214, 47%, 53%) !important;
+  }
+
+  #quiz_show > .muted-notice {
+    background-color: var(--global-bg-darker-25);
+    border: none;
+    text-shadow: none;
+  }
+
+  #content p > span[style*="background-color: #fbeeb8"] {
+    color: black;
+  }
+
+  [data-testid="file-preview-modal"] > :is(div, div > div[class$="-modalHeader"], div[class$="-modalFooter"]),
+  [data-testid="file-preview-modal"] {
+    background: var(--global-bg-darker-30);
+    color: var(--ic-brand-font-color-dark);
+  }
+
+  #file-upload-container {
+    & button {
+      & img {
+        filter: grayscale(100%);
+      }
+
+      & svg[name="IconFolder"] {
+        color: var(--global-bg-lighter-50);
+      }
+    }
+
+    & span[class$="-fileDrop__labelContent"] {
+      border-color: var(--grey-65);
+    }
+
+    & span[class$="-baseButton__content"] {
+      border: none;
+      background: none;
+    }
+
+    & table[data-testid="uploaded_files_table"] {
+      background-color: var(--global-bg-darker-20);
+      color: silver;
+    }
+
+    & div[data-testid="upload-box"] > span[class$="-view--flex-flex"] > span[class$="-view-flexItem"]:last-child div[class$="-view"]:has(> button[class$="-view--block-baseButton"]),
+    & span[class$="-fileDrop__layout"] > span > div[class$="-view"] {
+      background-color: var(--global-bg-darker-20);
+      border-color: var(--grey-65);
+
+      &:hover {
+        background-color: var(--global-bg-lighter-15);
+      }
+    }
+  }
+
+  span[class$="-checkboxFacade__facade"] {
+    background: gainsboro;
+
+    &::before {
+      border-color: var(--ic-brand-primary);
+    }
+
+    &:has(> svg[name="IconCheckMark"]) {
+      background: transparent;
+    }
+
+    span[class$="-checkboxFacade"]:hover > & {
+      background: var(--global-bg-lighter-80);
+    }
+  }
+
+  hr {
+    border-top-color: wheat;
+  }
+
+  #footer {
+    border-image: linear-gradient(to right, transparent 60%, silver 100%) 5;
+  }
+
+  footer#footer > #footer-links > :is(a, #terms_of_service_footer_link > #terms_of_service_modal > a) {
+    background: none !important;
+    border: none !important;
+    color: var(--ic-link-color-lightened-10) !important;
+  }
+
+  #right-side {
+    & .h2 {
+      border-bottom-color: wheat;
+    }
+
+    & > .events_list.recent_feedback > ul.right-side-list.events > li.event > a.recent_feedback_icon:not(:hover) > .event-details > p {
+      text-decoration: underline;
+    }
+
+    & :is(.events_list, .to-do-list) :is(.event-details, .todo-details)::after {
+      background: linear-gradient(to right, transparent 0%, gainsboro 100%);
+    }
+  }
+
+  .flashalert-message > [class$="-view-alert transition--fade-entered"] {
+    background-color: silver;
+    color: black;
+  }
+
+  .flashalert-message > button[class$="-view-link"] {
+    color: var(--ic-link-color-darkened-10);
+  }
+
+  ul#question_list > li.answered > a.jump_to_question_link {
+    color: dodgerblue;
+  }
+
+  div[class$="-pill"] {
+    background: none;
+    border-color: currentcolor;
+    color: var(--ic-brand-font-color-dark);
+  }
+
+  .ic-announcement-row span[class$="-view--inlineBlock-badge"],
+  span[data-testid="submission-comment-unread"] > span[class$="-view--inlineBlock-badge"] {
+    background-color: dodgerblue;
+  }
+
+  .AnnotationControlButton-outer,
+  .AnnotationControlButton:hover:enabled .AnnotationControlButton-outer {
+    border: none !important;
+  }
+
+  .AnnotationControlButton.selected .AnnotationControlButton-outer {
+    color: var(--ic-brand-global-nav-bgd);
+  }
+
+  .AnnotationControlButton,
+  .ViewerControls {
+    background-color: transparent;
+    color: var(--grey-65);
+  }
+
+  .AnnotationControlButton:hover:enabled,
+  .download-button--button:hover {
+    background-color: var(--global-bg-lighter-80);
+  }
+
+  nav.AnnotationControls > button.AnnotationControlButton.selected {
+    background-color: grey;
+
+    &:hover:enabled {
+      background-color: silver;
+      border: none;
+    }
+  }
+
+  .ic-Error-page .ic-Error-img {
+    filter: grayscale(100%) brightness(50%);
+  }
+
+  .ui-dialog button.ui-dialog-titlebar-close span.ui-icon-closethick {
+    filter: invert(0.5);
+    opacity: 1;
+  }
+
+  .ui-dialog .ui-dialog-titlebar.ui-widget-header {
+    background-color: transparent;
+    border-bottom: none;
+  }
+
+  .ui-widget-overlay {
+    background-color: hsla(0, 0%, 0%, 0.5);
+  }
+
+  #edit_event {
+    background-color: transparent;
+    border: none;
+    color: var(--ic-brand-font-color-dark);
+
+    & .ui-tabs .ui-tabs-nav li a {
+      color: tan !important;
+    }
+  }
+
+  .ui-tabs .ui-tabs-nav li {
+    &.ui-tabs-active {
+      background-color: var(--ic-brand-global-nav-bgd);
+      border-color: silver !important;
+    }
+
+    &:hover {
+      background-color: grey !important;
+    }
+  }
+
+  .ui-tabs .ui-tabs-panel {
+    background-color: var(--ic-brand-global-nav-bgd);
+  }
+
+  input[class$="-textInput"],
+  [class$="-textInput__facade"] > input {
+    color: var(--ic-brand-font-color-dark) !important;
+
+    &::placeholder {
+      color: hsl(from var(--ic-brand-font-color-dark) h 20% 40%) !important;
+    }
+  }
+
+  [class$="-formFieldLayout__label"] {
+    color: var(--ic-brand-font-color-dark) !important;
+  }
+
+  [class$="-textInput__facade"]::before {
+    border-color: var(--ic-link-color);
+  }
+
+  .standalone-icon::before,
+  [class$="-textInput__facade"] svg:is([name="IconArrowOpenDown"], [name="IconArrowOpenUp"]) {
+    color: var(--ic-brand-font-color-dark);
+  }
+
+  /* This icon is small and really hard to see */
+  img[src*="cloudfront.net/dist/images/turnitin_error_score"] {
+    filter: contrast(0%) sepia(40%) brightness(120%);
+  }
+
+  #files-table > [role="rowgroup"] > [role="row"][data-testid="table-row"] {
+    background-color: var(--global-bg-darker-20);
+    border: 1px solid var(--global-bg-lighter-80);
+  }
+
+  #files-table > tbody > tr > :is(td, th, th > button),
+  #files-table > [role="rowgroup"] > [role="row"] > [role="cell"],
+  [role="menu"] [class$="-menuItem__label"],
+  [role="menu"] [role="menuitem"]:hover [class$="-menuItem__label"] {
+    color: silver;
+  }
+
+  span[class$="-view--block-contextView__content"] {
+    background-color: var(--ic-brand-global-nav-bgd);
+    color: silver;
+
+    & [class$="-panel"] > div,
+    & [class$="-panel"] > div > div > div {
+      border-color: silver;
+      color: wheat;
+    }
+  }
+
+  span[class$="-view--block-contextView__content"] [class$="-view-tab"] {
+    background-color: var(--global-bg-darker-25);
+    border-color: silver;
+    color: grey;
+
+    &:hover {
+      color: wheat;
+    }
+
+    &[aria-selected="true"] {
+      background-color: var(--ic-brand-global-nav-bgd);
+      border-bottom-width: 0px;
+      color: var(--ic-brand-font-color-dark);
+    }
+  }
+
+  .ic-dashboard-app > #DashboardCard_Container .ic-DashboardCard__header .Button.ic-DashboardCard__header-button {
+    background-color: hsla(0, 0%, 0%, 0.2);
+    border: none;
+    color: wheat;
+
+    &:focus,
+    &:hover {
+      background-color: hsla(0, 0%, 100%, 0.2);
+      color: whitesmoke;
+    }
+  }
+
+  #content :is(.page-title, h2, h3) {
+    color: tan;
+  }
+
+  [aria-label="Submission Comments Tray"] > [class$="-tray__content"] > div > [class$="-view"] {
+    background-color: hsla(0, 0%, 100%, 0.1);
+    color: inherit;
+  }
+
+  .ic-app-header__menu-list-item.ic-app-header__menu-list-item--active .ic-avatar,
+  .ic-avatar {
+    border: none;
+  }
+
+  .fc-event,
+  .fc-event:hover {
+    border-color: var(--colour-success);
+    color: inherit;
+  }
+
+  .fc-today {
+    background-color: var(--grey-40) !important;
+  }
+
+  #calendars-context-list .context_list_context:hover,
+  .item-group-condensed .ig-list .ig-row:hover {
+    background-color: var(--global-bg-lighter-15);
+  }
+
+  #undated-events .event {
+    background-color: var(--global-bg-darker-20);
+    color: seagreen;
+  }
+
+  #minical .fc-widget-content {
+    border-color: transparent;
+    color: inherit;
+  }
+
+  #minical,
+  .fc-state-default {
+    background-color: transparent;
+    border: none;
+    color: var(--ic-brand-font-color-dark);
+  }
+
+  .ic-flash-success {
+    background-color: black;
+    border-color: var(--colour-success);
+
+    & .ic-flash__icon {
+      background-color: var(--colour-success);
+    }
+  }
+
+  .ic-flash-error,
+  .ic-flash-info,
+  .ic-flash-warning {
+    background-color: black;
+  }
+
+  #content ol[class$="-breadcrumb"] > li[class$="-breadcrumb__crumb"] a[class$="-view--block-link"],
+  [class$="-view-link"]:is(a, button),
+  [class$="-toggleDetails__toggle"] {
+    &:focus {
+      color: var(--ic-link-color-darkened-10);
+      outline-color: currentColor !important;
+    }
+
+    &:active,
+    &:hover {
+      color: var(--ic-link-color-darkened-10);
+    }
+  }
+
+  textarea[class$="textArea"] {
+    background-color: var(--ic-brand-global-nav-bgd);
+    border-color: var(--global-bg-lighter-80);
+    color: var(--ic-brand-font-color-dark-lightened-15);
+
+    &::placeholder {
+      color: hsl(from var(--ic-brand-font-color-dark) h 20% 40%);
+    }
+  }
+
+  #submit-button {
+    & span[class$="-baseButton__content"] {
+      background-color: hsl(209.6, 100%, 30%) !important;
+    }
+
+    &:hover span[class$="-baseButton__content"] {
+      background-color: hsl(209.6, 100%, 40%) !important;
+    }
+  }
+
+  #calendar_header button,
+  .btn,
+  .Button,
+  aside#right-side a.Button.button-sidebar-wide[href="/grades"] {
+    background-color: var(--global-bg-darker-20);
+    border: 1px solid var(--global-bg-lighter-80);
+    color: var(--grey-65);
+
+    &:hover {
+      background-color: var(--global-bg-lighter-15);
+    }
+  }
+
+  .header-bar-right__buttons > :is(button, form > button) {
+    background-color: var(--global-bg-lighter-15);
+    border: 1px solid var(--global-bg-lighter-80);
+    color: var(--grey-65);
+
+    &:hover {
+      background-color: var(--global-bg-darker-20);
+    }
+  }
+
+  a[role="button"]:hover {
+    background-color: var(--global-bg-lighter-15);
+    border: 1px solid var(--global-bg-lighter-80);
+    color: var(--grey-65);
+  }
+
+  span[class$="-baseButton__content"] {
+    background-color: var(--global-bg-darker-20);
+    border: 1px solid var(--global-bg-lighter-80);
+    color: var(--grey-65);
+
+    [class$="-view--inlineBlock-baseButton"]:hover &,
+    [class$="-view--block-baseButton"]:hover & {
+      background-color: var(--global-bg-lighter-15);
+    }
+  }
+
+  .Button.Button--link {
+    background-color: transparent;
+    border: none;
+    color: var(--ic-link-color);
+
+    &:hover {
+      color: var(--ic-link-color-darkened-10);
+    }
+  }
+
+  .fc-body {
+    background-color: transparent !important;
+    border: none !important;
+  }
+
+  #calendar-list-holder,
+  .fc-widget-content,
+  span[class$="-view--block-avatar"],
+  span[class$="-view--inlineBlock-avatar"] {
+    background-color: transparent !important;
+  }
+
+  li[class$="-view--inlineBlock-inlineListItem"],
+  span[class$="-view--flex-flex"] > span[class$="-view-flexItem"] > span[class$="-text"] {
+    color: var(--grey-65);
+  }
+
+  .list-view a.active {
+    border-left-color: skyblue;
+    color: skyblue;
+  }
+
+  .css-1owtdyg-radioInput__control,
+  .ic-app-header__menu-list-item.ic-app-header__menu-list-item--active .ic-app-header__menu-list-link,
+  .ic-Search > input.ic-Input.ic-Search-input,
+  [class$="-textInput__facade"] {
+    background-color: var(--global-bg-darker-25);
+  }
+
+  a.ic-app-header__menu-list-link:is(:hover, :focus) {
+    background-color: hsla(0, 0%, 0%, 0.2) !important;
+    border: none !important;
+  }
+
+  .item-group-condensed .ig-header {
+    background-color: var(--ic-brand-global-nav-bgd);
+    border-color: var(--global-bg-lighter-80);
+  }
+
+  .item-group-condensed .ig-list .ig-row,
+  .question_editing,
+  .quiz-submission,
+  .submission-type-icon-contents,
+  table.summary tbody th,
+  table.summary td {
+    background: var(--global-bg-darker-20);
+    border-color: var(--global-bg-lighter-80);
+  }
+
+  .submission-type-icon-contents :is(span[color], svg[class$="-inlineSVG-svgIcon"]) {
+    color: lightgrey;
+  }
+
+  .css-kn6wpe-view--block-link,
+  a.css-1y7hzt0-view-link {
+    color: hsl(212, 67%, 41%);
+  }
+
+  .discussions-v2__container-image,
+  .discussions-v2__wrapper [data-testid="discussion-connected-container"],
+  .ic-app-nav-toggle-and-crumbs,
+  .quiz-header,
+  [class$="-toggleDetails__toggle"]::before {
+    border-color: var(--global-bg-lighter-80);
+  }
+
+  .ic-discussion-row {
+    border: 1px solid var(--global-bg-lighter-80);
+  }
+
+  #calendar-app .fc-event,
+  #calendars-context-list .context_list_context,
+  .discussions-container__wrapper .ic-discussion-row,
+  .display_question,
+  .Pages,
+  .ui-widget-content,
+  span.transition--slide-right-entered,
+  span[data-id="submissions-comments-tray"],
+  [role="menu"] [role="menuitem"]:hover {
+    background-color: var(--global-bg-darker-20);
+  }
+
+  #questions.assessing {
+    background-color: var(--global-bg-darker-20) !important;
+  }
+
+  .ig-header .name,
+  button.element_toggler.accessible-toggler {
+    color: var(--grey-70);
+    text-shadow: none !important;
+  }
+
+  [class$="-checkboxFacade__label"],
+  [class$="-radioInput__label"],
+  [class$="-toggleDetails__details"] {
+    color: var(--grey-65);
+  }
+
+  .css-thvpgg-radioInput__facade {
+    background-color: #1a6600;
+  }
+
+  [data-testid="submission-workflow-tracker-subtitle"][color="success"] {
+    color: var(--colour-success);
+  }
+
+  circle[class$="-progressCircle__meter"] {
+    stroke: var(--colour-success);
+  }
+
+  circle[class$="-progressCircle__track"] {
+    stroke: lightgrey;
+  }
+
+  .react-rubric > table > thead > tr > th,
+  tbody[data-testid="criterions"] > tr:last-child > td,
+  tr[data-testid="rubric-criterion"] > th {
+    background-color: var(--global-bg-lighter-50);
+    color: var(--grey-65);
+  }
+
+  tr[data-testid="rubric-criterion"] > td {
+    background-color: var(--global-bg-darker-20);
+    color: var(--grey-55);
+  }
+
+  .rating-tier {
+    border-left-color: grey;
+  }
+
+  #minical .event::after,
+  .react-rubric :is(td, th) {
+    border: 1px solid var(--grey-65);
+  }
+
+  .css-17r3ise-view-cell {
+    background-color: var(--ic-brand-global-nav-bgd);
+    color: var(--grey-65);
+  }
+
+  .ic-notification__icon > i.icon-info {
+    color: var(--ic-brand-font-color-dark);
+  }
+
+  #announcementWrapper {
+    & .ic-notification__icon {
+      background-color: var(--ic-brand-primary-darkened-15);
+    }
+
+    & [class*="-view-alert"] > div:first-child {
+      background-color: var(--ic-brand-primary-darkened-15);
+      border-color: var(--ic-brand-primary-darkened-15);
+      color: var(--ic-brand-font-color-dark);
+    }
+  }
+
+  #announcementWrapper [class*="-view-alert"],
+  .ic-notification {
+    border-color: var(--ic-brand-primary-darkened-15);
+  }
+
+  .notification_message img {
+    filter: brightness(70%) grayscale(50%) sepia(50%);
+  }
+
+  #undated-events,
+  .display_question,
+  .ic-notification__content,
+  [role="menu"] [role="menuitem"],
+  [role="menu"] {
+    background-color: transparent;
+  }
+
+  #questions.assessment_results .question,
+  .question {
+    border-color: var(--grey-40);
+
+    & .header {
+      background-color: transparent;
+      border-color: var(--grey-40);
+
+      & .question_points_holder {
+        color: inherit;
+      }
+    }
+
+    & select {
+      background-color: var(--ic-brand-global-nav-bgd);
+      border-color: var(--grey-40);
+    }
+  }
+
+  .tray-with-space-for-global-nav span[class$="-toggleFacade__label"] {
+    color: var(--ic-brand-global-nav-menu-item__text-color);
+  }
+
+  .tray-with-space-for-global-nav > div > span > ul > li > a:hover {
+    color: var(--ic-link-color-darkened-10);
+  }
+
+  .ToDoSidebarItem__Icon,
+  .tray-with-space-for-global-nav > div :is(span > ul > li, ul > li:last-child > ul > li > div),
+  div[class="navigation-tray-container history-tray"] > .tray-with-space-for-global-nav > div > ul > li,
+  div[data-testid="globalAnnouncementsAlert"],
+  ul[data-testid="ToDoSidebarItem__InformationRow"] > li,
+  [class*="-view-alert"] {
+    color: var(--ic-brand-font-color-dark);
+  }
+
+  #content ol[class$="-breadcrumb"] > li[class$="-breadcrumb__crumb"] a[class$="-view--block-link"],
+  .ToDoSidebarItem__Title > a,
+  .tray-with-space-for-global-nav > div > span > :is(span > a, ul > li > a),
+  .tray-with-space-for-global-nav > div > ul > li:is(:first-child > a, :last-child > ul > li > a),
+  .tray-with-space-for-global-nav li[class$="-view-listItem"] > div[class^="profile-tab"] > a,
+  [class$="-view-link"]:is(a, button),
+  a[data-testid="view-submission-link"],
+  div.navigation-tray-container.history-tray > .tray-with-space-for-global-nav > div > ul > li > span > span:last-child > a,
+  span[data-testid="post-message-container"] button[class$="-view--inlineBlock-link"],
+  [class$="-toggleDetails__toggle"] {
+    color: var(--ic-link-color);
+  }
+
+  #files-table svg[class$="inlineSVG-svgIcon"],
+  svg[name="IconSearch"],
+  svg[name="IconX"],
+  svg[name="IconXSolid"] {
+    color: var(--ic-brand-global-nav-ic-icon-svg-fill);
+    fill: var(--ic-brand-global-nav-ic-icon-svg-fill);
+  }
+
+  svg[name="IconX"]:is(:active, :focus, :hover),
+  svg[name="IconXSolid"]:is(:active, :focus, :hover) {
+    color: var(--ic-link-color);
+    fill: var(--ic-link-color);
+  }
+
+  .ToDoSidebarItem__Info > span {
+    color: var(--grey-40);
+  }
+
+  .answer {
+    border-color: var(--grey-40);
+  }
+
+  input[type="text"] {
+    background-color: transparent;
+    box-shadow: none;
+  }
+
+  .ic-Table.ic-Table--hover-row tbody tr:is(.ic-Table__row--bg-alert, .ic-Table__row--bg-danger, .ic-Table__row--bg-neutral, .ic-Table__row--bg-success):hover,
+  .ic-Table.ic-Table--hover-row tbody tr:hover,
+  .selected-assignment {
+    background-color: var(--global-bg-lighter-80);
+  }
+
+  .ic-Table--grades-summary-table a:hover {
+    text-shadow: 0px 0px 1px black;
+  }
+
+  ul[role="listbox"] {
+    background-color: var(--global-bg-darker-20);
+
+    & > li {
+      background: none;
+
+      & > span[aria-selected] {
+        color: var(--ic-brand-font-color-dark);
+      }
+
+      & > span[aria-selected="false"]:hover {
+        background-color: var(--grey-55);
+      }
+
+      & > span[aria-selected="true"] {
+        background-color: var(--grey-35);
+      }
+    }
+  }
+
+  #announcement-filter::selection {
+    background-color: transparent;
+  }
+
+  .announcements-v2__wrapper .ic-announcement-row {
+    box-shadow: 0 -1px var(--grey-55), inset 0 -1px var(--grey-55);
+  }
+}
+
+/* CIE */
+@-moz-document url-prefix("https://canvas.lms.unimelb.edu.au/courses/245724") {
+  div.border-trbl[style*="background-color: #f0f4f3"] {
+    background-color: var(--global-bg-darker-20) !important;
+  }
+
+  #wiki_page_show > .show-content.user_content > p > span[style="background-color: #c2e0f4;"],
+  .pages.show .show-content span[style="background-color: #fbeeb8;"] {
+    background-color: royalblue !important;
+  }
+
+  #wiki_page_show > .show-content.user_content table tr:not(:first-child) td:first-child,
+  #wiki_page_show > .show-content.user_content table tr:nth-child(2n-1) td {
+    background-color: var(--global-bg-darker-30) !important;
+    color: tan !important;
+  }
+
+  .user_content > p > span[style*="color: #31465c"] {
+    color: var(--ic-brand-font-color-dark) !important;
+  }
+
+  .Pull_out {
+    background-color: hsl(30, 10%, 30%) !important;
+  }
+}
