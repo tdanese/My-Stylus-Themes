@@ -11,18 +11,17 @@
     width: auto;
   }
 }
-@-moz-document domain("canva.com") {
-.e3l6yA
-{
-  filter: none;
-  opacity: 1;
-  pointer-events: inherit;
-}
 
-.bfFHbg
-{
-  cursor: auto;
-}
+@-moz-document domain("canva.com") {
+  .e3l6yA {
+    filter: none;
+    opacity: 1;
+    pointer-events: inherit;
+  }
+
+  .bfFHbg {
+    cursor: auto;
+  }
 }
 
 @-moz-document domain("discord.com") {
@@ -118,21 +117,19 @@
     transition-property: background-color, border-color, color !important;
   }
 }
+
 @-moz-document domain("store.steampowered.com") {
-body.v6 #footer
-{
-  padding: 0px;
-}
+  body.v6 #footer {
+    padding: 0px;
+  }
 
-body.v6 #footer_spacer
-{
-  height: 120px;
-}
+  body.v6 #footer_spacer {
+    height: 120px;
+  }
 
-body.v6 #footer .footer_content
-{
-  padding-bottom: 16px;
-}
+  body.v6 #footer .footer_content {
+    padding-bottom: 16px;
+  }
 }
 
 @-moz-document domain("winaero.com") {
