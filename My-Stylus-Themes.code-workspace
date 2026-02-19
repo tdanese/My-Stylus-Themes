@@ -5,6 +5,10 @@
 		}
 	],
 	"settings": {
-		"files.defaultLanguage": "${activeEditorLanguage}"
+		"files.defaultLanguage": "${activeEditorLanguage}",
+		"diffEditor.wordWrap": "off",
+		"editor.tabSize": 2,
+    "editor.detectIndentation": false,
+    "files.eol": "\n"
 	}
 }

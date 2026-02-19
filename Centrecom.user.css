@@ -1,0 +1,244 @@
+/* ==UserStyle==
+@name           Centrecom
+@namespace      github.com/tdanese/My-Stylus-Themes (https://github.com/tdanese/My-Stylus-Themes)
+@version        2026-02-19.0.1
+@description    Dark theme + increase useful screen area
+@author         tdanese
+@homepageURL    https://github.com/tdanese/My-Stylus-Themes
+==/UserStyle== */
+@-moz-document domain("centrecom.com.au") {
+  header {
+    background: hsla(0, 0%, 0%, 0.2) !important;
+    backdrop-filter: blur(10px);
+    max-width: 1320px;
+    padding-bottom: 28px;
+  }
+
+  #main-menu {
+    box-shadow: none !important;
+    background: transparent !important;
+    top: 80px;
+  }
+
+  .header_icons .icono {
+    opacity: 0.65;
+  }
+
+  .sm-centrecom-horizontal-menu #main-menu.sm-centrecom > li > a {
+    padding: 0px 20px;
+    line-height: 28px;
+  }
+
+  .sm-centrecom-horizontal-menu #main-menu.sm-centrecom > li.main-link-shop > a {
+    background: rgba(0, 134, 255, 0.5);
+  }
+
+  .prbox_headerbar,
+  .home-container,
+  .master-wrapper-main .center-1,
+  footer,
+  .master-wrapper-page {
+    background-color: hsl(0 0% 10%);
+  }
+
+  #formLogin .btn-login,
+  .form-bottom .btn-register {
+    border-color: var(--bs-btn-border-color);
+  }
+
+  .btn-primary {
+    --bs-btn-bg: steelblue;
+    --bs-btn-border-color: transparent
+  }
+
+  .top-header ul li a.top-cart {
+    background-color: steelblue !important;
+    padding: 7px 12px;
+  }
+
+  .top,
+  .top-header,
+  .top-header ul li {
+    height: 28px;
+    line-height: 28px;
+  }
+
+  .top-header .countdownheaderbox > span {
+    color: darkgoldenrod;
+  }
+
+  .deallabel-yellow {
+    color: gold;
+  }
+
+  .prbox_pricebox .saleprice,
+  .deal-grid-box .price .onsale {
+    color: #a20;
+  }
+
+  .close {
+    color: white;
+    opacity: 0.4;
+    text-shadow: none;
+  }
+
+  .featherlight .featherlight-content {
+    padding: 25px 25px;
+    border: 0px solid transparent;
+    background: #222;
+  }
+
+  .modal-content,
+  .deal-grid-box .price,
+  .page-body,
+  .product-details-page,
+  .product_tabs_content {
+    background-color: #222;
+  }
+
+  body,
+  .footer-links ul li a,
+  .seco-content-title,
+  .text-info,
+  .prbox_headerbar h2,
+  .order-summary-content,
+  .wishlist-content .footer-links ul li a,
+  .footer-links ul li.title,
+  .master-wrapper-main {
+    color: silver;
+  }
+
+  form#product-details-form .deallabel,
+  .deallabel > a,
+  .product-top-frame .left .category-stickers ul li.red {
+    background-color: darkred;
+    color: lightgrey;
+  }
+
+  .prbox_box,
+  .deal-grid-box {
+    background-color: #111;
+    height: auto;
+    margin: 0.2% 0.75%;
+  }
+
+  .prbox_box .prbox_name,
+  .deal-grid-box .productname {
+    color: steelblue;
+  }
+
+  .master-wrapper-content,
+  footer .footer-wrapper,
+  .form-container,
+  #deal-products-wrap,
+  .rsDefault,
+  .rsDefault .rsOverflow,
+  .rsDefault .rsSlide,
+  .prod_stores_stock li {
+    background: transparent;
+  }
+
+  #gallery-1 {
+    background-color: transparent !important;
+  }
+
+  .prod_top h1 {
+    color: dimgrey;
+  }
+
+  .prod_top h2,
+  .prod_price_old,
+  .prod_price_rrp {
+    color: grey;
+  }
+
+  .order-cart-products .qty-spin span {
+    background-color: #111;
+    border-color: grey;
+    color: silver;
+    line-height: 24px;
+  }
+
+  .order-cart-offers .products-title-offers,
+  .order-cart-products .products-title,
+  .prod_sales_points ul li,
+  .product-details-page .qty-spin > input,
+  .product-details-page .qty-spin > span,
+  .product_tabs_content #content_specifications table tr td.type {
+    background-color: #111;
+    border-color: grey;
+    color: silver;
+  }
+
+  .product_tabs_content #content_specifications table tr:hover {
+    background-color: #111;
+  }
+
+  .product_tabs_content #content_specifications table,
+  .product_tabs_content #content_specifications table tr td {
+    border-color: grey;
+  }
+
+  .btn_checkout,
+  .prod_addtocart,
+  button.store_pickup_button {
+    background-color: #050;
+    color: lightgray;
+    height: 35px;
+    padding: 0;
+    transition: opacity .2s ease-in;
+  }
+
+  .stock-result1 {
+    color: #e53;
+  }
+
+  .stock-result3 {
+    color: #090;
+  }
+
+  button.store_pickup_button:hover {
+    opacity: 0.85;
+  }
+
+  button.prod_addtowishlist {
+    background-color: darkgrey;
+    height: 35px;
+    padding: 0;
+  }
+
+  .prod_shipping_container {
+    background: transparent;
+    border: none;
+    margin: 0;
+  }
+
+  .product-details-page .prod_sales_points {
+    margin-bottom: 1%;
+  }
+
+  .continue-shopping,
+  .product-details-page .prod-qty {
+    margin: 0;
+  }
+
+  footer .footer-wrapper,
+  .header_container,
+  .product-details-page .prod_left {
+    padding: 0;
+  }
+
+  .header-left,
+  .header-right {
+    padding: 10px 20px;
+  }
+
+  .header-right {
+    width: 93%;
+  }
+
+  img,
+  .prbox_img {
+    filter: brightness(0.75) grayscale(0.3);
+  }
+}

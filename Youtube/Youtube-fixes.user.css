@@ -1,0 +1,74 @@
+/* ==UserStyle==
+@name           Youtube fixes
+@namespace      github.com/tdanese/My-Stylus-Themes (https://github.com/tdanese/My-Stylus-Themes)
+@version        2026-02-19.0.1
+@description    Fixes & style preferences
+@author         tdanese
+@homepageURL    https://github.com/tdanese/My-Stylus-Themes
+==/UserStyle== */
+@-moz-document domain("youtube.com") {
+
+  tp-yt-paper-checkbox .tp-yt-paper-checkbox[style-target="label"],
+  .tp-yt-paper-checkbox[style-target="label"] {
+    padding-left: 6px;
+  }
+
+  #playlists.ytd-add-to-playlist-renderer > .ytd-add-to-playlist-renderer:not(:last-child) {
+    margin-bottom: 6px;
+  }
+
+  #actions.ytd-add-to-playlist-renderer ytd-button-renderer.ytd-add-to-playlist-renderer,
+  #playlists.ytd-add-to-playlist-renderer {
+    padding: 0px 8px;
+  }
+
+  ytd-add-to-playlist-renderer[dialog] #playlists.ytd-add-to-playlist-renderer {
+    max-height: 540px;
+  }
+
+  .ytdMenuTitleRendererHost {
+    padding: 8px 24px;
+  }
+
+  .ytd-popup-container:has(ytd-add-to-playlist-renderer) {
+    top: 50px !important;
+    margin: 0px 0px;
+    width: max-content;
+  }
+
+  #ytd-player {
+    border-radius: 0px !important;
+  }
+
+  ytd-notification-topbar-button-renderer {
+    backdrop-filter: blur(2px);
+    border-radius: 24px;
+  }
+
+  .ytSearchboxComponentInputBox {
+    border: none;
+  }
+
+  .ytSearchboxComponentSearchButton {
+    border: none !important;
+    backdrop-filter: blur(2px);
+    background-color: hsla(0, 0%, 22%, .08);
+  }
+
+  ytd-comment-view-model #action-menu > .ytd-comment-view-model yt-icon-button > button#button.yt-icon-button:hover {
+    background-color: var(--yt-spec-10-percent-layer);
+    border-radius: 24px;
+  }
+
+  ytd-watch-metadata[description-collapsed][enable-color-sampling] #description.ytd-watch-metadata:hover {
+    background: var(--yt-spec-10-percent-layer);
+  }
+
+  ytd-watch-metadata[description-collapsed][enable-color-sampling] #description.ytd-watch-metadata:hover ytd-watch-info-text.ytd-watch-metadata {
+    color: silver;
+  }
+
+  .badge-shape-style-type-verified-artist > badge-shape {
+    background-color: transparent;
+  }
+}

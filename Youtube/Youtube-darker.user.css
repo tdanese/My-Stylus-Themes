@@ -1,0 +1,172 @@
+/* ==UserStyle==
+@name           Youtube dark
+@namespace      github.com/tdanese/My-Stylus-Themes (https://github.com/tdanese/My-Stylus-Themes)
+@version        2026-02-19.0.1
+@description    Darker dark theme, reduced saturation, reduced contrast of text to make it easier for me to read
+@author         tdanese
+@homepageURL    https://github.com/tdanese/My-Stylus-Themes
+==/UserStyle== */
+@-moz-document domain("youtube.com") {
+
+  :root,
+  html[dark],
+  [dark] {
+    --classic-red-darker: #a00 !important;
+    --yt-spec-text-primary: silver !important;
+    --reel-metadata-color: var(--yt-spec-text-primary) !important;
+    --yt-spec-static-overlay-text-primary: var(--yt-spec-text-primary) !important;
+    --paper-checkbox-unchecked-color: var(--yt-spec-text-primary) !important;
+    /*   --yt-spec-call-to-action: hsl(207.3, 70%, 45%) !important; */
+    --yt-spec-call-to-action: steelblue !important;
+    --yt-attributed-string-link-hover-color: cornflowerblue;
+    --icon-colour: hsl(0, 0%, 62%);
+    --text-warm: antiquewhite;
+    --yt-spec-suggested-action: hsl(210, 50%, 10%);
+    --yt-spec-light-blue: var(--yt-spec-call-to-action);
+    --yt-spec-overlay-call-to-action: var(--yt-spec-call-to-action);
+  }
+
+  yt-button-shape#subscribe-button-shape > button:hover {
+    background-color: silver;
+  }
+
+  yt-button-shape#subscribe-button-shape > button {
+    background-color: grey;
+    color: hsl(0, 0%, 15%);
+  }
+
+  span.yt-core-attributed-string--highlight-text-decorator > a.yt-core-attributed-string__link--call-to-action-color,
+  .ytReelChannelBarViewModelChannelName a.yt-core-attributed-string__link.yt-core-attributed-string--link-inherit-color,
+  span.yt-core-attributed-string--link-inherit-color,
+  a.yt-core-attributed-string--link-inherit-color {
+    color: inherit !important;
+  }
+
+  a.yt-core-attributed-string--link-inherit-color:hover {
+    color: gainsboro !important;
+  }
+
+  .yt-core-attributed-string__link--call-to-action-color,
+  .yt-core-attributed-string--link-inherit-color .yt-core-attributed-string__link--call-to-action-color,
+  .yt-spec-button-shape-next--call-to-action.yt-spec-button-shape-next--text,
+  span.yt-core-attributed-string__link--call-to-action-color,
+  span.yt-core-attributed-string--link-inherit-color > a.yt-core-attributed-string__link--call-to-action-color {
+    color: var(--yt-spec-call-to-action);
+  }
+
+  #description-inner > #ytd-watch-info-text > #info-container #info.ytd-watch-info-text > a[style="color: rgb(62, 166, 255);"] {
+    color: var(--yt-spec-call-to-action) !important;
+  }
+
+  a[href^="/hashtag"] {
+    background-color: hsl(0, 0%, 0%, 25%);
+    color: var(--yt-spec-call-to-action) !important;
+  }
+
+  #submit-button.ytd-commentbox button {
+    background-color: var(--yt-spec-call-to-action);
+    color: lightgrey;
+  }
+
+  #submit-button.ytd-commentbox button:hover {
+    background-color: hsl(210, 79%, 55%);
+  }
+
+  ytd-commentbox {
+    --paper-input-container-input-color: var(--text-warm);
+  }
+
+  #content-text.ytd-comment-view-model,
+  yt-formatted-string.title.style-scope.ytd-guide-entry-renderer {
+    color: var(--text-warm) !important;
+  }
+
+  .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--text,
+  yt-icon span div {
+    color: var(--icon-colour);
+  }
+
+  .ytp-videowall-still-info-content,
+  yt-formatted-string.style-scope.ytd-rich-grid-media,
+  .ytp-modern-videowall-still-info-title {
+    color: lightgrey;
+  }
+
+  span.style-scope.ytd-rich-shelf-renderer {
+    color: grey;
+  }
+
+  .button.ytd-text-inline-expander,
+  .shortsLockupViewModelHostOutsideMetadataEndpoint,
+  .yt-lockup-metadata-view-model__title,
+  .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--outline,
+  .yt-spec-icon-badge-shape--type-notification .yt-spec-icon-badge-shape__icon,
+  .ytCarouselTitleViewModelTitle,
+  .ytd-watch-metadata,
+  .ytdMenuTitleRendererHost,
+  .ytp-panel-menu,
+  .ytSearchboxComponentHostDark,
+  .ytSuggestionComponentPersonalizedSuggestion,
+  .ytSuggestionComponentSuggestion,
+  .ytTextCarouselItemViewModelHost,
+  #content-text.ytd-comment-view-model,
+  #icon-label.yt-dropdown-menu,
+  #text.complex-string.ytd-channel-name a.yt-simple-endpoint.yt-formatted-string,
+  #title,
+  yt-formatted-string.ytd-comments-header-renderer {
+    color: var(--yt-spec-text-primary);
+  }
+
+  #sponsor-button > timed-animation-button-renderer > yt-smartimation > .smartimation__content > ytd-button-renderer > yt-button-shape > button {
+    background-color: darkgrey;
+  }
+
+  .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--tonal {
+    background-color: transparent;
+    color: var(--icon-colour);
+  }
+
+  .yt-spec-touch-feedback-shape > .yt-spec-touch-feedback-shape__fill {
+    background-color: var(--icon-colour) !important;
+  }
+
+  .ytVideoMetadataCarouselViewModelHost,
+  #description.ytd-watch-metadata,
+  ytd-rich-metadata-renderer {
+    background-color: hsla(0, 0%, 100%, .031);
+  }
+
+  .ytSearchboxComponentSuggestionsContainer {
+    background-color: hsl(0, 0%, 7%);
+  }
+
+  .yt-spec-icon-badge-shape--type-notification .yt-spec-icon-badge-shape__badge,
+  .ytp-play-progress,
+  .ytp-swatch-background-color,
+  .ytProgressBarLineProgressBarPlayed,
+  .ytThumbnailOverlayProgressBarHostWatchedProgressBarSegment,
+  #progress.ytd-thumbnail-overlay-resume-playback-renderer {
+    background: var(--classic-red-darker);
+  }
+
+  #icon.ytd-rich-shelf-renderer span.yt-icon div svg path:first-child {
+    fill: var(--classic-red-darker);
+  }
+
+  #hearted.ytd-creator-heart-renderer span.yt-icon div {
+    color: var(--classic-red-darker);
+  }
+
+  .ytp-panel-menu path[fill="white"],
+  g > path[fill="rgb(255,255,255)"] {
+    fill: currentColor;
+  }
+
+  .ytp-modern-videowall-still-image,
+  .ytp-videowall-still-image,
+  .ytThumbnailViewModelImage,
+  #inline-preview-player,
+  img {
+    filter: grayscale(0.5) brightness(0.75);
+  }
+}
