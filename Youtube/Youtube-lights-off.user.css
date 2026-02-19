@@ -1,0 +1,24 @@
+/* ==UserStyle==
+@name           Youtube lights off
+@namespace      github.com/tdanese/My-Stylus-Themes (https://github.com/tdanese/My-Stylus-Themes)
+@version        2026-02-19.0.1
+@description    Remove distractions, darker font
+@author         tdanese
+@homepageURL    https://github.com/tdanese/My-Stylus-Themes
+==/UserStyle== */
+@-moz-document url-prefix("https://www.youtube.com/watch") {
+
+  #secondary,
+  #masthead-container,
+  ytd-watch-metadata > #above-the-fold > .ytd-watch-metadata:not(#title),
+  ytd-watch-metadata > ytd-metadata-row-container-renderer.ytd-watch-metadata,
+  #comments,
+  #primary-inner > #below > #clarify-box,
+  #movie_player > .ytp-fullscreen-grid {
+    display: none;
+  }
+
+  #title {
+    color: grey;
+  }
+}

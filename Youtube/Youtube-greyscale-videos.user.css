@@ -1,0 +1,13 @@
+/* ==UserStyle==
+@name           Youtube greyscale videos
+@namespace      github.com/tdanese/My-Stylus-Themes (https://github.com/tdanese/My-Stylus-Themes)
+@version        2026-02-19.0.1
+@description    50% greyscale filter videos, regular brightness
+@author         tdanese
+@homepageURL    https://github.com/tdanese/My-Stylus-Themes
+==/UserStyle== */
+@-moz-document domain("youtube.com") {
+  #player-container {
+    filter: grayscale(0.5)
+  }
+}

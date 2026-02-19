@@ -1,0 +1,13 @@
+/* ==UserStyle==
+@name           Youtube dark & greyscale videos
+@namespace      github.com/tdanese/My-Stylus-Themes (https://github.com/tdanese/My-Stylus-Themes)
+@version        2026-02-19.0.1
+@description    Reduce video brightness to 75% + 50% greyscale
+@author         tdanese
+@homepageURL    https://github.com/tdanese/My-Stylus-Themes
+==/UserStyle== */
+@-moz-document domain("youtube.com") {
+  #player-container {
+    filter: grayscale(0.5) brightness(0.75)
+  }
+}
