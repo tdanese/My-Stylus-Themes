@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Canvas dark
 @namespace      github.com/tdanese/My-Stylus-Themes (https://github.com/tdanese/My-Stylus-Themes)
-@version        2026-02-19.0.1
+@version        2026-03-03.0.1
 @description    Dark theme, including overrides for pages where styles are defined in the HTML
 @author         tdanese
 @homepageURL    https://github.com/tdanese/My-Stylus-Themes
@@ -526,15 +526,16 @@
     border: 1px solid var(--global-bg-lighter-80);
   }
 
-  #calendar-app .fc-event,
-  #calendars-context-list .context_list_context,
+  .course-list-unpublished-course-row,
   .discussions-container__wrapper .ic-discussion-row,
   .display_question,
   .Pages,
   .ui-widget-content,
+  [role="menu"] [role="menuitem"]:hover,
+  #calendar-app .fc-event,
+  #calendars-context-list .context_list_context,
   span.transition--slide-right-entered,
-  span[data-id="submissions-comments-tray"],
-  [role="menu"] [role="menuitem"]:hover {
+  span[data-id="submissions-comments-tray"] {
     background-color: var(--global-bg-darker-20);
   }
 
