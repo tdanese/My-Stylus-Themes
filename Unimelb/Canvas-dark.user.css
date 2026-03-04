@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Canvas dark
 @namespace      github.com/tdanese/My-Stylus-Themes (https://github.com/tdanese/My-Stylus-Themes)
-@version        2026-03-03.0.1
+@version        2026-03-05.0.1
 @description    Dark theme, including overrides for pages where styles are defined in the HTML
 @author         tdanese
 @homepageURL    https://github.com/tdanese/My-Stylus-Themes
@@ -39,6 +39,12 @@
     --ic-link-color-darkened-10: hsl(217, 52%, 43%) !important;
     --ic-link-color-lightened-10: hsl(from var(--ic-link-color) h s calc(l * 0.9)) !important;
     --ic-link-color: hsl(214, 47%, 53%) !important;
+    --uom-brand-color-primary: hsl(225, 57%, 50%);
+  }
+
+  ul.uom-ui-grid > li {
+    color: inherit;
+    background-color: var(--global-bg-darker-20);
   }
 
   #quiz_show > .muted-notice {
