@@ -1,0 +1,40 @@
+/* ==UserStyle==
+@name           Unimelb
+@namespace      github.com/tdanese/My-Stylus-Themes (https://github.com/tdanese/My-Stylus-Themes)
+@version        2026-03-22.0.1
+@description    unimelb.edu.au and subdomains excluding canvas.lms.unimelb.edu.au
+@author         tdanese
+@homepageURL    https://github.com/tdanese/My-Stylus-Themes
+@preprocessor   less
+@var color bg-global "Global background colour" bisque
+==/UserStyle== */
+@-moz-document domain("handbook.unimelb.edu.au"),
+domain("library.unimelb.edu.au"),
+domain("my.unimelb.edu.au"),
+domain("safety.unimelb.edu.au"),
+domain("students.unimelb.edu.au"),
+domain("www.unimelb.edu.au") {
+  html {
+    background-color: @bg-global;
+  }
+}
+
+@-moz-document domain("identity.unimelb.edu.au") {
+  body {
+    background-color: @bg-global;
+  }
+
+  #content-wrapper {
+    background: none;
+  }
+}
+
+@-moz-document domain("your.unimelb.edu.au") {
+  :root {
+    --dxp-g-root: @bg-global;
+  }
+
+  .home-middle-section {
+    background: none;
+  }
+}
