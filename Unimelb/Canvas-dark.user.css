@@ -1,11 +1,38 @@
 /* ==UserStyle==
 @name           Canvas dark
 @namespace      github.com/tdanese/My-Stylus-Themes (https://github.com/tdanese/My-Stylus-Themes)
-@version        2026-03-05.0.1
+@version        2026-03-21.0.1
 @description    Dark theme, including overrides for pages where styles are defined in the HTML
 @author         tdanese
 @homepageURL    https://github.com/tdanese/My-Stylus-Themes
+@preprocessor   less
+@var color bg-global "Global background colour" hsl(0, 0%, 14%)
+@var color font-global "Global font colour" hsl(34.3, 30%, 80%)
+@var color uom-brand "uom-brand" hsl(225, 57%, 50%)
+@var color link-colour "Link colour" hsl(214, 47%, 53%)
 ==/UserStyle== */
+@-moz-document domain("unimelb.h5p.com") {
+  .h5p-content {
+    background-color: @bg-global !important;
+  }
+
+  .h5p-accordion .h5p-panel-content,
+  .h5p-accordion .h5p-panel-expanded,
+  .h5p-accordion .h5p-panel-title {
+    color: @font-global;
+  }
+
+  .h5p-accordion .h5p-panel-title:hover,
+  .h5p-accordion .h5p-panel-title:focus-within,
+  .h5p-accordion .h5p-panel-title:active {
+    color: @uom-brand;
+  }
+
+  .h5p-panel-content a {
+    color: @link-colour;
+  }
+}
+
 @-moz-document domain("canvas.lms.unimelb.edu.au"), domain("instructure.com") {
   :root {
     --colour-success: hsl(105, 100%, 30%);
@@ -27,9 +54,9 @@
     --grey-65: hsl(0, 0%, 65%);
     --grey-70: hsl(from var(--ic-brand-global-nav-bgd) h s calc(l * 5));
     --ic-brand-font-color-dark-lightened-15: oldlace !important;
-    --ic-brand-font-color-dark: hsl(34.3, 30%, 80%) !important;
+    --ic-brand-font-color-dark: @font-global !important;
     --ic-brand-global-nav-avatar-border: transparent !important;
-    --ic-brand-global-nav-bgd: hsl(0, 0%, 14%) !important;
+    --ic-brand-global-nav-bgd: @bg-global !important;
     --ic-brand-global-nav-ic-icon-svg-fill--active: var(--ic-link-color-darkened-10) !important;
     --ic-brand-global-nav-ic-icon-svg-fill: dimgrey;
     --ic-brand-global-nav-menu-item__text-color--active: var(--ic-link-color-darkened-10) !important;
@@ -38,8 +65,34 @@
     --ic-brand-primary: hsl(222, 60%, 37%) !important;
     --ic-link-color-darkened-10: hsl(217, 52%, 43%) !important;
     --ic-link-color-lightened-10: hsl(from var(--ic-link-color) h s calc(l * 0.9)) !important;
-    --ic-link-color: hsl(214, 47%, 53%) !important;
-    --uom-brand-color-primary: hsl(225, 57%, 50%);
+    --ic-link-color: @link-colour !important;
+    --uom-brand-color-primary: @uom-brand;
+  }
+
+  .css-1wf5tpt-modal {
+    background: var(--global-bg-darker-25);
+    color: var(--ic-brand-font-color-dark);
+  }
+
+  .css-1gr6vo7-mask {
+    background: rgba(0, 0, 0, 0.75);
+  }
+
+  .css-djg1i-view {
+    color: var(--ic-brand-font-color-dark);
+  }
+
+  .css-wromy8-view-cell,
+  div[data-testid="rubric-tab"] table tbody {
+    background: var(--global-bg-darker-20);
+    border-color: var(--global-bg-lighter-80);
+    color: var(--ic-brand-font-color-dark);
+  }
+
+  div[data-testid="rubric-assessment-traditional-view"] > div,
+  div[data-testid="rubric-tab"] table thead td {
+    background-color: var(--global-bg-lighter-50);
+    color: var(--grey-65);
   }
 
   ul.uom-ui-grid > li {
@@ -628,6 +681,7 @@
     filter: brightness(70%) grayscale(50%) sepia(50%);
   }
 
+  .css-1u9u9of-modalHeader,
   #undated-events,
   .display_question,
   .ic-notification__content,
