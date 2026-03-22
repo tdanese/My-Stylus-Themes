@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Canvas fixes
 @namespace      github.com/tdanese/My-Stylus-Themes (https://github.com/tdanese/My-Stylus-Themes)
-@version        2026-03-21.0.1
+@version        2026-03-22.0.1
 @description    Fixes, increase useful screen area, slightly darker background colour
 @author         tdanese
 @homepageURL    https://github.com/tdanese/My-Stylus-Themes
@@ -217,6 +217,17 @@
   #discussion-redesign-layout > div > div > div > span[class$="-view--block"] > div[class$="-drawerLayout"],
   #discussion-redesign-layout > div > div > div > span[class$="-view--block"] {
     height: unset !important;
+  }
+
+  table[data-testid="uploaded_files_table"] {
+    color: var(--ic-brand-font-color-dark);
+
+    & > thead > tr > th,
+    & > thead > tr,
+    & > thead {
+      background: none;
+      color: inherit;
+    }
   }
 
   #file-upload-container div[data-testid="upload-box"] > span[class$="-view--flex-flex"] > span[class$="-view-flexItem"]:last-child div[class$="-view"]:has(> button[class$="-view--block-baseButton"]),

@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Canvas dark
 @namespace      github.com/tdanese/My-Stylus-Themes (https://github.com/tdanese/My-Stylus-Themes)
-@version        2026-03-22.0.1
+@version        2026-03-22.0.2
 @description    Dark theme, including overrides for pages where styles are defined in the HTML
 @author         tdanese
 @homepageURL    https://github.com/tdanese/My-Stylus-Themes
@@ -67,6 +67,12 @@
     --ic-link-color-lightened-10: hsl(from var(--ic-link-color) h s calc(l * 0.9)) !important;
     --ic-link-color: @link-colour !important;
     --uom-brand-color-primary: @uom-brand;
+  }
+
+  code,
+  pre {
+    background-color: var(--global-bg-darker-20);
+    color: gainsboro;
   }
 
   .css-1wf5tpt-modal {
@@ -136,11 +142,6 @@
       background: none;
     }
 
-    & table[data-testid="uploaded_files_table"] {
-      background-color: var(--global-bg-darker-20);
-      color: silver;
-    }
-
     & div[data-testid="upload-box"] > span[class$="-view--flex-flex"] > span[class$="-view-flexItem"]:last-child div[class$="-view"]:has(> button[class$="-view--block-baseButton"]),
     & span[class$="-fileDrop__layout"] > span > div[class$="-view"] {
       background-color: var(--global-bg-darker-20);
@@ -149,6 +150,15 @@
       &:hover {
         background-color: var(--global-bg-lighter-15);
       }
+    }
+  }
+
+  table[data-testid="uploaded_files_table"] {
+    background-color: var(--global-bg-darker-20);
+    color: silver;
+
+    & > tbody > tr > td {
+      color: var(--ic-brand-font-color-dark);
     }
   }
 
@@ -717,6 +727,7 @@
     color: var(--ic-link-color-darkened-10);
   }
 
+  .css-7yks1e-view,
   .ToDoSidebarItem__Icon,
   .tray-with-space-for-global-nav > div :is(span > ul > li, ul > li:last-child > ul > li > div),
   div[class="navigation-tray-container history-tray"] > .tray-with-space-for-global-nav > div > ul > li,
@@ -726,6 +737,7 @@
     color: var(--ic-brand-font-color-dark);
   }
 
+  [data-testid="rubric-assessment-traditional-view"] .css-1nzyi9p-view--block-link:is(button),
   #content ol[class$="-breadcrumb"] > li[class$="-breadcrumb__crumb"] a[class$="-view--block-link"],
   .ToDoSidebarItem__Title > a,
   .tray-with-space-for-global-nav > div > span > :is(span > a, ul > li > a),
