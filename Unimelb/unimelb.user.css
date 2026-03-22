@@ -14,6 +14,10 @@ domain("my.unimelb.edu.au"),
 domain("safety.unimelb.edu.au"),
 domain("students.unimelb.edu.au"),
 domain("www.unimelb.edu.au") {
+  :root {
+    --col-grey-light-25: rgba(255, 255, 255, 0.3);
+  }
+
   html {
     background-color: @bg-global;
   }
