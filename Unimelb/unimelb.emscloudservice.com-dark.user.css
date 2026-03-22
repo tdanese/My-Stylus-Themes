@@ -11,40 +11,42 @@
 ==/UserStyle== */
 @-moz-document domain("unimelb.emscloudservice.com") {
   html {
-    --bg-inverse: hsl(from @bg h s calc(abs(l - 100)));
-    --bg-plus-5: hsl(from @bg h s calc(l + 5));
-    --bg-plus-15: hsl(from @bg h s calc(l + 15));
-    --bg-minus-5: hsl(from @bg h s calc(l - 5));
+    --bg: @bg;
+    --bg-inverse: hsl(from var(--bg) h s calc(-1 * l + 100));
+    --bg-plus-5: hsl(from var(--bg) h s calc(l + 5));
+    --bg-plus-15: hsl(from var(--bg) h s calc(l + 15));
+    --bg-minus-5: hsl(from var(--bg) h s calc(l - 5));
     --green: hsl(from #97ca3d h 40% 30%);
+    --link-font-colour: @link-font-colour;
   }
 
   .modal-footer a:not(.btn),
   .row a:not(.btn):not([role="tab"]):not([role="button"]):not(.thumbnail),
   #book-grid-container .location,
   #pc_forgotPasswordContainer > .lnk-password {
-    color: @link-font-colour;
+    color: var(--link-font-colour);
   }
 
   #pc_forgotPasswordContainer > .lnk-password:hover {
-    border-bottom-color: @link-font-colour;
+    border-bottom-color: var(--link-font-colour);
   }
 
   .btn-primary:focus {
-    background-color: @link-font-colour;
+    background-color: var(--link-font-colour);
     color: var(--bg-inverse);
     border-color: var(--bg-inverse);
   }
 
   .btn-primary:active,
   .btn-primary {
-    background-color: @link-font-colour;
+    background-color: var(--link-font-colour);
     color: var(--bg-inverse);
-    border-color: @link-font-colour;
+    border-color: var(--link-font-colour);
   }
 
   .btn-primary:hover {
     color: var(--bg-inverse);
-    border-color: @link-font-colour;
+    border-color: var(--link-font-colour);
   }
 
   a.current-page {
@@ -67,12 +69,12 @@
 
   .time-box-overflow,
   .column-container .column:nth-child(2n) {
-    background-color: @bg;
+    background-color: var(--bg);
   }
 
   .modal-content,
   body {
-    background-color: @bg !important;
+    background-color: var(--bg) !important;
     color: var(--bg-inverse);
   }
 
@@ -113,6 +115,7 @@
     color: var(--bg-inverse) !important;
   }
 
+  .form-control,
   .grid-container .grid-row:nth-child(2n) {
     background-color: transparent;
   }
