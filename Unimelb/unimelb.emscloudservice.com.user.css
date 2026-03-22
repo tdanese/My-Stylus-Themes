@@ -1,0 +1,73 @@
+/* ==UserStyle==
+@name           unimelb.emscloudservice.com fixes
+@namespace      github.com/tdanese/My-Stylus-Themes (https://github.com/tdanese/My-Stylus-Themes)
+@version        2026-03-22.0.1
+@description    Adjusts margins, padding, sizes etc. to increase useful screen area
+@author         tdanese
+@homepageURL    https://github.com/tdanese/My-Stylus-Themes
+@preprocessor   less
+@var range navbar-h "Navbar height" [28, 0, 50, 1, 'px']
+==/UserStyle== */
+@-moz-document domain("unimelb.emscloudservice.com") {
+  #wrapper {
+    margin-top: @navbar-h;
+  }
+
+  #sidebar-wrapper {
+    height: calc(100% - @navbar-h);
+    left: 0px;
+    margin-left: 0px;
+    position: fixed;
+    top: @navbar-h;
+  }
+
+  .sidebar-nav {
+    width: -moz-available;
+  }
+
+  .navbar h1 {
+    margin-bottom: 2px !important;
+    margin-top: 2px !important;
+  }
+
+  #user-menu-section #helpicon,
+  #user-menu-section #usernameid {
+    padding-bottom: 0 !important;
+    padding-left: 0 !important;
+    padding-top: 5px !important;
+  }
+
+  .container-fluid,
+  #page-title {
+    height: inherit;
+  }
+
+  h1 {
+    margin: 0 !important;
+  }
+
+  .navbar {
+    box-shadow: none;
+    height: @navbar-h;
+    margin-bottom: 0;
+    min-height: @navbar-h;
+  }
+
+  .nav-tabs > li > a {
+    margin-bottom: 1px;
+  }
+
+  .book-grid-container .grid,
+  .dynamic-filter-content,
+  .form-control,
+  .grid-container .room-row .building-hours,
+  .table tbody tr td a,
+  .time-box,
+  .time-row,
+  #locationsContainer,
+  #signin-panel,
+  #user-menu-section #helpicon,
+  #user-menu-section #usernameid {
+    background-color: transparent !important;
+  }
+}

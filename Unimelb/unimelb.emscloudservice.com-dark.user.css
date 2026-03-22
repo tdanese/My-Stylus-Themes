@@ -1,0 +1,136 @@
+/* ==UserStyle==
+@name           unimelb.emscloudservice.com dark
+@namespace      github.com/tdanese/My-Stylus-Themes (https://github.com/tdanese/My-Stylus-Themes)
+@version        2026-03-22.0.1
+@description    Dark theme
+@author         tdanese
+@homepageURL    https://github.com/tdanese/My-Stylus-Themes
+@preprocessor   less
+@var color bg "Background colour" hsl(0, 0%, 15%)
+@var color link-font-colour "Link colour" hsl(206, 60%, 40%)
+==/UserStyle== */
+@-moz-document domain("unimelb.emscloudservice.com") {
+  html {
+    --bg-inverse: hsl(from @bg h s calc(abs(l - 100)));
+    --bg-plus-5: hsl(from @bg h s calc(l + 5));
+    --bg-plus-15: hsl(from @bg h s calc(l + 15));
+    --bg-minus-5: hsl(from @bg h s calc(l - 5));
+    --green: hsl(from #97ca3d h 40% 30%);
+  }
+
+  .modal-footer a:not(.btn),
+  .row a:not(.btn):not([role="tab"]):not([role="button"]):not(.thumbnail),
+  #book-grid-container .location,
+  #pc_forgotPasswordContainer > .lnk-password {
+    color: @link-font-colour;
+  }
+
+  #pc_forgotPasswordContainer > .lnk-password:hover {
+    border-bottom-color: @link-font-colour;
+  }
+
+  .btn-primary:focus {
+    background-color: @link-font-colour;
+    color: var(--bg-inverse);
+    border-color: var(--bg-inverse);
+  }
+
+  .btn-primary:active,
+  .btn-primary {
+    background-color: @link-font-colour;
+    color: var(--bg-inverse);
+    border-color: @link-font-colour;
+  }
+
+  .btn-primary:hover {
+    color: var(--bg-inverse);
+    border-color: @link-font-colour;
+  }
+
+  a.current-page {
+    background-color: var(--bg-plus-15);
+    color: var(--bg-inverse);
+    border-left: solid 6px var(--green);
+  }
+
+  #sidebar-wrapper {
+    background: var(--bg-plus-5);
+    border-right: solid 1px var(--bg-plus-15);
+  }
+
+  .grid-container .building-row .time-row-container .time-row .time-box,
+  .column-container .building-column,
+  .booking-grid > div > .row:hover,
+  .sidebar-nav li:hover {
+    background-color: var(--bg-plus-15) !important;
+  }
+
+  .time-box-overflow,
+  .column-container .column:nth-child(2n) {
+    background-color: @bg;
+  }
+
+  .modal-content,
+  body {
+    background-color: @bg !important;
+    color: var(--bg-inverse);
+  }
+
+  .grid-container .grid-row,
+  .column-container .column:nth-child(2n+1),
+  .dynamic-filter-content .dynamic-filter-container .dynamic-filter-row:nth-child(2n+1),
+  #page-loading-overlay,
+  #page-loading-overlay-skype,
+  .nav > li > a:focus,
+  .nav > li > a:hover,
+  .btn-default:hover,
+  .btn:hover {
+    background-color: var(--bg-minus-5);
+  }
+
+  .navbar {
+    background-color: var(--bg-plus-5);
+    color: var(--bg-inverse);
+  }
+
+  .nav-tabs li.active a,
+  .nav-tabs li.active a:hover,
+  .btn-main {
+    background-color: var(--bg-plus-5) !important;
+    color: var(--bg-inverse) !important;
+    border-color: var(--green) !important;
+  }
+
+  #my-bookings-tabs a,
+  h2,
+  #sidebar-wrapper-home,
+  #user-menu > a #user-name,
+  #page-title h1,
+  .sidebar-nav li a,
+  .form-control,
+  .form-control::placeholder,
+  .nav-tabs a {
+    color: var(--bg-inverse) !important;
+  }
+
+  .grid-container .grid-row:nth-child(2n) {
+    background-color: transparent;
+  }
+
+  #my-bookings-tabs .date > .input-group-addon {
+    background-color: transparent !important;
+  }
+
+  .booking-grid > div > .row:nth-child(2n+1),
+  .table tbody tr:nth-child(2n+1) {
+    background-color: var(--bg-plus-5);
+  }
+
+  .booking-grid > div > .row {
+    border-top-color: var(--bg-plus-15);
+  }
+
+  #helpid {
+    color: grey;
+  }
+}
