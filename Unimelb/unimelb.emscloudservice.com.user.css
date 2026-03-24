@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Unimelb DiBS fixes
 @namespace      github.com/tdanese/My-Stylus-Themes (https://github.com/tdanese/My-Stylus-Themes)
-@version        2026-03-22.0.1
+@version        2026-03-24.0.1
 @description    Adjusts margins, padding, sizes etc. to increase useful screen area
 @author         tdanese
 @homepageURL    https://github.com/tdanese/My-Stylus-Themes
@@ -30,8 +30,7 @@
     margin-top: 2px !important;
   }
 
-  #user-menu-section #helpicon,
-  #user-menu-section #usernameid {
+  #user-menu-section :is(#helpicon, #usernameid) {
     padding-bottom: 0 !important;
     padding-left: 0 !important;
     padding-top: 5px !important;
@@ -66,8 +65,7 @@
   .time-row,
   #locationsContainer,
   #signin-panel,
-  #user-menu-section #helpicon,
-  #user-menu-section #usernameid {
+  #user-menu-section :is(#helpicon, #usernameid) {
     background-color: transparent !important;
   }
 }

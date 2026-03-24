@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           bleachbit.org Dark
 @namespace      github.com/tdanese/My-Stylus-Themes (https://github.com/tdanese/My-Stylus-Themes)
-@version        2026-02-19.0.1
+@version        2026-03-24.0.1
 @description    Dark
 @author         tdanese
 @homepageURL    https://github.com/tdanese/My-Stylus-Themes
@@ -37,32 +37,30 @@
     float: unset;
     display: block;
     min-width: max-content;
+
+    & ul.menu {
+      background: none;
+
+      & li {
+        background: hsla(0, 0%, 0%, 0.1);
+      }
+    }
   }
 
-  #navigation ul {
-    background: none;
-  }
-
-  #navigation ul li {
-    background: hsla(0, 0%, 0%, 0.1);
-  }
-
-  #navigation ul li a {
+  #navigation ul li :is(a, a.active) {
     text-shadow: none;
-  }
 
-  #navigation ul li a:hover {
-    background-color: silver;
+    &:hover {
+      background-color: silver;
+    }
   }
 
   #navigation ul li a.active {
     background: hsla(0, 0%, 30%, 1);
-    text-shadow: none;
-  }
 
-  #navigation ul li a.active:hover {
-    background-color: silver;
-    color: hsl(0, 0%, 20%);
+    &:hover {
+      color: hsl(0, 0%, 20%);
+    }
   }
 }
 

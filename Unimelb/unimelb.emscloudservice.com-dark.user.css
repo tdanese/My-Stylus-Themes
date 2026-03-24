@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Unimelb DiBS dark
 @namespace      github.com/tdanese/My-Stylus-Themes (https://github.com/tdanese/My-Stylus-Themes)
-@version        2026-03-22.0.1
+@version        2026-03-24.0.1
 @description    Dark theme
 @author         tdanese
 @homepageURL    https://github.com/tdanese/My-Stylus-Themes
@@ -13,9 +13,9 @@
   html {
     --bg: @bg;
     --bg-inverse: hsl(from var(--bg) h s calc(-1 * l + 100));
-    --bg-plus-5: hsl(from var(--bg) h s calc(l + 5));
-    --bg-plus-15: hsl(from var(--bg) h s calc(l + 15));
     --bg-minus-5: hsl(from var(--bg) h s calc(l - 5));
+    --bg-plus-15: hsl(from var(--bg) h s calc(l + 15));
+    --bg-plus-5: hsl(from var(--bg) h s calc(l + 5));
     --green: hsl(from #97ca3d h 40% 30%);
     --link-font-colour: @link-font-colour;
   }
@@ -33,26 +33,26 @@
 
   .btn-primary:focus {
     background-color: var(--link-font-colour);
-    color: var(--bg-inverse);
     border-color: var(--bg-inverse);
+    color: var(--bg-inverse);
   }
 
   .btn-primary:active,
   .btn-primary {
     background-color: var(--link-font-colour);
-    color: var(--bg-inverse);
     border-color: var(--link-font-colour);
+    color: var(--bg-inverse);
   }
 
   .btn-primary:hover {
-    color: var(--bg-inverse);
     border-color: var(--link-font-colour);
+    color: var(--bg-inverse);
   }
 
   a.current-page {
     background-color: var(--bg-plus-15);
-    color: var(--bg-inverse);
     border-left: solid 6px var(--green);
+    color: var(--bg-inverse);
   }
 
   #sidebar-wrapper {
@@ -60,9 +60,9 @@
     border-right: solid 1px var(--bg-plus-15);
   }
 
-  .grid-container .building-row .time-row-container .time-row .time-box,
-  .column-container .building-column,
   .booking-grid > div > .row:hover,
+  .column-container .building-column,
+  .grid-container .building-row .time-row-container .time-row .time-box,
   .sidebar-nav li:hover {
     background-color: var(--bg-plus-15) !important;
   }
@@ -78,15 +78,14 @@
     color: var(--bg-inverse);
   }
 
-  .grid-container .grid-row,
+  .btn-default:hover,
+  .btn:hover,
   .column-container .column:nth-child(2n+1),
   .dynamic-filter-content .dynamic-filter-container .dynamic-filter-row:nth-child(2n+1),
-  #page-loading-overlay,
+  .grid-container .grid-row,
+  .nav > li > a:is(:focus, :hover),
   #page-loading-overlay-skype,
-  .nav > li > a:focus,
-  .nav > li > a:hover,
-  .btn-default:hover,
-  .btn:hover {
+  #page-loading-overlay {
     background-color: var(--bg-minus-5);
   }
 
@@ -95,23 +94,22 @@
     color: var(--bg-inverse);
   }
 
-  .nav-tabs li.active a,
-  .nav-tabs li.active a:hover,
-  .btn-main {
+  .btn-main,
+  .nav-tabs li.active :is(a, a:hover) {
     background-color: var(--bg-plus-5) !important;
-    color: var(--bg-inverse) !important;
     border-color: var(--green) !important;
+    color: var(--bg-inverse) !important;
   }
 
-  #my-bookings-tabs a,
-  h2,
-  #sidebar-wrapper-home,
-  #user-menu > a #user-name,
-  #page-title h1,
-  .sidebar-nav li a,
   .form-control,
   .form-control::placeholder,
-  .nav-tabs a {
+  .nav-tabs a,
+  .sidebar-nav li a,
+  #my-bookings-tabs a,
+  #page-title h1,
+  #sidebar-wrapper-home,
+  #user-menu > a #user-name,
+  h2 {
     color: var(--bg-inverse) !important;
   }
 

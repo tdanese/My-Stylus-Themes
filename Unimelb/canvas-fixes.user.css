@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Canvas fixes
 @namespace      github.com/tdanese/My-Stylus-Themes (https://github.com/tdanese/My-Stylus-Themes)
-@version        2026-03-22.0.1
+@version        2026-03-24.0.1
 @description    Fixes, increase useful screen area, slightly darker background colour
 @author         tdanese
 @homepageURL    https://github.com/tdanese/My-Stylus-Themes
@@ -11,14 +11,14 @@
 @-moz-document domain("unimelb.h5p.com") {
   .h5p-content {
     background-color: @bg-global;
+
+    & ul.h5p-actions {
+      background: none;
+    }
   }
 
   body {
     background-color: unset;
-  }
-
-  .h5p-content ul.h5p-actions {
-    background: none;
   }
 }
 
@@ -248,12 +248,9 @@
   #announcementWrapper > .ic-notification,
   #files-table > [role="rowgroup"] > [role="row"] :is([role="cell"], [role="rowheader"]) #files-table > [role="rowgroup"] > [role="row"],
   #files-table > [role="rowgroup"],
-  #files-table > tbody > tr > :is(td, th),
-  #files-table > tbody > tr,
-  #files-table > tbody,
-  #files-table > thead > tr > :is(td, th),
-  #files-table > thead > tr,
-  #files-table > thead,
+  #files-table > :is(tbody, thead),
+  #files-table > :is(tbody, thead) > tr,
+  #files-table > :is(tbody, thead) > tr > :is(td, th),
   #files-table,
   #questions.assessing,
   div[data-testid="attempt-tab"] > div[class*="-view-alert"],

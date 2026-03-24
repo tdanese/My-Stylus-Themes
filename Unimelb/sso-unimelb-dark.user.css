@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Unimelb SSO dark
 @namespace      github.com/tdanese/My-Stylus-Themes (https://github.com/tdanese/My-Stylus-Themes)
-@version        2026-03-24.0.2
+@version        2026-03-24.0.3
 @description    Dark theme for Unimelb's okta verify screen. Many rules have the important modifier due to their liberal use in the okta stylesheets.
 @author         tdanese
 @homepageURL    https://github.com/tdanese/My-Stylus-Themes
@@ -12,10 +12,7 @@
 @-moz-document domain("sso.unimelb.edu.au") {
   #okta-sign-in.auth-container {
 
-    & .link:active,
-    & .link:hover,
-    & .link:link,
-    & .link:visited,
+    & .link:is(:active, :hover, :link, :visited),
     & .o-form-explain,
     & .okta-form-subtitle,
     & h2,

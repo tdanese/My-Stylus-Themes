@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Canvas dark
 @namespace      github.com/tdanese/My-Stylus-Themes (https://github.com/tdanese/My-Stylus-Themes)
-@version        2026-03-22.0.2
+@version        2026-03-24.0.1
 @description    Dark theme, including overrides for pages where styles are defined in the HTML
 @author         tdanese
 @homepageURL    https://github.com/tdanese/My-Stylus-Themes
@@ -22,9 +22,7 @@
     color: @font-global;
   }
 
-  .h5p-accordion .h5p-panel-title:hover,
-  .h5p-accordion .h5p-panel-title:focus-within,
-  .h5p-accordion .h5p-panel-title:active {
+  .h5p-accordion .h5p-panel-title:is(:active, :focus-within, :hover) {
     color: @uom-brand;
   }
 
@@ -737,17 +735,17 @@
     color: var(--ic-brand-font-color-dark);
   }
 
-  [data-testid="rubric-assessment-traditional-view"] .css-1nzyi9p-view--block-link:is(button),
-  #content ol[class$="-breadcrumb"] > li[class$="-breadcrumb__crumb"] a[class$="-view--block-link"],
   .ToDoSidebarItem__Title > a,
   .tray-with-space-for-global-nav > div > span > :is(span > a, ul > li > a),
   .tray-with-space-for-global-nav > div > ul > li:is(:first-child > a, :last-child > ul > li > a),
   .tray-with-space-for-global-nav li[class$="-view-listItem"] > div[class^="profile-tab"] > a,
+  [class$="-toggleDetails__toggle"],
   [class$="-view-link"]:is(a, button),
+  [data-testid="rubric-assessment-traditional-view"] .css-1nzyi9p-view--block-link:is(button),
+  #content ol[class$="-breadcrumb"] > li[class$="-breadcrumb__crumb"] a[class$="-view--block-link"],
   a[data-testid="view-submission-link"],
   div.navigation-tray-container.history-tray > .tray-with-space-for-global-nav > div > ul > li > span > span:last-child > a,
-  span[data-testid="post-message-container"] button[class$="-view--inlineBlock-link"],
-  [class$="-toggleDetails__toggle"] {
+  span[data-testid="post-message-container"] button[class$="-view--inlineBlock-link"] {
     color: var(--ic-link-color);
   }
 
