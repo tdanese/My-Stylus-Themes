@@ -134,6 +134,7 @@
 
 @-moz-document domain("supremecourt.vic.gov.au") {
   .site-footer .footer-top {
+    /* Colour sampled from other elements on the site. They used a white font so if the background image doesn't load, you can't see the text. */
     background: #981e32;
   }
 }
