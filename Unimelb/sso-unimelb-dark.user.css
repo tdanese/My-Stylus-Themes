@@ -1,0 +1,70 @@
+/* ==UserStyle==
+@name           Unimelb SSO dark
+@namespace      github.com/tdanese/My-Stylus-Themes (https://github.com/tdanese/My-Stylus-Themes)
+@version        2026-03-24.0.1
+@description    Dark theme for Unimelb's okta verify screen. Many rules have the important modifier due to their liberal use in the okta stylesheets.
+@author         tdanese
+@homepageURL    https://github.com/tdanese/My-Stylus-Themes
+@preprocessor   less
+==/UserStyle== */
+@-moz-document domain("sso.unimelb.edu.au") {
+  #okta-sign-in.auth-container {
+
+    & .link:active,
+    & .link:hover,
+    & .link:link,
+    & .link:visited,
+    & .o-form-explain,
+    & .okta-form-subtitle,
+    & h2,
+    & h3 {
+      color: silver;
+    }
+
+    & .mfa-okta-verify {
+      filter: brightness(50%);
+    }
+
+    & .o-form .okta-form-input-field input {
+      background-color: hsl(0, 0%, 15%);
+      color: silver;
+    }
+
+    & > .auth-content .button {
+      background-color: hsl(140, 50%, 30%) !important;
+      border: none;
+      color: lightgrey !important;
+
+      &:hover {
+        background-color: hsl(140, 50%, 35%) !important;
+      }
+
+      &.select-factor {
+        background: silver !important;
+        color: hsl(0, 0%, 15%) !important;
+
+        &:hover {
+          background-color: darkgrey !important;
+        }
+      }
+    }
+  }
+
+  #custom-applogin-banner.applogin-banner p,
+  p {
+    color: silver;
+  }
+
+  body,
+  div,
+  main {
+    /*   I don't know why they use so many borders when they are the same colour as the background */
+    background-color: rgb(27, 24, 25) !important;
+    border-color: transparent !important;
+    color: silver !important;
+  }
+
+  nav#side-nav-expandable {
+    background-color: hsl(0, 0%, 5%);
+  }
+}
