@@ -1,11 +1,13 @@
 /* ==UserStyle==
 @name           Unimelb SSO dark
 @namespace      github.com/tdanese/My-Stylus-Themes (https://github.com/tdanese/My-Stylus-Themes)
-@version        2026-03-24.0.1
+@version        2026-03-24.0.2
 @description    Dark theme for Unimelb's okta verify screen. Many rules have the important modifier due to their liberal use in the okta stylesheets.
 @author         tdanese
 @homepageURL    https://github.com/tdanese/My-Stylus-Themes
 @preprocessor   less
+@var color bg "Background colour" rgb(27, 24, 25)
+@var color font-main "Main font colour" silver
 ==/UserStyle== */
 @-moz-document domain("sso.unimelb.edu.au") {
   #okta-sign-in.auth-container {
@@ -18,7 +20,7 @@
     & .okta-form-subtitle,
     & h2,
     & h3 {
-      color: silver;
+      color: @font-main;
     }
 
     & .mfa-okta-verify {
@@ -27,24 +29,24 @@
 
     & .o-form .okta-form-input-field input {
       background-color: hsl(0, 0%, 15%);
-      color: silver;
+      color: @font-main;
     }
 
     & > .auth-content .button {
       background-color: hsl(140, 50%, 30%) !important;
       border: none;
-      color: lightgrey !important;
+      color: hsl(from @font-main h s calc(l / 0.9)) !important;
 
       &:hover {
         background-color: hsl(140, 50%, 35%) !important;
       }
 
       &.select-factor {
-        background: silver !important;
+        background: @font-main !important;
         color: hsl(0, 0%, 15%) !important;
 
         &:hover {
-          background-color: darkgrey !important;
+          background-color: hsl(from @font-main h s calc(l / 1.14)) !important;
         }
       }
     }
@@ -52,16 +54,16 @@
 
   #custom-applogin-banner.applogin-banner p,
   p {
-    color: silver;
+    color: @font-main;
   }
 
   body,
   div,
   main {
     /*   I don't know why they use so many borders when they are the same colour as the background */
-    background-color: rgb(27, 24, 25) !important;
+    background-color: @bg !important;
     border-color: transparent !important;
-    color: silver !important;
+    color: @font-main !important;
   }
 
   nav#side-nav-expandable {
