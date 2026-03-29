@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Unimelb
 @namespace      github.com/tdanese/My-Stylus-Themes (https://github.com/tdanese/My-Stylus-Themes)
-@version        2026-03-22.0.1
+@version        2026-03-29.0.1
 @description    unimelb.edu.au and subdomains excluding canvas.lms.unimelb.edu.au
 @author         tdanese
 @homepageURL    https://github.com/tdanese/My-Stylus-Themes
@@ -30,6 +30,14 @@ domain("www.unimelb.edu.au") {
 
   #content-wrapper {
     background: none;
+  }
+}
+
+@-moz-document url-prefix("https://lms.unimelb.edu.au") {
+  :root {
+    background: @bg-global;
+    --col-bg-light: @bg-global;
+    --col-bg-alt-25: @bg-global;
   }
 }
 

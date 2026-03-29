@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           10.com.au Dark
 @namespace      github.com/tdanese/My-Stylus-Themes (https://github.com/tdanese/My-Stylus-Themes)
-@version        2026-03-24.0.1
+@version        2026-03-29.0.1
 @description    Dark
 @author         tdanese
 @homepageURL    https://github.com/tdanese/My-Stylus-Themes
@@ -42,9 +42,9 @@
   }
 
   .mytv-tabs__tab--accounts.mytv-tabs__tab .mytv-icon-container .mytv-icon::before {
-    -webkit-background-clip: text;
-    background-clip: text;
     background: -webkit-linear-gradient(var(--theme-color-darker), var(--theme-color));
+    background-clip: text;
+    -webkit-background-clip: text;
   }
 
   .mytv-tabs__tab--accounts.mytv-tabs__tab--active {
