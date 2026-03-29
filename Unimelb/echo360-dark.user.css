@@ -1,0 +1,153 @@
+/* ==UserStyle==
+@name           Echo360 Dark
+@namespace      github.com/tdanese/My-Stylus-Themes (https://github.com/tdanese/My-Stylus-Themes)
+@version        2026-03-29.0.1
+@description    Dark theme with less garish accent colours
+@author         tdanese
+@homepageURL    https://github.com/tdanese/My-Stylus-Themes
+==/UserStyle== */
+@-moz-document domain("echo360.net.au") {
+  html {
+    --accent-colour-dark: hsl(329.5, 100%, 20%);
+    --accent-colour: hsl(329.5, 100%, 30%);
+    --accent-colour-light: hsl(329.5, 100%, 40%);
+    --grey-15: hsl(0, 0%, 15%);
+    --grey-20: hsl(0, 0%, 20%);
+    --grey-25: hsl(0, 0%, 25%);
+    --text: silver;
+  }
+
+  .select-typeahead .select-dropdown-wrapper .options li.active-result.highlighted > a {
+    color: var(--grey-15);
+  }
+
+  .dTnGqv {
+    background-color: var(--accent-colour-dark);
+    color: var(--text);
+  }
+
+  #library-panels button:hover {
+    color: var(--accent-colour-light);
+  }
+
+  .echo-select__control {
+    background-color: var(--grey-15);
+    color: var(--text) !important;
+  }
+
+  .echo-select-container,
+  .main-content [data-test-component="LibraryWrapper"] > [data-test-component="ContentWrapper"] {
+    background-color: transparent;
+  }
+
+  .echo-login-form .echo-input-group input {
+    background-color: transparent;
+    color: var(--text);
+  }
+
+  .cl-light .class-row .dark-children,
+  .class-list .info-bar .sort .select-typeahead .select-dropdown-wrapper,
+  .class-row > .content-wrapper > .content > .details > .media-icons.video > .menu.open > .menu-items,
+  div[data-test-component="DownloadMedia"] {
+    background: var(--grey-20);
+  }
+
+  .class-row > .content-wrapper > .content > .details > .media-icons.video > .menu.open > .menu-items::after {
+    background: hsl(0, 0%, 90%);
+  }
+
+  .cl-light .class-row > .content-wrapper > .content > :is(.details > .date-time, .details > .date-time > .time, .header),
+  .class-row > .content-wrapper > .content > .details > .media-icons.video > .menu.open > .menu-items > ul > li > a,
+  .echo-login-form label,
+  .login-form :is(h1, h3),
+  .select-typeahead a,
+  .select-typeahead a:is(:focus, :hover, :visited),
+  [data-test-component="DownloadFile"] > button,
+  #download-tabs > ul > li > button[aria-selected="false"],
+  #library-panels button,
+  div[class^="commonComponents__DateTime"],
+  div[class^="commonComponents__Preview"],
+  label#mediaSortField-select_label,
+  label#sectionSortField-select_label,
+  span[class^="commonComponents__SecondaryInfo"] {
+    color: var(--text);
+  }
+
+  .cl-light .class-row {
+    border-color: var(--grey-25);
+
+    &:hover {
+      -webkit-box-shadow: none;
+      box-shadow: none;
+      background-color: var(--grey-20);
+    }
+  }
+
+  .class-list .info-bar {
+    border-bottom-color: var(--grey-25);
+  }
+
+  div.course-section-header {
+    background-color: transparent;
+    border: none;
+
+    & .buttons a {
+      background-color: hsl(0, 0%, 10%);
+      box-shadow: none;
+      color: var(--text);
+    }
+  }
+
+  .class-row > .content-wrapper > .content > .details > .media-icons.video > .menu.open > .menu-items > ul > li:not(.disabled):hover,
+  div.course-section-header .buttons a.selected::after {
+    background-color: var(--accent-colour-dark);
+  }
+
+  #content-panel {
+    background-color: hsl(350, 50%, 10%);
+  }
+
+  body {
+    background-color: var(--grey-20);
+    color: var(--text);
+  }
+
+  header > nav > ul a {
+    color: var(--text) !important;
+    border-bottom-width: 2px !important;
+    border-bottom-color: var(--accent-colour-light) !important;
+    height: var(--header-height);
+
+    &:hover {
+      background-color: hsl(0, 0%, 30%) !important;
+      color: var(--accent-colour-light) !important;
+      height: var(--header-height);
+    }
+  }
+
+  #header-collections,
+  #header-content,
+  #header-user-courses {
+    color: var(--text) !important;
+
+    &:hover {
+      color: var(--accent-colour-light) !important;
+    }
+  }
+
+  .main-content,
+  header.echo-header-bar,
+  header[data-test-component="EchoHeader"] {
+    background-color: var(--grey-20);
+  }
+
+  .courseHome,
+  .select-typeahead li:not(.result-disabled):hover,
+  a[class^="commonComponents__CardWrapper"] {
+    background-color: var(--grey-15);
+  }
+
+  span[class^="commonComponents__CardName"] {
+    color: grey;
+  }
+}
