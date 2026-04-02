@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Unimelb DiBS dark
 @namespace      github.com/tdanese/My-Stylus-Themes (https://github.com/tdanese/My-Stylus-Themes)
-@version        2026-03-24.0.1
+@version        2026-04-01.0.1
 @description    Dark theme
 @author         tdanese
 @homepageURL    https://github.com/tdanese/My-Stylus-Themes
@@ -11,11 +11,10 @@
 ==/UserStyle== */
 @-moz-document domain("unimelb.emscloudservice.com") {
   html {
-    --bg: @bg;
-    --bg-inverse: hsl(from var(--bg) h s calc(-1 * l + 100));
-    --bg-minus-5: hsl(from var(--bg) h s calc(l - 5));
-    --bg-plus-15: hsl(from var(--bg) h s calc(l + 15));
-    --bg-plus-5: hsl(from var(--bg) h s calc(l + 5));
+    --bg-inverse: hsl(from @bg h s calc(100 - l));
+    --bg-minus-5: hsl(from @bg h s calc(l - 5));
+    --bg-plus-15: hsl(from @bg h s calc(l + 15));
+    --bg-plus-5: hsl(from @bg h s calc(l + 5));
     --green: hsl(from #97ca3d h 40% 30%);
     --link-font-colour: @link-font-colour;
   }
@@ -69,12 +68,12 @@
 
   .time-box-overflow,
   .column-container .column:nth-child(2n) {
-    background-color: var(--bg);
+    background-color: @bg;
   }
 
   .modal-content,
   body {
-    background-color: var(--bg) !important;
+    background-color: @bg !important;
     color: var(--bg-inverse);
   }
 
