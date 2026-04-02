@@ -1,0 +1,107 @@
+/* ==UserStyle==
+@name           Steam Black
+@namespace      github.com/tdanese/My-Stylus-Themes (https://github.com/tdanese/My-Stylus-Themes)
+@version        2026-04-02.0.1
+@description    Darker and less saturated colours for store.steampowered.com and steamcommunity.com
+@author         tdanese
+@homepageURL    https://github.com/tdanese/My-Stylus-Themes
+@preprocessor   less
+@var color bg "Background colour" rgb(27, 25, 26)
+@var color discount-colour "Discount font colour" hsl(73, 65%, 60%)
+==/UserStyle== */
+@-moz-document domain("store.steampowered.com") {
+  body.v6 {
+    background: @bg;
+  }
+
+  div#global_header {
+    background: hsla(0, 0%, 0%, 0.3);
+  }
+
+  div#global_header > .content,
+  body.v6 #footer {
+    background: none;
+  }
+
+  ._16jZ3HEbtaJTl80pQINN2Y {
+    background: radial-gradient(200% 200% at 50% 110%, rgba(from @bg r g b / 0.2) 0%, rgba(from @bg r g b / 0.5) 5%, rgba(from @bg r g b / 0.85) 20%, @bg 90%, black 100%);
+  }
+
+  .home_ctn.tab_container {
+    background: linear-gradient(to bottom, rgb(39, 37, 37) 5%, transparent 70%);
+  }
+
+  .tab_item.focus {
+    background: linear-gradient(to right, hsl(0, 5%, 30%) 5%, hsl(20, 5%, 50%) 95%);
+  }
+
+  #tab_preview_container {
+    background: radial-gradient(69% 62% at 100% 16%, hsl(0, 10%, 40%) 0%, hsl(20, 5%, 50%) 100%);
+  }
+
+  .big_button {
+    background: linear-gradient(90deg, hsl(230, 20%, 20%) 0%, hsl(220, 40%, 40%) 100%);
+  }
+
+  .content_hub_capsule_ctn .gradient {
+    background: radial-gradient(115% 120% at 0% 0%, transparent, hsl(230, 30%, 20%));
+  }
+
+  .focus .tab_item_details .tab_item_top_tags,
+  .focus.tab_item .release_date,
+  .focus > .discount_block .discount_original_price {
+    color: black;
+  }
+
+  .focus > .discount_block .discount_original_price::before {
+    border-color: black;
+  }
+
+  .tab_item.focus .discount_block .discount_final_price {
+    color: @bg;
+  }
+
+  .discount_block .discount_pct,
+  .discount_pct {
+    color: @discount-colour;
+    background: hsl(85.5, 30%, 20%);
+  }
+
+  .discount_final_price {
+    color: @discount-colour;
+  }
+
+  .header_installsteam_btn_green .header_installsteam_btn_leftcap,
+  .header_installsteam_btn_green .header_installsteam_btn_rightcap,
+  .header_installsteam_btn_green .header_installsteam_btn_content {
+    background-color: hsl(78.5, 40%, 20%);
+  }
+
+  footer._291ttHtxyu5obiKzor2G9G {
+    background: none;
+  }
+
+  form[role="search"] > button {
+    background: hsl(205.2, 70%, 45%);
+  }
+}
+
+@-moz-document domain("steamcommunity.com") {
+  body {
+    background: @bg;
+  }
+
+  div#global_header {
+    background: hsla(0, 0%, 0%, 0.3);
+  }
+
+  div#global_header > .content {
+    background: none;
+  }
+
+  .forum_op,
+  .forumtopic_comments .commentthread_comment {
+    background-color: hsla(0, 0%, 40%, 0.1);
+    border: none;
+  }
+}

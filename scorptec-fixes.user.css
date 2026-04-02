@@ -1,0 +1,61 @@
+/* ==UserStyle==
+@name           Scorptec Fixes
+@namespace      github.com/tdanese/My-Stylus-Themes (https://github.com/tdanese/My-Stylus-Themes)
+@version        2026-04-02.0.1
+@description    Fixes for scorptec.com.au
+@author         tdanese
+@homepageURL    https://github.com/tdanese/My-Stylus-Themes
+==/UserStyle== */
+@-moz-document domain("scorptec.com.au") {
+  .btn-free-freight {
+    background: transparent;
+  }
+
+  .account-card,
+  .checkoutbox {
+    background-color: transparent;
+    border: none;
+  }
+
+  .product-page-special-message,
+  .product-save-price {
+    font-size: 10pt;
+  }
+
+  .footer-end .foot-items a:hover,
+  .sm-subcat-link:is(:active, :focus, :hover) {
+    text-decoration: underline;
+  }
+
+  #header-search-wrapper {
+    align-content: center;
+  }
+
+  .header-main {
+    height: 54px;
+
+    & .location-selection,
+    & #header-account {
+      bottom: unset;
+    }
+
+    & #header-input-group {
+      margin-bottom: 0 !important;
+    }
+
+    & .header-logo {
+      height: 0px;
+      bottom: unset;
+    }
+  }
+
+  .category-container {
+    top: 86px;
+    max-width: 240px !important;
+  }
+
+  .product-page-left #product-page-tab-wrapper.product-page-tabs {
+    height: unset;
+    margin-top: 0px;
+  }
+}

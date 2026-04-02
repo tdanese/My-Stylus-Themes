@@ -1,0 +1,148 @@
+/* ==UserStyle==
+@name           Scorptec Dark
+@namespace      github.com/tdanese/My-Stylus-Themes (https://github.com/tdanese/My-Stylus-Themes)
+@version        2026-04-02.0.1
+@description    Dark theme for scorptec.com.au
+@author         tdanese
+@homepageURL    https://github.com/tdanese/My-Stylus-Themes
+@preprocessor   less
+@var color bg "Background colour" hsl(0, 0%, 15%)
+@var color font-colour "Primary font colour" silver
+@var color link-colour "Primary link colour" dodgerblue
+==/UserStyle== */
+@-moz-document domain("scorptec.com.au") {
+  :root {
+    --brand-red: darkred;
+    --sale-text-red: crimson;
+    --brand-red-dark: maroon;
+    --bg-darker-5: hsl(from @bg h s calc(l - 5));
+  }
+
+  .bv-cleanslate .bv-content-list.bv-content-list-reviews {
+
+    & .bv-content-review .bv-author-profile .bv-author,
+    & .bv-content-review .bv-content-header .bv-content-header-meta .bv-content-datetime,
+    & .bv-content-review .bv-content-header .bv-content-title,
+    & .bv-content-review.bv-content-item .bv-author-profile .bv-inline-profile,
+    & .bv-secondary-content-list .bv-author {
+      color: hsl(0, 0%, 66%) !important;
+    }
+
+    & .bv-content-review .bv-content-summary {
+      color: @font-color !important;
+    }
+
+    & .bv-content-review .bv-content-summary .bv-syndication-summary,
+    & .bv-secondary-content-list .bv-content-item {
+      background-color: hsla(0, 0%, 0%, 0.3) !important;
+    }
+  }
+
+  .header-main #header-account #account-login .account-header-dropdown {
+    background-color: @bg;
+  }
+
+  .hamburger-menu,
+  .header-menu,
+  .product-promotion .product-promotion-text:is(.rb-bg-special, .rb-bg-member),
+  #account-cart {
+    background-color: var(--brand-red);
+  }
+
+  .btn-free-freight:hover,
+  .hamburger-menu.active {
+    background-color: lightgrey;
+  }
+
+  #account-cart:hover {
+    background-color: var(--brand-red-dark);
+  }
+
+  .product-promotion:is(.rb-border-special, .rb-border-member) {
+    border-top-color: var(--brand-red);
+  }
+
+  .product-page-special-message,
+  .product-save-price {
+    color: var(--sale-text-red);
+  }
+
+  .delivery-status-label,
+  .order-status-label,
+  .payment-status-label,
+  .pl-footer-nav .pagination .page-item.active .page-link,
+  .product-page-right .product-stock-right {
+    background-color: transparent;
+  }
+
+  .breadcrumbs-wrapper .left-breadcrumbs ul.breadcrumbs :is(li, li a) {
+    color: grey;
+  }
+
+  .sm-subcat-link,
+  .sm-subcat,
+  .table-account-history-list tbody tr th {
+    background-color: var(--bg-darker-5);
+    color: @font-color;
+  }
+
+  .header-main #header-account #account-login .account-header-dropdown .account-list:hover,
+  .parent-category:hover,
+  .sm-category-list:is(:active, :focus, :hover) {
+    background-color: hsl(0, 0%, 4%);
+  }
+
+  .category-container {
+    background-color: var(--bg-darker-5);
+    border: none !important;
+  }
+
+  .header-main #header-account a,
+  .header-menu .header-menu-item {
+    color: gainsboro;
+  }
+
+  a {
+    color: @link-colour;
+  }
+
+  .pl-footer-nav .pagination .page-item .page-link {
+    color: #757575;
+  }
+
+  .add-to-system,
+  a.inherit-class {
+    color: inherit;
+  }
+
+  .content-wrapper,
+  body,
+  div.footer-end {
+    background-color: @bg;
+    border-left: none;
+    color: @font-color;
+  }
+
+  .cart .cart-price-wrapper .cart-total,
+  .cart-prod-reco,
+  .footer-end .foot-items a,
+  .header-main,
+  .parent-category li a,
+  .prod-tab-title,
+  .product-grid .grid-product-wrapper .grid-subcategory-title a,
+  .product-list-filter .filter-items .filter-item-values-wrapper .filter-item-value,
+  .product-page-left .product-page-tabs .product-page-tab:is(.active-page-tab, :hover),
+  .product-page-left .product-page-title,
+  .scorp-btn.scorp-btn-default,
+  .sm-category-link,
+  .table,
+  .unstyled-link.dark,
+  h1,
+  h2 {
+    color: @font-color;
+  }
+
+  .product-page-left #product-page-tab-wrapper.product-page-tabs {
+    background-color: var(--bg-darker-5);
+  }
+}
