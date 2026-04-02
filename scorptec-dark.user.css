@@ -29,7 +29,7 @@
     }
 
     & .bv-content-review .bv-content-summary {
-      color: @font-color !important;
+      color: @font-colour !important;
     }
 
     & .bv-content-review .bv-content-summary .bv-syndication-summary,
