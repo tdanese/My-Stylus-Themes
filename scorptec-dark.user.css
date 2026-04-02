@@ -83,7 +83,7 @@
   .sm-subcat,
   .table-account-history-list tbody tr th {
     background-color: var(--bg-darker-5);
-    color: @font-color;
+    color: @font-colour;
   }
 
   .header-main #header-account #account-login .account-header-dropdown .account-list:hover,
@@ -120,7 +120,7 @@
   div.footer-end {
     background-color: @bg;
     border-left: none;
-    color: @font-color;
+    color: @font-colour;
   }
 
   .cart .cart-price-wrapper .cart-total,
@@ -139,7 +139,7 @@
   .unstyled-link.dark,
   h1,
   h2 {
-    color: @font-color;
+    color: @font-colour;
   }
 
   .product-page-left #product-page-tab-wrapper.product-page-tabs {
