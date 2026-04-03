@@ -1,0 +1,27 @@
+/* ==UserStyle==
+@name           GitHub Black
+@namespace      github.com/tdanese/My-Stylus-Themes (https://github.com/tdanese/My-Stylus-Themes)
+@version        2026-04-03.0.1
+@description    Overrides colours of 'Soft dark' theme with less blue
+@author         tdanese
+@homepageURL    https://github.com/tdanese/My-Stylus-Themes
+@preprocessor   less
+==/UserStyle== */
+@-moz-document domain("github.com") {
+  @media (prefers-color-scheme: dark) {
+    [data-color-mode][data-color-mode="auto"][data-dark-theme="dark_dimmed"] {
+      --bgColor-accent-muted: hsla(0, 0%, 50%, 0.1);
+      --bgColor-default: rgb(31, 30, 30);
+      --bgColor-inset: rgb(24, 22, 22);
+      --bgColor-muted: hsl(0, 3%, 14%);
+      --color-notifications-row-bg: var(--bgColor-muted);
+      --dashboard-bgColor: var(--bgColor-inset);
+      --fgColor-accent: hsl(215, 60%, 50%);
+      --header-bgColor: hsla(0, 7%, 10%, 0.4);
+    }
+  }
+
+  #repository-container-header {
+    background-color: var(--bgColor-inset) !important;
+  }
+}
