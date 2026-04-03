@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Canvas dark
 @namespace      github.com/tdanese/My-Stylus-Themes (https://github.com/tdanese/My-Stylus-Themes)
-@version        2026-03-24.0.1
+@version        2026-04-03.0.1
 @description    Dark theme, including overrides for pages where styles are defined in the HTML
 @author         tdanese
 @homepageURL    https://github.com/tdanese/My-Stylus-Themes
@@ -31,7 +31,7 @@
   }
 }
 
-@-moz-document domain("canvas.lms.unimelb.edu.au"), domain("instructure.com") {
+@-moz-document domain("canvas.lms.unimelb.edu.au") {
   :root {
     --colour-success: hsl(105, 100%, 30%);
     --global-bg-darker-20: hsl(from var(--ic-brand-global-nav-bgd) h s calc(l * 0.8));
@@ -65,6 +65,107 @@
     --ic-link-color-lightened-10: hsl(from var(--ic-link-color) h s calc(l * 0.9)) !important;
     --ic-link-color: @link-colour !important;
     --uom-brand-color-primary: @uom-brand;
+  }
+
+  #inbox-conversation-holder [style*="background-color: rgb(229, 242, 248)"] {
+    background-color: var(--global-bg-lighter-50) !important;
+  }
+
+  span[data-testid="conversationListItem-Item"] span[color="brand"] {
+    color: var(--ic-brand-font-color-dark);
+  }
+
+  span[data-testid="desktop-message-action-header"] [data-testid="tool-bar"] {
+    background: none;
+  }
+
+  .css-12tcxep-toggleFacade__label {
+    color: var(--ic-brand-font-color-dark);
+  }
+
+  .css-1hgpq08-view-table {
+    background: var(--global-bg-darker-20);
+    color: var(--ic-brand-font-color-dark);
+
+    .css-f5n8nd-view-row {
+      background-color: var(--global-bg-darker-20);
+    }
+
+    .css-md78hg-colHeader,
+    .css-4zi05x-colHeader {
+      background: none;
+      color: var(--ic-brand-font-color-dark-lightened-15);
+    }
+
+    .css-1bh2ecq-view-body,
+    .css-1g3jg0z-view-rowHeader,
+    .css-75u40t-view-cell {
+      background: none;
+      color: var(--ic-brand-font-color-dark);
+    }
+  }
+
+  .css-touacp-view-alert {
+    background-color: transparent;
+    border-color: var(--ic-brand-primary-darkened-15);
+
+    .css-1b9nv6a {
+      background-color: var(--ic-brand-primary-darkened-15);
+      border-color: var(--ic-brand-primary-darkened-15);
+    }
+  }
+
+  .avatar {
+    background-color: transparent;
+    border-color: transparent;
+  }
+
+  .css-14pk9v0-inlineSVG-svgIcon-colHeader__sortedIconColor {
+    color: var(--ic-brand-primary);
+  }
+
+  .css-16uwlm5-colHeader__button:focus {
+    outline-color: var(--ic-brand-primary);
+  }
+
+  .css-16uwlm5-colHeader__button {
+    color: var(--ic-brand-font-color-dark);
+    background: var(--global-bg-lighter-15);
+  }
+
+  a.delete_key_link {
+    color: rgb(200, 0, 0);
+  }
+
+  .ui-tooltip.popover.horizontal::after {
+    border-right-color: var(--global-bg-darker-30);
+  }
+
+  .ui-widget.ui-tooltip.popover {
+    color: var(--ic-brand-font-color-dark);
+    background-color: var(--global-bg-darker-30);
+  }
+
+  #content .css-1ii6wsc-view-tabs__container {
+    background: none;
+
+    #tab-currentTab,
+    #tab-pastTab {
+      color: var(--ic-brand-font-color-dark);
+    }
+
+    #tab-currentTab::after {
+      background-color: var(--ic-brand-primary-darkened-15);
+    }
+
+    .css-1fvv4kp-view-panel__content {
+      background: none;
+      color: var(--ic-brand-font-color-dark);
+    }
+
+    .ic-notification__icon {
+      background: var(--ic-brand-primary-darkened-15);
+    }
   }
 
   code,
@@ -121,27 +222,27 @@
   }
 
   #file-upload-container {
-    & button {
-      & img {
+    button {
+      img {
         filter: grayscale(100%);
       }
 
-      & svg[name="IconFolder"] {
+      svg[name="IconFolder"] {
         color: var(--global-bg-lighter-50);
       }
     }
 
-    & span[class$="-fileDrop__labelContent"] {
+    span[class$="-fileDrop__labelContent"] {
       border-color: var(--grey-65);
     }
 
-    & span[class$="-baseButton__content"] {
+    span[class$="-baseButton__content"] {
       border: none;
       background: none;
     }
 
-    & div[data-testid="upload-box"] > span[class$="-view--flex-flex"] > span[class$="-view-flexItem"]:last-child div[class$="-view"]:has(> button[class$="-view--block-baseButton"]),
-    & span[class$="-fileDrop__layout"] > span > div[class$="-view"] {
+    div[data-testid="upload-box"] > span[class$="-view--flex-flex"] > span[class$="-view-flexItem"]:last-child div[class$="-view"]:has(> button[class$="-view--block-baseButton"]),
+    span[class$="-fileDrop__layout"] > span > div[class$="-view"] {
       background-color: var(--global-bg-darker-20);
       border-color: var(--grey-65);
 
@@ -155,7 +256,7 @@
     background-color: var(--global-bg-darker-20);
     color: silver;
 
-    & > tbody > tr > td {
+    > tbody > tr > td {
       color: var(--ic-brand-font-color-dark);
     }
   }
@@ -191,15 +292,15 @@
   }
 
   #right-side {
-    & .h2 {
+    .h2 {
       border-bottom-color: wheat;
     }
 
-    & > .events_list.recent_feedback > ul.right-side-list.events > li.event > a.recent_feedback_icon:not(:hover) > .event-details > p {
+    > .events_list.recent_feedback > ul.right-side-list.events > li.event > a.recent_feedback_icon:not(:hover) > .event-details > p {
       text-decoration: underline;
     }
 
-    & :is(.events_list, .to-do-list) :is(.event-details, .todo-details)::after {
+    :is(.events_list, .to-do-list) :is(.event-details, .todo-details)::after {
       background: linear-gradient(to right, transparent 0%, gainsboro 100%);
     }
   }
@@ -280,7 +381,7 @@
     border: none;
     color: var(--ic-brand-font-color-dark);
 
-    & .ui-tabs .ui-tabs-nav li a {
+    .ui-tabs .ui-tabs-nav li a {
       color: tan !important;
     }
   }
@@ -332,10 +433,10 @@
     border: 1px solid var(--global-bg-lighter-80);
   }
 
-  #files-table > tbody > tr > :is(td, th, th > button),
-  #files-table > [role="rowgroup"] > [role="row"] > [role="cell"],
   [role="menu"] [class$="-menuItem__label"],
-  [role="menu"] [role="menuitem"]:hover [class$="-menuItem__label"] {
+  [role="menu"] [role="menuitem"]:hover [class$="-menuItem__label"],
+  #files-table > [role="rowgroup"] > [role="row"] > [role="cell"],
+  #files-table > tbody > tr > :is(td, th, th > button) {
     color: silver;
   }
 
@@ -343,8 +444,8 @@
     background-color: var(--ic-brand-global-nav-bgd);
     color: silver;
 
-    & [class$="-panel"] > div,
-    & [class$="-panel"] > div > div > div {
+    [class$="-panel"] > div,
+    [class$="-panel"] > div > div > div {
       border-color: silver;
       color: wheat;
     }
@@ -402,8 +503,8 @@
     background-color: var(--grey-40) !important;
   }
 
-  #calendars-context-list .context_list_context:hover,
-  .item-group-condensed .ig-list .ig-row:hover {
+  .item-group-condensed .ig-list .ig-row:hover,
+  #calendars-context-list .context_list_context:hover {
     background-color: var(--global-bg-lighter-15);
   }
 
@@ -417,8 +518,8 @@
     color: inherit;
   }
 
-  #minical,
-  .fc-state-default {
+  .fc-state-default,
+  #minical {
     background-color: transparent;
     border: none;
     color: var(--ic-brand-font-color-dark);
@@ -428,7 +529,7 @@
     background-color: black;
     border-color: var(--colour-success);
 
-    & .ic-flash__icon {
+    .ic-flash__icon {
       background-color: var(--colour-success);
     }
   }
@@ -464,7 +565,7 @@
   }
 
   #submit-button {
-    & span[class$="-baseButton__content"] {
+    span[class$="-baseButton__content"] {
       background-color: hsl(209.6, 100%, 30%) !important;
     }
 
@@ -473,9 +574,9 @@
     }
   }
 
-  #calendar_header button,
   .btn,
   .Button,
+  #calendar_header button,
   aside#right-side a.Button.button-sidebar-wide[href="/grades"] {
     background-color: var(--global-bg-darker-20);
     border: 1px solid var(--global-bg-lighter-80);
@@ -483,6 +584,7 @@
 
     &:hover {
       background-color: var(--global-bg-lighter-15);
+      color: var(--ic-brand-font-color-dark);
     }
   }
 
@@ -528,8 +630,8 @@
     border: none !important;
   }
 
-  #calendar-list-holder,
   .fc-widget-content,
+  #calendar-list-holder,
   span[class$="-view--block-avatar"],
   span[class$="-view--inlineBlock-avatar"] {
     background-color: transparent !important;
@@ -546,6 +648,7 @@
   }
 
   .css-1owtdyg-radioInput__control,
+  .css-3n7xhb-view-alert,
   .ic-app-header__menu-list-item.ic-app-header__menu-list-item--active .ic-app-header__menu-list-link,
   .ic-Search > input.ic-Input.ic-Search-input,
   [class$="-textInput__facade"] {
@@ -654,8 +757,8 @@
     border-left-color: grey;
   }
 
-  #minical .event::after,
-  .react-rubric :is(td, th) {
+  .react-rubric :is(td, th),
+  #minical .event::after {
     border: 1px solid var(--grey-65);
   }
 
@@ -669,11 +772,11 @@
   }
 
   #announcementWrapper {
-    & .ic-notification__icon {
+    .ic-notification__icon {
       background-color: var(--ic-brand-primary-darkened-15);
     }
 
-    & [class*="-view-alert"] > div:first-child {
+    [class*="-view-alert"] > div:first-child {
       background-color: var(--ic-brand-primary-darkened-15);
       border-color: var(--ic-brand-primary-darkened-15);
       color: var(--ic-brand-font-color-dark);
@@ -690,11 +793,11 @@
   }
 
   .css-1u9u9of-modalHeader,
-  #undated-events,
   .display_question,
   .ic-notification__content,
   [role="menu"] [role="menuitem"],
-  [role="menu"] {
+  [role="menu"],
+  #undated-events {
     background-color: transparent;
   }
 
@@ -702,16 +805,16 @@
   .question {
     border-color: var(--grey-40);
 
-    & .header {
+    .header {
       background-color: transparent;
       border-color: var(--grey-40);
 
-      & .question_points_holder {
+      .question_points_holder {
         color: inherit;
       }
     }
 
-    & select {
+    select {
       background-color: var(--ic-brand-global-nav-bgd);
       border-color: var(--grey-40);
     }
@@ -776,8 +879,8 @@
     box-shadow: none;
   }
 
-  .ic-Table.ic-Table--hover-row tbody tr:is(.ic-Table__row--bg-alert, .ic-Table__row--bg-danger, .ic-Table__row--bg-neutral, .ic-Table__row--bg-success):hover,
   .ic-Table.ic-Table--hover-row tbody tr:hover,
+  .ic-Table.ic-Table--hover-row tbody tr:is(.ic-Table__row--bg-alert, .ic-Table__row--bg-danger, .ic-Table__row--bg-neutral, .ic-Table__row--bg-success):hover,
   .selected-assignment {
     background-color: var(--global-bg-lighter-80);
   }
@@ -789,18 +892,18 @@
   ul[role="listbox"] {
     background-color: var(--global-bg-darker-20);
 
-    & > li {
+    > li {
       background: none;
 
-      & > span[aria-selected] {
+      > span[aria-selected] {
         color: var(--ic-brand-font-color-dark);
       }
 
-      & > span[aria-selected="false"]:hover {
+      > span[aria-selected="false"]:hover {
         background-color: var(--grey-55);
       }
 
-      & > span[aria-selected="true"] {
+      > span[aria-selected="true"] {
         background-color: var(--grey-35);
       }
     }
