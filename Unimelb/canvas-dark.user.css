@@ -31,7 +31,8 @@
   }
 }
 
-@-moz-document domain("canvas.lms.unimelb.edu.au"), domain("instructure.com") {
+@-moz-document domain("canvas.lms.unimelb.edu.au"),
+domain("instructure.com") {
   :root {
     --colour-success: hsl(105, 100%, 30%);
     --global-bg-darker-20: hsl(from var(--ic-brand-global-nav-bgd) h s calc(l * 0.8));
@@ -65,6 +66,107 @@
     --ic-link-color-lightened-10: hsl(from var(--ic-link-color) h s calc(l * 0.9)) !important;
     --ic-link-color: @link-colour !important;
     --uom-brand-color-primary: @uom-brand;
+  }
+
+  #inbox-conversation-holder [style*="background-color: rgb(229, 242, 248)"] {
+    background-color: var(--global-bg-lighter-50) !important;
+  }
+
+  span[data-testid="conversationListItem-Item"] span[color="brand"] {
+    color: var(--ic-brand-font-color-dark);
+  }
+
+  span[data-testid="desktop-message-action-header"] [data-testid="tool-bar"] {
+    background: none;
+  }
+
+  .css-12tcxep-toggleFacade__label {
+    color: var(--ic-brand-font-color-dark);
+  }
+
+  .css-1hgpq08-view-table {
+    background: var(--global-bg-darker-20);
+    color: var(--ic-brand-font-color-dark);
+
+    .css-f5n8nd-view-row {
+      background-color: var(--global-bg-darker-20);
+    }
+
+    .css-md78hg-colHeader,
+    .css-4zi05x-colHeader {
+      background: none;
+      color: var(--ic-brand-font-color-dark-lightened-15);
+    }
+
+    .css-1bh2ecq-view-body,
+    .css-1g3jg0z-view-rowHeader,
+    .css-75u40t-view-cell {
+      background: none;
+      color: var(--ic-brand-font-color-dark);
+    }
+  }
+
+  .css-touacp-view-alert {
+    background-color: transparent;
+    border-color: var(--ic-brand-primary-darkened-15);
+
+    .css-1b9nv6a {
+      background-color: var(--ic-brand-primary-darkened-15);
+      border-color: var(--ic-brand-primary-darkened-15);
+    }
+  }
+
+  .avatar {
+    background-color: transparent;
+    border-color: transparent;
+  }
+
+  .css-14pk9v0-inlineSVG-svgIcon-colHeader__sortedIconColor {
+    color: var(--ic-brand-primary);
+  }
+
+  .css-16uwlm5-colHeader__button:focus {
+    outline-color: var(--ic-brand-primary);
+  }
+
+  .css-16uwlm5-colHeader__button {
+    color: var(--ic-brand-font-color-dark);
+    background: var(--global-bg-lighter-15);
+  }
+
+  a.delete_key_link {
+    color: rgb(200, 0, 0);
+  }
+
+  .ui-tooltip.popover.horizontal::after {
+    border-right-color: var(--global-bg-darker-30);
+  }
+
+  .ui-widget.ui-tooltip.popover {
+    color: var(--ic-brand-font-color-dark);
+    background-color: var(--global-bg-darker-30);
+  }
+
+  #content .css-1ii6wsc-view-tabs__container {
+    background: none;
+
+    #tab-currentTab,
+    #tab-pastTab {
+      color: var(--ic-brand-font-color-dark);
+    }
+
+    #tab-currentTab::after {
+      background-color: var(--ic-brand-primary-darkened-15);
+    }
+
+    .css-1fvv4kp-view-panel__content {
+      background: none;
+      color: var(--ic-brand-font-color-dark);
+    }
+
+    .ic-notification__icon {
+      background: var(--ic-brand-primary-darkened-15);
+    }
   }
 
   code,
@@ -483,6 +585,7 @@
 
     &:hover {
       background-color: var(--global-bg-lighter-15);
+      color: var(--ic-brand-font-color-dark);
     }
   }
 
@@ -545,6 +648,7 @@
     color: skyblue;
   }
 
+  .css-3n7xhb-view-alert,
   .css-1owtdyg-radioInput__control,
   .ic-app-header__menu-list-item.ic-app-header__menu-list-item--active .ic-app-header__menu-list-link,
   .ic-Search > input.ic-Input.ic-Search-input,
