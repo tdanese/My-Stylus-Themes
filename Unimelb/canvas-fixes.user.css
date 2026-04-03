@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Canvas fixes
 @namespace      github.com/tdanese/My-Stylus-Themes (https://github.com/tdanese/My-Stylus-Themes)
-@version        2026-03-24.0.1
+@version        2026-04-03.0.1
 @description    Fixes, increase useful screen area, slightly darker background colour
 @author         tdanese
 @homepageURL    https://github.com/tdanese/My-Stylus-Themes
@@ -17,8 +17,11 @@
     }
   }
 
+  .h5p-course-presentation .h5p-box-wrapper,
+  .h5p-course-presentation .h5p-presentation-wrapper,
+  .h5p-course-presentation .h5p-footer,
   body {
-    background-color: unset;
+    background: none;
   }
 }
 
@@ -27,6 +30,10 @@
     --ic-brand-global-nav-bgd: @bg-global;
     --ic-brand-global-nav-ic-icon-svg-fill: dimgrey;
     --ic-brand-global-nav-menu-item__text-color: var(--ic-brand-global-nav-ic-icon-svg-fill);
+  }
+
+  .btn, .Button, .ui-button {
+    transition-property: background-color, color;
   }
 
   div[style]:has(> p.lti-embed-container > iframe.lti-embed) {
@@ -46,11 +53,17 @@
   .global-nav-custom-tray,
   .ic-DashboardCard,
   .ic-DashboardCard__header_content,
-  body,
   span.transition--slide-left-entered {
     background-color: var(--ic-brand-global-nav-bgd) !important;
   }
 
+  body,
+  span[class*="-tray"] {
+    background-color: var(--ic-brand-global-nav-bgd);
+  }
+
+  span.transition--slide-right-entered,
+  span[data-id="submissions-comments-tray"],
   #header,
   #main .global-nav-custom-tray,
   #nav-tray-portal > span > span,
@@ -129,11 +142,6 @@
     align-items: flex-start;
     border: none;
     overflow: hidden;
-  }
-
-  span.transition--slide-right-entered,
-  span[data-id="submissions-comments-tray"] {
-    scrollbar-width: thin;
   }
 
   #discussion-drawer-layout > span#module_sequence_footer_container {
