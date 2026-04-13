@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Unimelb
 @namespace      github.com/tdanese/My-Stylus-Themes (https://github.com/tdanese/My-Stylus-Themes)
-@version        2026-04-13.0.1
+@version        2026-04-13.0.2
 @description    unimelb.edu.au and subdomains excluding canvas.lms.unimelb.edu.au
 @author         tdanese
 @homepageURL    https://github.com/tdanese/My-Stylus-Themes
@@ -13,7 +13,7 @@ domain("handbook.unimelb.edu.au"),
 domain("library.unimelb.edu.au"),
 domain("my.unimelb.edu.au"),
 domain("safety.unimelb.edu.au"),
-domain("students.unimelb.edu.au"),
+url-prefix("https://students.unimelb.edu.au/"),
 domain("www.unimelb.edu.au") {
   :root {
     --col-grey-light-25: rgba(255, 255, 255, 0.3);
@@ -68,6 +68,21 @@ domain("www.unimelb.edu.au") {
     background: @bg-global;
     --col-bg-light: @bg-global;
     --col-bg-alt-25: @bg-global;
+  }
+}
+
+@-moz-document domain("mytimetable.students.unimelb.edu.au") {
+  body {
+    background-color: @bg-global;
+    --primary-color: rgb(40, 35, 40);
+  }
+
+  .css-1es1tny {
+    background-color: antiquewhite;
+  }
+
+  .css-1jukbya .MuiDrawer-paper {
+    background-color: var(--primary-color);
   }
 }
 
