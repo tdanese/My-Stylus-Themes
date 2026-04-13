@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Scorptec Fixes
 @namespace      github.com/tdanese/My-Stylus-Themes (https://github.com/tdanese/My-Stylus-Themes)
-@version        2026-04-02.0.1
+@version        2026-04-13.0.1
 @description    Fixes for scorptec.com.au
 @author         tdanese
 @homepageURL    https://github.com/tdanese/My-Stylus-Themes
@@ -34,16 +34,16 @@
   .header-main {
     height: 54px;
 
-    & .location-selection,
-    & #header-account {
+    .location-selection,
+    #header-account {
       bottom: unset;
     }
 
-    & #header-input-group {
+    #header-input-group {
       margin-bottom: 0 !important;
     }
 
-    & .header-logo {
+    .header-logo {
       height: 0px;
       bottom: unset;
     }

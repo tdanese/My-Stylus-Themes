@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Fixes
 @namespace      github.com/tdanese/My-Stylus-Themes (https://github.com/tdanese/My-Stylus-Themes)
-@version        2026-02-24.0.1
+@version        2026-04-13.0.1
 @description    Fixes that are too small to dedicate a whole file
 @author         tdanese
 @homepageURL    https://github.com/tdanese/My-Stylus-Themes
@@ -9,6 +9,10 @@
 @-moz-document domain("iview.abc.net.au") {
   div[data-component="FeatureCarousel"] {
     width: auto;
+  }
+
+  .iv-__C8j {
+    top: 0;
   }
 }
 

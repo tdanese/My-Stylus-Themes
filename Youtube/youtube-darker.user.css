@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Youtube dark
 @namespace      github.com/tdanese/My-Stylus-Themes (https://github.com/tdanese/My-Stylus-Themes)
-@version        2026-02-19.0.1
+@version        2026-04-13.0.1
 @description    Darker dark theme, reduced saturation, reduced contrast of text to make it easier for me to read
 @author         tdanese
 @homepageURL    https://github.com/tdanese/My-Stylus-Themes
@@ -26,19 +26,25 @@
     --yt-spec-overlay-call-to-action: var(--yt-spec-call-to-action);
   }
 
-  yt-button-shape#subscribe-button-shape > button:hover {
-    background-color: silver;
+  .ytSpecIconBadgeShapeTypeNotification .ytSpecIconBadgeShapeBadge {
+    background-color: var(--classic-red-darker);
+    color: var(--yt-spec-text-primary);
   }
 
   yt-button-shape#subscribe-button-shape > button {
     background-color: grey;
     color: hsl(0, 0%, 15%);
+
+    &:hover {
+      background-color: silver;
+    }
   }
 
-  span.yt-core-attributed-string--highlight-text-decorator > a.yt-core-attributed-string__link--call-to-action-color,
   .ytReelChannelBarViewModelChannelName a.yt-core-attributed-string__link.yt-core-attributed-string--link-inherit-color,
+  a.yt-core-attributed-string--link-inherit-color,
+  span.yt-core-attributed-string--highlight-text-decorator > a.yt-core-attributed-string__link--call-to-action-color,
   span.yt-core-attributed-string--link-inherit-color,
-  a.yt-core-attributed-string--link-inherit-color {
+  span.ytAttributedStringLinkInheritColor {
     color: inherit !important;
   }
 
@@ -49,9 +55,14 @@
   .yt-core-attributed-string__link--call-to-action-color,
   .yt-core-attributed-string--link-inherit-color .yt-core-attributed-string__link--call-to-action-color,
   .yt-spec-button-shape-next--call-to-action.yt-spec-button-shape-next--text,
+  .ytAttributedStringLinkInheritColor > a.ytAttributedStringLinkCallToActionColor.ytAttributedStringLink,
   span.yt-core-attributed-string__link--call-to-action-color,
   span.yt-core-attributed-string--link-inherit-color > a.yt-core-attributed-string__link--call-to-action-color {
     color: var(--yt-spec-call-to-action);
+  }
+
+  .ytAttributedStringLinkInheritColor > a.ytAttributedStringLinkCallToActionColor.ytAttributedStringLink:hover {
+    color: var(--yt-attributed-string-link-hover-color);
   }
 
   #description-inner > #ytd-watch-info-text > #info-container #info.ytd-watch-info-text > a[style="color: rgb(62, 166, 255);"] {
@@ -76,6 +87,10 @@
     --paper-input-container-input-color: var(--text-warm);
   }
 
+  .yt-tab-shape__tab--tab-selected {
+    color: var(--text-warm);
+  }
+
   #content-text.ytd-comment-view-model,
   yt-formatted-string.title.style-scope.ytd-guide-entry-renderer {
     color: var(--text-warm) !important;
@@ -86,9 +101,14 @@
     color: var(--icon-colour);
   }
 
+  .yt-page-header-view-model__page-header-title,
+  .yt-truncated-text__absolute-button:hover,
+  .ytChipShapeInactive,
+  .ytp-modern-videowall-still-info-title,
   .ytp-videowall-still-info-content,
-  yt-formatted-string.style-scope.ytd-rich-grid-media,
-  .ytp-modern-videowall-still-info-title {
+  .ytPageHeaderViewModelTitle,
+  .ytTruncatedTextAbsoluteButton:hover,
+  yt-formatted-string.style-scope.ytd-rich-grid-media {
     color: lightgrey;
   }
 
@@ -97,18 +117,26 @@
   }
 
   .button.ytd-text-inline-expander,
+  .fullscreen-action-menu .yt-core-attributed-string,
   .shortsLockupViewModelHostOutsideMetadataEndpoint,
   .yt-lockup-metadata-view-model__title,
+  .yt-page-header-view-model__page-header-attribution,
   .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--outline,
   .yt-spec-icon-badge-shape--type-notification .yt-spec-icon-badge-shape__icon,
+  .yt-truncated-text__absolute-button,
   .ytCarouselTitleViewModelTitle,
   .ytd-watch-metadata,
   .ytdMenuTitleRendererHost,
+  .ytmVideoInfoVideoTitleContainer,
   .ytp-panel-menu,
+  .ytPageHeaderViewModelAttribution,
   .ytSearchboxComponentHostDark,
+  .ytSpecIconBadgeShapeStyleOverlay .ytSpecIconBadgeShapeIcon,
+  .ytSpecIconBadgeShapeTypeNotification,
   .ytSuggestionComponentPersonalizedSuggestion,
   .ytSuggestionComponentSuggestion,
   .ytTextCarouselItemViewModelHost,
+  .ytTruncatedTextAbsoluteButton,
   #content-text.ytd-comment-view-model,
   #icon-label.yt-dropdown-menu,
   #text.complex-string.ytd-channel-name a.yt-simple-endpoint.yt-formatted-string,
@@ -124,6 +152,10 @@
   .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--tonal {
     background-color: transparent;
     color: var(--icon-colour);
+  }
+
+  .ytChipShapeActive {
+    background-color: var(--icon-colour);
   }
 
   .yt-spec-touch-feedback-shape > .yt-spec-touch-feedback-shape__fill {
@@ -149,19 +181,24 @@
     background: var(--classic-red-darker);
   }
 
-  #icon.ytd-rich-shelf-renderer span.yt-icon div svg path:first-child {
+  #icon.ytd-reel-shelf-renderer span.yt-icon div svg path:first-child,
+  #icon.ytd-rich-shelf-renderer span.yt-icon div svg path:first-child,
+  path[fill="#f03"] {
     fill: var(--classic-red-darker);
   }
 
+  .ytmCuedOverlayPlayButtonIcon,
   #hearted.ytd-creator-heart-renderer span.yt-icon div {
     color: var(--classic-red-darker);
   }
 
+  .ytp-svg-fill,
   .ytp-panel-menu path[fill="white"],
   g > path[fill="rgb(255,255,255)"] {
     fill: currentColor;
   }
 
+  .ytmVideoCoverThumbnail,
   .ytp-modern-videowall-still-image,
   .ytp-videowall-still-image,
   .ytThumbnailViewModelImage,

@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Unimelb
 @namespace      github.com/tdanese/My-Stylus-Themes (https://github.com/tdanese/My-Stylus-Themes)
-@version        2026-04-03.0.1
+@version        2026-04-13.0.1
 @description    unimelb.edu.au and subdomains excluding canvas.lms.unimelb.edu.au
 @author         tdanese
 @homepageURL    https://github.com/tdanese/My-Stylus-Themes
@@ -25,8 +25,31 @@ domain("www.unimelb.edu.au") {
   }
 
   .uomcontent .accordion {
-    --accordion-col-bg-opened: var(--col-grey-light-25);
     --accordion-col-bg-content: transparent;
+    --accordion-col-bg-opened: var(--col-grey-light-25);
+  }
+}
+
+@-moz-document domain("captureme.unimelb.edu.au") {
+
+  body,
+  #container {
+    background-color: @bg-global;
+  }
+
+  #expiredLink,
+  #faultyOrDamaged,
+  #lostOrStolen,
+  #rejectedPhoto {
+    height: 5rem;
+    display: block;
+    width: 5rem;
+    margin: auto;
+    background: radial-gradient(black 20%, transparent 70%);
+
+    &:hover {
+      background: radial-gradient(dodgerblue 20%, transparent 70%);
+    }
   }
 }
 

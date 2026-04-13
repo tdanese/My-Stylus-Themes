@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Canvas fixes
 @namespace      github.com/tdanese/My-Stylus-Themes (https://github.com/tdanese/My-Stylus-Themes)
-@version        2026-04-03.0.2
+@version        2026-04-13.0.1
 @description    Fixes, increase useful screen area, slightly darker background colour
 @author         tdanese
 @homepageURL    https://github.com/tdanese/My-Stylus-Themes
@@ -25,11 +25,19 @@
   }
 }
 
-@-moz-document domain("canvas.lms.unimelb.edu.au"), domain("instructure.com") {
+@-moz-document domain("canvas.lms.unimelb.edu.au") {
   :root {
     --ic-brand-global-nav-bgd: @bg-global;
     --ic-brand-global-nav-ic-icon-svg-fill: dimgrey;
     --ic-brand-global-nav-menu-item__text-color: var(--ic-brand-global-nav-ic-icon-svg-fill);
+  }
+
+  #syllabus tr.date.date_passed :is(td, th) {
+    background-color: hsla(0, 0%, 0%, 0.1);
+  }
+
+  #syllabus tr.date:is(.related, .selected) :is(td, th) {
+    background-color: hsla(0, 0%, 50%, 0.1);
   }
 
   .btn,
@@ -256,6 +264,7 @@
   [aria-label="Assignment Weights"] > table.summary > tbody > tr :is(td, th),
   #announcementWrapper [class*="-view-alert"],
   #announcementWrapper > .ic-notification,
+  #announcementWrapper .ic-notification__content,
   #files-table > [role="rowgroup"] > [role="row"] :is([role="cell"], [role="rowheader"]) #files-table > [role="rowgroup"] > [role="row"],
   #files-table > [role="rowgroup"],
   #files-table > :is(tbody, thead),

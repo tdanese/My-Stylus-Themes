@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Scorptec Dark
 @namespace      github.com/tdanese/My-Stylus-Themes (https://github.com/tdanese/My-Stylus-Themes)
-@version        2026-04-02.0.3
+@version        2026-04-13.0.1
 @description    Dark theme for scorptec.com.au
 @author         tdanese
 @homepageURL    https://github.com/tdanese/My-Stylus-Themes
@@ -20,20 +20,20 @@
 
   .bv-cleanslate .bv-content-list.bv-content-list-reviews {
 
-    & .bv-content-review .bv-author-profile .bv-author,
-    & .bv-content-review .bv-content-header .bv-content-header-meta .bv-content-datetime,
-    & .bv-content-review .bv-content-header .bv-content-title,
-    & .bv-content-review.bv-content-item .bv-author-profile .bv-inline-profile,
-    & .bv-secondary-content-list .bv-author {
+    .bv-content-review .bv-author-profile .bv-author,
+    .bv-content-review .bv-content-header .bv-content-header-meta .bv-content-datetime,
+    .bv-content-review .bv-content-header .bv-content-title,
+    .bv-content-review.bv-content-item .bv-author-profile .bv-inline-profile,
+    .bv-secondary-content-list .bv-author {
       color: hsl(0, 0%, 66%) !important;
     }
 
-    & .bv-content-review .bv-content-summary {
+    .bv-content-review .bv-content-summary {
       color: @font-colour !important;
     }
 
-    & .bv-content-review .bv-content-summary .bv-syndication-summary,
-    & .bv-secondary-content-list .bv-content-item {
+    .bv-content-review .bv-content-summary .bv-syndication-summary,
+    .bv-secondary-content-list .bv-content-item {
       background-color: hsla(0, 0%, 0%, 0.3) !important;
     }
   }
