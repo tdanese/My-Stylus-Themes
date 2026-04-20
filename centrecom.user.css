@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Centrecom
 @namespace      github.com/tdanese/My-Stylus-Themes (https://github.com/tdanese/My-Stylus-Themes)
-@version        2026-03-24.0.1
+@version        2026-04-20.0.1
 @description    Dark theme + increase useful screen area
 @author         tdanese
 @homepageURL    https://github.com/tdanese/My-Stylus-Themes
@@ -50,7 +50,7 @@
 
   .btn-primary {
     --bs-btn-bg: steelblue;
-    --bs-btn-border-color: transparent
+    --bs-btn-border-color: transparent;
   }
 
   .top-header ul li a.top-cart {
@@ -187,7 +187,7 @@
     color: lightgray;
     height: 35px;
     padding: 0;
-    transition: opacity .2s ease-in;
+    transition: opacity 0.2s ease-in;
   }
 
   .stock-result1 {
@@ -241,5 +241,24 @@
   img,
   .prbox_img {
     filter: brightness(0.75) grayscale(0.3);
+  }
+
+  .ajax-loading-block-window {
+    border-color: black;
+    background-color: rgba(25, 25, 25, 0.9);
+  }
+
+  .my-acc-content {
+    background: none;
+  }
+
+  #tableWishlist tr.disabled td,
+  #tableWishlist tr.disabled td a {
+    opacity: 0.7 !important;
+  }
+
+  #tableWishlist tr td,
+  #tableWishlist tr td a {
+    color: var(--bs-link-color);
   }
 }
