@@ -1,0 +1,13 @@
+/* ==UserStyle==
+@name           Dimmer
+@namespace      github.com/tdanese/My-Stylus-Themes (https://github.com/tdanese/My-Stylus-Themes)
+@version        2026-04-20.0.1
+@description    Adjust brightness of any page with a slider
+@author         tdanese
+@homepageURL    https://github.com/tdanese/My-Stylus-Themes
+@preprocessor   default
+@var  range br  "Brightness"  [60, 0, 100, 1, '%']
+==/UserStyle== */
+html {
+  filter: brightness(var(--br));
+}
