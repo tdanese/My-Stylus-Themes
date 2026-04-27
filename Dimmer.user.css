@@ -8,6 +8,6 @@
 @preprocessor   default
 @var  range br  "Brightness"  [60, 0, 100, 1, '%']
 ==/UserStyle== */
-html {
+html:not([stylus-iframe]) {
   filter: brightness(var(--br));
 }
