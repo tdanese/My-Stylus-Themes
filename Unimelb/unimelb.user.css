@@ -1,18 +1,58 @@
 /* ==UserStyle==
 @name           Unimelb
 @namespace      github.com/tdanese/My-Stylus-Themes (https://github.com/tdanese/My-Stylus-Themes)
-@version        2026-04-13.0.2
+@version        2026-04-27.0.1
 @description    unimelb.edu.au and subdomains excluding canvas.lms.unimelb.edu.au
 @author         tdanese
 @homepageURL    https://github.com/tdanese/My-Stylus-Themes
 @preprocessor   less
 @var color bg-global "Global background colour" bisque
 ==/UserStyle== */
+@-moz-document domain("my.unimelb.edu.au") {
+  .bg-white {
+    background-color: @bg-global !important;
+  }
+
+  .card,
+  .bg-gray-100 {
+    background-color: @bg-global;
+  }
+
+  .bg-teal-25 {
+    background-color: hsl(180, 45%, 85%) !important;
+  }
+
+  .top-nav-bottom,
+  .top-nav-top {
+    height: 30px;
+  }
+
+  div.d-flex.justify-content-center.align-items-center[style]:has(> a#link_main_menu_logo) {
+    display: none !important;
+  }
+
+  ul.navbar-nav {
+    > h1.title-desktop {
+      display: none;
+    }
+
+    > li.nav-item {
+      height: 100%;
+
+      > .nav-link {
+        align-content: center;
+        height: 100%;
+        padding: 0px 1rem !important;
+      }
+    }
+  }
+}
+
 @-moz-document domain("eng.unimelb.edu.au"),
 domain("handbook.unimelb.edu.au"),
 domain("library.unimelb.edu.au"),
-domain("my.unimelb.edu.au"),
 domain("safety.unimelb.edu.au"),
+domain("services.unimelb.edu.au"),
 url-prefix("https://students.unimelb.edu.au/"),
 domain("www.unimelb.edu.au") {
   :root {
@@ -20,6 +60,12 @@ domain("www.unimelb.edu.au") {
     --col-bg-alt-25: transparent;
   }
 
+  .bg-white {
+    background-color: @bg-global !important;
+  }
+
+  .card,
+  .bg-gray-100,
   html {
     background-color: @bg-global;
   }
@@ -31,7 +77,6 @@ domain("www.unimelb.edu.au") {
 }
 
 @-moz-document domain("captureme.unimelb.edu.au") {
-
   body,
   #container {
     background-color: @bg-global;
@@ -41,11 +86,11 @@ domain("www.unimelb.edu.au") {
   #faultyOrDamaged,
   #lostOrStolen,
   #rejectedPhoto {
-    height: 5rem;
-    display: block;
-    width: 5rem;
-    margin: auto;
     background: radial-gradient(black 20%, transparent 70%);
+    display: block;
+    height: 5rem;
+    margin: auto;
+    width: 5rem;
 
     &:hover {
       background: radial-gradient(dodgerblue 20%, transparent 70%);
@@ -66,8 +111,8 @@ domain("www.unimelb.edu.au") {
 @-moz-document url-prefix("https://lms.unimelb.edu.au") {
   :root {
     background: @bg-global;
-    --col-bg-light: @bg-global;
     --col-bg-alt-25: @bg-global;
+    --col-bg-light: @bg-global;
   }
 }
 
@@ -97,7 +142,6 @@ domain("www.unimelb.edu.au") {
 }
 
 @-moz-document domain("unimelb.service-now.com") {
-
   body,
   #catItemTop > .panel-default {
     background-color: @bg-global;

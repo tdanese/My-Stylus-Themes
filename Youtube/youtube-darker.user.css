@@ -1,29 +1,40 @@
 /* ==UserStyle==
 @name           Youtube dark
 @namespace      github.com/tdanese/My-Stylus-Themes (https://github.com/tdanese/My-Stylus-Themes)
-@version        2026-04-13.0.1
+@version        2026-04-27.0.1
 @description    Darker dark theme, reduced saturation, reduced contrast of text to make it easier for me to read
 @author         tdanese
 @homepageURL    https://github.com/tdanese/My-Stylus-Themes
 ==/UserStyle== */
 @-moz-document domain("youtube.com") {
-
   :root,
   html[dark],
   [dark] {
     --classic-red-darker: #a00 !important;
-    --yt-spec-text-primary: silver !important;
-    --reel-metadata-color: var(--yt-spec-text-primary) !important;
-    --yt-spec-static-overlay-text-primary: var(--yt-spec-text-primary) !important;
-    --paper-checkbox-unchecked-color: var(--yt-spec-text-primary) !important;
-    /*   --yt-spec-call-to-action: hsl(207.3, 70%, 45%) !important; */
-    --yt-spec-call-to-action: steelblue !important;
-    --yt-attributed-string-link-hover-color: cornflowerblue;
     --icon-colour: hsl(0, 0%, 62%);
+    --paper-checkbox-unchecked-color: var(--yt-spec-text-primary) !important;
+    --reel-metadata-color: var(--yt-spec-text-primary) !important;
     --text-warm: antiquewhite;
-    --yt-spec-suggested-action: hsl(210, 50%, 10%);
+    --yt-attributed-string-link-hover-color: cornflowerblue;
+    --yt-spec-call-to-action: steelblue !important;
     --yt-spec-light-blue: var(--yt-spec-call-to-action);
     --yt-spec-overlay-call-to-action: var(--yt-spec-call-to-action);
+    --yt-spec-static-overlay-text-primary: var(--yt-spec-text-primary) !important;
+    --yt-spec-suggested-action: hsl(210, 50%, 10%);
+    --yt-spec-text-primary: silver !important;
+    --yt-sys-color-baseline--call-to-action: var(--yt-spec-call-to-action) !important;
+    --yt-sys-color-baseline--menu-background: hsl(0, 0%, 10%) !important;
+    --yt-sys-color-baseline--outline: rgba(255, 255, 255, 0.1) !important;
+    --yt-sys-color-baseline--overlay-text-primary: var(--yt-spec-text-primary) !important;
+    --yt-sys-color-baseline--text-primary: var(--yt-spec-text-primary) !important;
+  }
+
+  .ytContextualSheetLayoutHost {
+    background-color: var(--yt-sys-color-baseline--menu-background);
+  }
+
+  ytd-watch-metadata {
+    --yt-saturated-raised-background: hsla(0, 0%, 100%, 0.07) !important;
   }
 
   .ytSpecIconBadgeShapeTypeNotification .ytSpecIconBadgeShapeBadge {
@@ -31,6 +42,7 @@
     color: var(--yt-spec-text-primary);
   }
 
+  .ytSpecButtonShapeNextOverlay.ytSpecButtonShapeNextFilled,
   yt-button-shape#subscribe-button-shape > button {
     background-color: grey;
     color: hsl(0, 0%, 15%);
@@ -41,6 +53,7 @@
   }
 
   .ytReelChannelBarViewModelChannelName a.yt-core-attributed-string__link.yt-core-attributed-string--link-inherit-color,
+  .ytReelChannelBarViewModelChannelName a.ytAttributedStringLinkInheritColor,
   a.yt-core-attributed-string--link-inherit-color,
   span.yt-core-attributed-string--highlight-text-decorator > a.yt-core-attributed-string__link--call-to-action-color,
   span.yt-core-attributed-string--link-inherit-color,
@@ -55,13 +68,17 @@
   .yt-core-attributed-string__link--call-to-action-color,
   .yt-core-attributed-string--link-inherit-color .yt-core-attributed-string__link--call-to-action-color,
   .yt-spec-button-shape-next--call-to-action.yt-spec-button-shape-next--text,
+  .ytAttributedStringLinkCallToActionColor,
   .ytAttributedStringLinkInheritColor > a.ytAttributedStringLinkCallToActionColor.ytAttributedStringLink,
+  .ytSpecButtonShapeNextCallToAction.ytSpecButtonShapeNextOutline,
   span.yt-core-attributed-string__link--call-to-action-color,
   span.yt-core-attributed-string--link-inherit-color > a.yt-core-attributed-string__link--call-to-action-color {
     color: var(--yt-spec-call-to-action);
   }
 
-  .ytAttributedStringLinkInheritColor > a.ytAttributedStringLinkCallToActionColor.ytAttributedStringLink:hover {
+  .ytAttributedStringLinkCallToActionColor:hover,
+  .ytAttributedStringLinkInheritColor > a.ytAttributedStringLinkCallToActionColor.ytAttributedStringLink:hover,
+  a.yt-simple-endpoint.yt-formatted-string:hover {
     color: var(--yt-attributed-string-link-hover-color);
   }
 
@@ -87,7 +104,7 @@
     --paper-input-container-input-color: var(--text-warm);
   }
 
-  .yt-tab-shape__tab--tab-selected {
+  .ytTabShapeHost:focus .ytTabShapeTab {
     color: var(--text-warm);
   }
 
@@ -97,17 +114,27 @@
   }
 
   .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--text,
+  .ytListItemViewModelAccessory,
+  .ytRadioShapeLabelContainer,
+  .ytSpecButtonShapeNextMono.ytSpecButtonShapeNextText,
   yt-icon span div {
     color: var(--icon-colour);
   }
 
+  :is(.ytAvatarStackViewModelAvatarStackText, .ytLockupMetadataViewModelHost) .ytAttributedStringLink.ytAttributedStringLinkCallToActionColor.ytAttributedStringLinkInheritColor:hover,
+  .button.ytd-text-inline-expander:hover,
   .yt-page-header-view-model__page-header-title,
+  .yt-tab-shape__tab--tab-selected,
   .yt-truncated-text__absolute-button:hover,
   .ytChipShapeInactive,
   .ytp-modern-videowall-still-info-title,
   .ytp-videowall-still-info-content,
   .ytPageHeaderViewModelTitle,
+  .ytTabShapeTabSelected,
   .ytTruncatedTextAbsoluteButton:hover,
+  .ytTruncatedTextOverlay .ytTruncatedTextAbsoluteButton:hover,
+  .ytTruncatedTextOverlay .ytTruncatedTextBottomButton:hover,
+  .ytTruncatedTextOverlay .ytTruncatedTextInlineButton:hover,
   yt-formatted-string.style-scope.ytd-rich-grid-media {
     color: lightgrey;
   }
@@ -124,19 +151,29 @@
   .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--outline,
   .yt-spec-icon-badge-shape--type-notification .yt-spec-icon-badge-shape__icon,
   .yt-truncated-text__absolute-button,
+  .ytAvatarStackViewModelAvatarStackText .ytAttributedStringLink.ytAttributedStringLinkCallToActionColor.ytAttributedStringLinkInheritColor,
+  .ytBadgeShapeThumbnailBadge,
   .ytCarouselTitleViewModelTitle,
   .ytd-watch-metadata,
   .ytdMenuTitleRendererHost,
+  .ytListItemViewModelTitle,
+  .ytLockupMetadataViewModelTitle,
   .ytmVideoInfoVideoTitleContainer,
   .ytp-panel-menu,
   .ytPageHeaderViewModelAttribution,
   .ytSearchboxComponentHostDark,
+  .ytSpecButtonShapeNextMono.ytSpecButtonShapeNextOutline,
   .ytSpecIconBadgeShapeStyleOverlay .ytSpecIconBadgeShapeIcon,
   .ytSpecIconBadgeShapeTypeNotification,
   .ytSuggestionComponentPersonalizedSuggestion,
   .ytSuggestionComponentSuggestion,
   .ytTextCarouselItemViewModelHost,
   .ytTruncatedTextAbsoluteButton,
+  .ytTruncatedTextOverlay .ytTruncatedTextAbsoluteButton,
+  .ytTruncatedTextOverlay .ytTruncatedTextBottomButton,
+  .ytTruncatedTextOverlay .ytTruncatedTextInlineButton,
+  .ytwHowThisWasMadeSectionViewModelBodyHeader,
+  .ytwHowThisWasMadeSectionViewModelSectionTitle,
   #content-text.ytd-comment-view-model,
   #icon-label.yt-dropdown-menu,
   #text.complex-string.ytd-channel-name a.yt-simple-endpoint.yt-formatted-string,
@@ -149,9 +186,15 @@
     background-color: darkgrey;
   }
 
-  .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--tonal {
+  .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--tonal,
+  .ytSpecButtonShapeNextMono.ytSpecButtonShapeNextTonal,
+  .ytSpecButtonShapeNextOverlay.ytSpecButtonShapeNextTonal {
     background-color: transparent;
     color: var(--icon-colour);
+
+    &:hover {
+      background-color: hsla(0, 0%, 100%, 0.1);
+    }
   }
 
   .ytChipShapeActive {
@@ -165,9 +208,12 @@
   .ytVideoMetadataCarouselViewModelHost,
   #description.ytd-watch-metadata,
   ytd-rich-metadata-renderer {
-    background-color: hsla(0, 0%, 100%, .031);
+    background-color: hsla(0, 0%, 100%, 0.031);
   }
 
+  /*   ytd-watch-metadata[description-collapsed] #description.ytd-watch-metadata:hover {
+    background-color: hsla(0, 0%, 100%, .06);
+  } */
   .ytSearchboxComponentSuggestionsContainer {
     background-color: hsl(0, 0%, 7%);
   }
@@ -177,6 +223,7 @@
   .ytp-swatch-background-color,
   .ytProgressBarLineProgressBarPlayed,
   .ytThumbnailOverlayProgressBarHostWatchedProgressBarSegment,
+  #progress.yt-page-navigation-progress,
   #progress.ytd-thumbnail-overlay-resume-playback-renderer {
     background: var(--classic-red-darker);
   }
