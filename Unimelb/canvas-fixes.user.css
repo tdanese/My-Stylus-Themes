@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Canvas fixes
 @namespace      github.com/tdanese/My-Stylus-Themes (https://github.com/tdanese/My-Stylus-Themes)
-@version        2026-04-13.0.1
+@version        2026-05-05.0.1
 @description    Fixes, increase useful screen area, slightly darker background colour
 @author         tdanese
 @homepageURL    https://github.com/tdanese/My-Stylus-Themes
@@ -17,9 +17,13 @@
     }
   }
 
+  .h5p-image > img {
+    background-color: white;
+  }
+
   .h5p-course-presentation .h5p-box-wrapper,
-  .h5p-course-presentation .h5p-presentation-wrapper,
   .h5p-course-presentation .h5p-footer,
+  .h5p-course-presentation .h5p-presentation-wrapper,
   body {
     background: none;
   }
@@ -72,13 +76,13 @@
     background-color: var(--ic-brand-global-nav-bgd);
   }
 
-  span.transition--slide-right-entered,
-  span[data-id="submissions-comments-tray"],
+  .Pages,
   #header,
   #main .global-nav-custom-tray,
   #nav-tray-portal > span > span,
   #question_list,
-  .Pages {
+  span.transition--slide-right-entered,
+  span[data-id="submissions-comments-tray"] {
     scrollbar-width: thin;
   }
 
@@ -99,7 +103,7 @@
     height: 3rem;
     width: 3rem;
 
-    & > span[class$="-avatar__initials"] {
+    > span[class$="-avatar__initials"] {
       font-size: 1.2rem;
       line-height: 2.9rem;
     }
@@ -108,7 +112,7 @@
   .navigation-tray-container.profile-tray form[action="/logout"] {
     margin-bottom: 0.5rem;
 
-    & > button {
+    > button {
       margin-top: 0.5rem !important;
     }
   }
@@ -120,14 +124,14 @@
   }
 
   body.primary-nav-expanded {
-    & #header .menu-item__text {
+    #header .menu-item__text {
       margin: 3px auto 0;
       max-width: 74px;
       overflow-wrap: normal;
       overflow: hidden;
     }
 
-    & #header #global_nav_study_skills_link > .menu-item__text {
+    #header #global_nav_study_skills_link > .menu-item__text {
       max-width: 54px;
     }
   }
@@ -163,12 +167,12 @@
     box-shadow: none;
   }
 
-  #discussion-drawer-layout > span > div:first-child,
   .canvas-rce__skins--root,
   .discussions-v2__container-image,
   .discussions-v2__wrapper [data-testid="discussion-connected-container"],
-  table[data-testid="uploaded_files_table"],
-  table[data-testid="uploaded_files_table"] :is(tbody, tbody > tr, tbody > tr > td) {
+  #discussion-drawer-layout > span > div:first-child,
+  table[data-testid="uploaded_files_table"] :is(tbody, tbody > tr, tbody > tr > td),
+  table[data-testid="uploaded_files_table"] {
     background: transparent;
   }
 
@@ -221,11 +225,11 @@
   #doc_preview {
     height: unset !important;
 
-    & > div {
+    > div {
       overflow-y: hidden !important;
     }
 
-    & iframe {
+    iframe {
       height: 100% !important;
       min-height: 340px !important;
     }
@@ -240,9 +244,9 @@
   table[data-testid="uploaded_files_table"] {
     color: var(--ic-brand-font-color-dark);
 
-    & > thead > tr > th,
-    & > thead > tr,
-    & > thead {
+    > thead > tr > th,
+    > thead > tr,
+    > thead {
       background: none;
       color: inherit;
     }
@@ -262,14 +266,14 @@
   .item-group-container,
   .question,
   [aria-label="Assignment Weights"] > table.summary > tbody > tr :is(td, th),
+  #announcementWrapper .ic-notification__content,
   #announcementWrapper [class*="-view-alert"],
   #announcementWrapper > .ic-notification,
-  #announcementWrapper .ic-notification__content,
+  #files-table > :is(tbody, thead) > tr > :is(td, th),
+  #files-table > :is(tbody, thead) > tr,
+  #files-table > :is(tbody, thead),
   #files-table > [role="rowgroup"] > [role="row"] :is([role="cell"], [role="rowheader"]) #files-table > [role="rowgroup"] > [role="row"],
   #files-table > [role="rowgroup"],
-  #files-table > :is(tbody, thead),
-  #files-table > :is(tbody, thead) > tr,
-  #files-table > :is(tbody, thead) > tr > :is(td, th),
   #files-table,
   #questions.assessing,
   div[data-testid="attempt-tab"] > div[class*="-view-alert"],
@@ -311,11 +315,11 @@
   }
 
   #content-wrapper {
-    & .fc-basic-view .fc-body .fc-row {
+    .fc-basic-view .fc-body .fc-row {
       height: 120px !important;
     }
 
-    & .fc-day-grid-container {
+    .fc-day-grid-container {
       height: fit-content !important;
     }
   }
@@ -374,9 +378,9 @@
     min-height: 3rem;
   }
 
+  .ic-app-crumbs,
   #breadcrumbs :is(ol, ul),
-  #breadcrumbs,
-  .ic-app-crumbs {
+  #breadcrumbs {
     max-height: 4rem;
     overflow: hidden;
   }
@@ -385,10 +389,10 @@
     text-underline-offset: 3px;
   }
 
+  [data-testid="assignment-2-student-content-tabs"] > span > div,
   #edit_calendar_event_form_holder > form[data-testid="calendar-event-form"],
   div[data-testid="upload-box"] > span > span > span,
-  nav.AnnotationControls,
-  [data-testid="assignment-2-student-content-tabs"] > span > div {
+  nav.AnnotationControls {
     margin: 0 !important;
   }
 

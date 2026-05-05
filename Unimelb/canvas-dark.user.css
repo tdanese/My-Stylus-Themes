@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Canvas dark
 @namespace      github.com/tdanese/My-Stylus-Themes (https://github.com/tdanese/My-Stylus-Themes)
-@version        2026-04-03.0.1
+@version        2026-05-05.0.1
 @description    Dark theme, including overrides for pages where styles are defined in the HTML
 @author         tdanese
 @homepageURL    https://github.com/tdanese/My-Stylus-Themes
@@ -16,9 +16,38 @@
     background-color: @bg-global !important;
   }
 
+  .h5p-confirmation-dialog-body,
+  .h5p-course-presentation .h5p-popup-container {
+    background-color: @bg-global;
+  }
+
+  .h5p-confirmation-dialog-background {
+    background-color: hsla(0, 0%, 0%, 0.4);
+  }
+
+  .h5p-confirmation-dialog-header,
+  .h5p-multichoice .h5p-alternative-container {
+    background-color: hsla(0, 0%, 100%, 0.1);
+  }
+
+  .h5p-multichoice .h5p-answer:not([aria-disabled="true"]):hover .h5p-alternative-container {
+    background-color: hsla(0, 0%, 100%, 0.3);
+  }
+
+  .h5p-image > img {
+    filter: invert(90%);
+  }
+
+  .h5p-confirmation-dialog-popup {
+    background-color: @bg-global;
+    color: @font-global;
+  }
+
   .h5p-accordion .h5p-panel-content,
   .h5p-accordion .h5p-panel-expanded,
-  .h5p-accordion .h5p-panel-title {
+  .h5p-accordion .h5p-panel-title,
+  .h5p-confirmation-dialog-header,
+  .h5p-course-presentation {
     color: @font-global;
   }
 
@@ -26,7 +55,7 @@
     color: @uom-brand;
   }
 
-  .h5p-panel-content a {
+  .h5p-content a {
     color: @link-colour;
   }
 }

@@ -1,15 +1,18 @@
 /* ==UserStyle==
 @name           Youtube dark
 @namespace      github.com/tdanese/My-Stylus-Themes (https://github.com/tdanese/My-Stylus-Themes)
-@version        2026-04-27.0.1
+@version        2026-05-05.0.1
 @description    Darker dark theme, reduced saturation, reduced contrast of text to make it easier for me to read
 @author         tdanese
 @homepageURL    https://github.com/tdanese/My-Stylus-Themes
 ==/UserStyle== */
 @-moz-document domain("youtube.com") {
+
   :root,
-  html[dark],
-  [dark] {
+  [dark],
+  html[dark]
+   {
+    --accent-color: #c00 !important;
     --classic-red-darker: #a00 !important;
     --icon-colour: hsl(0, 0%, 62%);
     --paper-checkbox-unchecked-color: var(--yt-spec-text-primary) !important;
@@ -29,12 +32,41 @@
     --yt-sys-color-baseline--text-primary: var(--yt-spec-text-primary) !important;
   }
 
-  .ytContextualSheetLayoutHost {
-    background-color: var(--yt-sys-color-baseline--menu-background);
+  ytd-app {
+    scrollbar-color: grey transparent;
+  }
+
+  ytd-author-comment-badge-renderer[creator] {
+    --ytd-author-comment-badge-background-color: var(--yt-spec-text-primary);
+  }
+
+  ytd-playlist-panel-renderer#playlist.ytd-watch-flexy {
+    --yt-lightsource-primary-title-color: var(--yt-spec-text-primary) !important;
+    --yt-lightsource-secondary-title-color: var(--yt-spec-text-primary) !important;
+    --yt-lightsource-section2-color: hsla(0, 0%, 15%, 0.9) !important;
   }
 
   ytd-watch-metadata {
     --yt-saturated-raised-background: hsla(0, 0%, 100%, 0.07) !important;
+  }
+
+  ytd-reel-video-renderer[extract-overlay],
+  ytd-reel-video-renderer {
+    --reel-metadata-color: var(--yt-spec-text-primary);
+  }
+
+  .ytd-rich-item-renderer-highlight {
+    --highlight: hsla(0, 0%, 100%, 0.1);
+    background-color: var(--highlight) !important;
+    box-shadow: var(--highlight) 0px 0px 12px 10px !important;
+  }
+
+  .ytSpecTouchFeedbackShapeHost.ytSpecTouchFeedbackShapeTouchResponse.ytSpecTouchFeedbackShapeTriggerEvents {
+    filter: grayscale(80%) blur(8px);
+  }
+
+  .ytContextualSheetLayoutHost {
+    background-color: var(--yt-sys-color-baseline--menu-background);
   }
 
   .ytSpecIconBadgeShapeTypeNotification .ytSpecIconBadgeShapeBadge {
@@ -71,6 +103,7 @@
   .ytAttributedStringLinkCallToActionColor,
   .ytAttributedStringLinkInheritColor > a.ytAttributedStringLinkCallToActionColor.ytAttributedStringLink,
   .ytSpecButtonShapeNextCallToAction.ytSpecButtonShapeNextOutline,
+  .ytSpecButtonShapeNextCallToAction.ytSpecButtonShapeNextText,
   span.yt-core-attributed-string__link--call-to-action-color,
   span.yt-core-attributed-string--link-inherit-color > a.yt-core-attributed-string__link--call-to-action-color {
     color: var(--yt-spec-call-to-action);
@@ -87,23 +120,25 @@
   }
 
   a[href^="/hashtag"] {
-    background-color: hsl(0, 0%, 0%, 25%);
+    background-color: hsla(0, 0%, 0%, 25%);
     color: var(--yt-spec-call-to-action) !important;
   }
 
   #submit-button.ytd-commentbox button {
     background-color: var(--yt-spec-call-to-action);
     color: lightgrey;
-  }
 
-  #submit-button.ytd-commentbox button:hover {
-    background-color: hsl(210, 79%, 55%);
+    &:hover {
+      background-color: hsl(210, 79%, 55%);
+    }
   }
 
   ytd-commentbox {
     --paper-input-container-input-color: var(--text-warm);
+    --yt-formatted-string-contenteditable-endpoint-color: gainsboro;
   }
 
+  .text.ytd-notification-renderer,
   .ytTabShapeHost:focus .ytTabShapeTab {
     color: var(--text-warm);
   }
@@ -121,9 +156,14 @@
     color: var(--icon-colour);
   }
 
+  .ytSpecTouchFeedbackShapeHovered ~ .ytLockupViewModelMetadata :is(.ytLockupMetadataViewModelTitle, .ytLockupMetadataViewModelMetadata) {
+    color: lightgrey !important;
+  }
+
   :is(.ytAvatarStackViewModelAvatarStackText, .ytLockupMetadataViewModelHost) .ytAttributedStringLink.ytAttributedStringLinkCallToActionColor.ytAttributedStringLinkInheritColor:hover,
   .button.ytd-text-inline-expander:hover,
   .yt-page-header-view-model__page-header-title,
+  .yt-simple-endpoint.ytd-about-channel-renderer:hover,
   .yt-tab-shape__tab--tab-selected,
   .yt-truncated-text__absolute-button:hover,
   .ytChipShapeInactive,
@@ -146,8 +186,11 @@
   .button.ytd-text-inline-expander,
   .fullscreen-action-menu .yt-core-attributed-string,
   .shortsLockupViewModelHostOutsideMetadataEndpoint,
+  .title.ytd-comment-video-thumbnail-header-renderer,
+  .videoSummaryContentViewModelHost,
   .yt-lockup-metadata-view-model__title,
   .yt-page-header-view-model__page-header-attribution,
+  .yt-simple-endpoint.ytd-about-channel-renderer,
   .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--outline,
   .yt-spec-icon-badge-shape--type-notification .yt-spec-icon-badge-shape__icon,
   .yt-truncated-text__absolute-button,
@@ -156,13 +199,17 @@
   .ytCarouselTitleViewModelTitle,
   .ytd-watch-metadata,
   .ytdMenuTitleRendererHost,
+  .ytdVolumeControlsMuteIcon,
+  .ytInlinePlayerControlsTopRightControlsCircleButton,
   .ytListItemViewModelTitle,
   .ytLockupMetadataViewModelTitle,
   .ytmVideoInfoVideoTitleContainer,
   .ytp-panel-menu,
   .ytPageHeaderViewModelAttribution,
   .ytSearchboxComponentHostDark,
+  .ytSpecAvatarShapeLiveBadgeText,
   .ytSpecButtonShapeNextMono.ytSpecButtonShapeNextOutline,
+  .ytSpecButtonShapeNextOverlayDark.ytSpecButtonShapeNextTonal,
   .ytSpecIconBadgeShapeStyleOverlay .ytSpecIconBadgeShapeIcon,
   .ytSpecIconBadgeShapeTypeNotification,
   .ytSuggestionComponentPersonalizedSuggestion,
@@ -174,11 +221,23 @@
   .ytTruncatedTextOverlay .ytTruncatedTextInlineButton,
   .ytwHowThisWasMadeSectionViewModelBodyHeader,
   .ytwHowThisWasMadeSectionViewModelSectionTitle,
+  #about-container.ytd-about-channel-renderer,
+  #author-text.yt-simple-endpoint.ytd-comment-view-model,
+  #collapsed-title.ytd-expandable-metadata-renderer,
   #content-text.ytd-comment-view-model,
   #icon-label.yt-dropdown-menu,
+  #shorts-panel-container .ytwFactoidRendererValue,
   #text.complex-string.ytd-channel-name a.yt-simple-endpoint.yt-formatted-string,
   #title,
-  yt-formatted-string.ytd-comments-header-renderer {
+  #title.style-scope,
+  #video-title.ytd-playlist-video-renderer,
+  h2.yt-multi-page-menu-section-renderer,
+  h4.ytd-playlist-panel-video-renderer,
+  yt-formatted-string.title.ytd-playlist-panel-renderer > a.yt-simple-endpoint.style-scope.yt-formatted-string,
+  yt-formatted-string.ytd-comments-header-renderer,
+  ytd-background-promo-renderer:is([renderer-style="adaptive-full-height"], [renderer-style="full-height"], [renderer-style="left-justified-no-padding"]) .ytd-background-promo-renderer:is(.promo-body-text, .promo-title),
+  ytd-expandable-metadata-renderer[has-video-summary] .ytd-expandable-metadata-renderer:is(#collapsed-label, #expanded-title, #expanded-title-icon),
+  ytd-simple-menu-header-renderer {
     color: var(--yt-spec-text-primary);
   }
 
@@ -205,6 +264,13 @@
     background-color: var(--icon-colour) !important;
   }
 
+  .ytSubThreadHovered > .ytSubThreadThreadline .ytSubThreadConnection,
+  .ytSubThreadHovered > .ytSubThreadThreadline .ytSubThreadContinuation,
+  ytd-comment-view-model[hovered] .continuation.ytd-comment-view-model {
+    border-color: var(--icon-colour);
+  }
+
+  ytd-expandable-metadata-renderer[is-watch],
   .ytVideoMetadataCarouselViewModelHost,
   #description.ytd-watch-metadata,
   ytd-rich-metadata-renderer {
@@ -214,14 +280,19 @@
   /*   ytd-watch-metadata[description-collapsed] #description.ytd-watch-metadata:hover {
     background-color: hsla(0, 0%, 100%, .06);
   } */
+  ytd-engagement-panel-section-list-renderer[match-content-theme] #content.ytd-engagement-panel-section-list-renderer,
   .ytSearchboxComponentSuggestionsContainer {
     background-color: hsl(0, 0%, 7%);
   }
 
   .yt-spec-icon-badge-shape--type-notification .yt-spec-icon-badge-shape__badge,
+  .ytBadgeShapeThumbnailLive,
   .ytp-play-progress,
   .ytp-swatch-background-color,
   .ytProgressBarLineProgressBarPlayed,
+  .ytProgressBarPlayheadProgressBarPlayheadDot,
+  .ytSpecAvatarShapeLiveBadge,
+  .ytSpecAvatarShapeLiveRing::after,
   .ytThumbnailOverlayProgressBarHostWatchedProgressBarSegment,
   #progress.yt-page-navigation-progress,
   #progress.ytd-thumbnail-overlay-resume-playback-renderer {
