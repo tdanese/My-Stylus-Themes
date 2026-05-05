@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Unimelb
 @namespace      github.com/tdanese/My-Stylus-Themes (https://github.com/tdanese/My-Stylus-Themes)
-@version        2026-04-27.0.1
+@version        2026-05-05.0.1
 @description    unimelb.edu.au and subdomains excluding canvas.lms.unimelb.edu.au
 @author         tdanese
 @homepageURL    https://github.com/tdanese/My-Stylus-Themes
@@ -56,8 +56,8 @@ domain("services.unimelb.edu.au"),
 url-prefix("https://students.unimelb.edu.au/"),
 domain("www.unimelb.edu.au") {
   :root {
-    --col-grey-light-25: rgba(255, 255, 255, 0.3);
     --col-bg-alt-25: transparent;
+    --col-grey-light-25: rgba(255, 255, 255, 0.3);
   }
 
   .bg-white {
@@ -77,6 +77,7 @@ domain("www.unimelb.edu.au") {
 }
 
 @-moz-document domain("captureme.unimelb.edu.au") {
+
   body,
   #container {
     background-color: @bg-global;
@@ -110,9 +111,63 @@ domain("www.unimelb.edu.au") {
 
 @-moz-document url-prefix("https://lms.unimelb.edu.au") {
   :root {
-    background: @bg-global;
     --col-bg-alt-25: @bg-global;
     --col-bg-light: @bg-global;
+    background: @bg-global;
+  }
+}
+
+@-moz-document domain("sso.unimelb.edu.au") {
+  #okta-sign-in.auth-container {
+    margin: 0px auto;
+
+    .auth-content {
+      margin-top: 10px !important;
+      padding-top: 0px;
+
+      .okta-form-title {
+        margin-bottom: 10px;
+      }
+
+      .o-form-input button,
+      .o-form-input input {
+        border: none !important;
+        outline: none !important;
+      }
+
+      .button {
+        font-size: 14pt !important;
+      }
+    }
+
+    .link:link:hover {
+      text-decoration: none;
+    }
+
+    .auth-org-logo {
+      height: 90px;
+    }
+  }
+
+  .eyeicon {
+    right: -5px !important;
+  }
+
+  .applogin-container p {
+    margin: 0 !important;
+  }
+
+  #custom-applogin-banner {
+    height: 2rem;
+    margin: 0px auto !important;
+    max-width: 100%;
+    min-height: unset;
+    padding-bottom: 0px;
+    padding-top: 0px;
+
+    .applogin-background {
+      align-content: center;
+    }
   }
 }
 
@@ -142,6 +197,7 @@ domain("www.unimelb.edu.au") {
 }
 
 @-moz-document domain("unimelb.service-now.com") {
+
   body,
   #catItemTop > .panel-default {
     background-color: @bg-global;
