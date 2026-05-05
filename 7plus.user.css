@@ -1,0 +1,13 @@
+/* ==UserStyle==
+@name           7plus.com.au
+@namespace      github.com/tdanese/My-Stylus-Themes (https://github.com/tdanese/My-Stylus-Themes)
+@version        2026-05-05.0.1
+@description    The thin red border-top on the header was annoying me.
+@author         tdanese
+@homepageURL    https://github.com/tdanese/My-Stylus-Themes
+==/UserStyle== */
+@-moz-document domain("7plus.com.au") {
+  .Header§241OY {
+    border-top: none;
+  }
+}
