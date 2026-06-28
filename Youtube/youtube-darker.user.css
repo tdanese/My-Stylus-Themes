@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Youtube dark
 @namespace      github.com/tdanese/My-Stylus-Themes (https://github.com/tdanese/My-Stylus-Themes)
-@version        2026-06-28.0.1
+@version        2026-06-28.0.2
 @description    Darker dark theme, reduced saturation, reduced contrast of text to make it easier for me to read
 @author         tdanese
 @homepageURL    https://github.com/tdanese/My-Stylus-Themes
@@ -186,10 +186,10 @@
     color: lightgrey !important;
   }
 
-  .ytLockupMetadataViewModelHost .ytAttributedStringLink.ytAttributedStringLinkCallToActionColor.ytAttributedStringLinkInheritColor:hover,
   .yt-page-header-view-model__page-header-title,
   .yt-tab-shape__tab--tab-selected,
   .ytChipShapeInactive,
+  .ytLockupMetadataViewModelHost .ytAttributedStringLink.ytAttributedStringLinkCallToActionColor.ytAttributedStringLinkInheritColor:hover,
   .ytp-modern-videowall-still-info-title,
   .ytp-videowall-still-info-content,
   .ytPageHeaderViewModelTitle,
@@ -202,12 +202,12 @@
     color: grey;
   }
 
-  .ytTruncatedTextAbsoluteButton,
-  .ytTruncatedTextOverlay :is(.ytTruncatedTextAbsoluteButton, .ytTruncatedTextBottomButton, .ytTruncatedTextInlineButton),
-  .yt-truncated-text__absolute-button,
+  .button.ytd-text-inline-expander,
   .yt-simple-endpoint.ytd-about-channel-renderer,
+  .yt-truncated-text__absolute-button,
   .ytAvatarStackViewModelAvatarStackText .ytAttributedStringLink.ytAttributedStringLinkCallToActionColor.ytAttributedStringLinkInheritColor,
-  .button.ytd-text-inline-expander {
+  .ytTruncatedTextAbsoluteButton,
+  .ytTruncatedTextOverlay :is(.ytTruncatedTextAbsoluteButton, .ytTruncatedTextBottomButton, .ytTruncatedTextInlineButton) {
     color: var(--yt-spec-text-primary);
     &:hover {
       color: lightgrey;
@@ -215,6 +215,7 @@
   }
 
   .fullscreen-action-menu .yt-core-attributed-string,
+  .html5-video-player,
   .shortsLockupViewModelHostOutsideMetadataEndpoint,
   .title.ytd-comment-video-thumbnail-header-renderer,
   .videoAttributesSectionViewModelTitle,
@@ -264,6 +265,14 @@
   ytd-expandable-metadata-renderer[has-video-summary] .ytd-expandable-metadata-renderer:is(#collapsed-label, #expanded-title, #expanded-title-icon),
   ytd-simple-menu-header-renderer {
     color: var(--yt-spec-text-primary);
+  }
+
+  .ytp-volume-slider-handle,
+  .ytp-volume-slider-handle::before,
+  #volume-input::-moz-range-thumb,
+  #volume-input::-moz-range-track {
+    background-color: var(--yt-spec-text-primary);
+    background-image: none;
   }
 
   #sponsor-button > timed-animation-button-renderer > yt-smartimation > .smartimation__content > ytd-button-renderer > yt-button-shape > button {
@@ -333,14 +342,27 @@
     color: var(--classic-red-darker);
   }
 
-  .ytp-svg-fill,
   .ytp-panel-menu path[fill="white"],
+  .ytp-svg-fill,
   g > path[fill="rgb(255,255,255)" i] {
     fill: currentColor;
   }
 
   .ytp-chrome-controls svg path:is([fill="white"], [fill="#fff" i]) {
     fill: var(--yt-spec-text-primary);
+  }
+
+  ytm-custom-control {
+    :is(.player-controls-bottom .fullscreen-icon, .player-controls-middle .icon-button),
+    .player-controls-top :is(.icon-button, ytm-closed-captioning-button.ytmClosedCaptioningButtonHost button) {
+      c3-icon svg path {
+        fill: var(--yt-spec-text-primary);
+      }
+    }
+  }
+
+  .player-controls-middle .player-control-play-pause-icon svg {
+    filter: drop-shadow(0 0 1px rgba(0, 0, 0, .8));
   }
 
   .ytmVideoCoverThumbnail,
