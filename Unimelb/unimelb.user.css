@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Unimelb
 @namespace      github.com/tdanese/My-Stylus-Themes (https://github.com/tdanese/My-Stylus-Themes)
-@version        2026-06-28.0.1
+@version        2026-06-28.0.2
 @description    unimelb.edu.au and subdomains excluding canvas.lms.unimelb.edu.au
 @author         tdanese
 @homepageURL    https://github.com/tdanese/My-Stylus-Themes
@@ -24,8 +24,9 @@ domain("www.unimelb.edu.au") {
     background-color: @bg-global !important;
   }
 
-  .card,
   .bg-gray-100,
+  .card,
+  #main-content,
   html {
     background-color: @bg-global;
   }
@@ -33,6 +34,30 @@ domain("www.unimelb.edu.au") {
   .uomcontent .accordion {
     --accordion-col-bg-content: transparent;
     --accordion-col-bg-opened: var(--col-grey-light-25);
+  }
+}
+
+@-moz-document domain("careersonline.unimelb.edu.au") {
+  body {
+    background-color: @bg-global !important;
+  }
+
+  #wrap .main {
+    .under-nav {
+      background: none;
+    }
+
+    .main-content .container .panel {
+      background: none;
+
+      .list-group-item,
+      .panel-body,
+      .panel-footer,
+      .panel-heading,
+      a.list-group-item {
+        background: none;
+      }
+    }
   }
 }
 
@@ -210,9 +235,9 @@ domain("www.unimelb.edu.au") {
 
   #blueOcean_footer {
     height: 40px;
-    width: 20%;
     left: 40%;
     padding: 0px;
+    width: 20%;
 
     .footer-copyright {
       margin-bottom: 10px;
@@ -222,22 +247,32 @@ domain("www.unimelb.edu.au") {
 
 @-moz-document domain("your.unimelb.edu.au") {
   :root {
+    /* --col-bg-primary: @bg-global; */
     --dxp-g-root: @bg-global;
+    background-color: @bg-global;
   }
 
-  .home-middle-section {
-    background: none;
+  .home-middle-section,
+  .inputWrapper textarea,
+  .wForm .oneField input,
+  .wFormContainer,
+  .wFormWebPage,
+  [role="main"],
+  #tfaContent,
+  body,
+  body::before {
+    background-color: transparent;
   }
 }
 
 @-moz-document domain("unimelb.onthehub.com") {
   body {
     background-color: @bg-global;
-    font-family: 'ProximaNova-Regular';
+    font-family: "ProximaNova-Regular";
   }
 
-  label,
-  .admin-home .col .col-content ul li a {
+  .admin-home .col .col-content ul li a,
+  label {
     font-family: unset;
   }
 
@@ -252,7 +287,7 @@ domain("www.unimelb.edu.au") {
   .nav-tabs > li.active > a,
   .nav-tabs > li.active > a:is(:focus, :hover),
   .product-wrapper .product-box,
-  .question-group input[type='text'] {
+  .question-group input[type="text"] {
     background-color: hsla(0, 0%, 100%, 0.7);
   }
 
@@ -268,9 +303,63 @@ domain("www.unimelb.edu.au") {
 }
 
 @-moz-document domain("unimelb.service-now.com") {
+
   body,
   #catItemTop > .panel-default {
     background-color: @bg-global;
     border: none;
+  }
+}
+
+@-moz-document domain("unimelb.t1cloud.com") {
+  :root {
+    --ciaColourBackgroundPage: @bg-global;
+    --ciaColourBackgroundFormHeader: @bg-global;
+  }
+
+  .editablePanel {
+    height: 100%;
+    padding-top: 0px;
+    padding-bottom: 0px;
+
+    &.scrollContent > .content {
+      scrollbar-color: grey transparent;
+      height: calc(100% - 30px) !important;
+    }
+
+    > .header {
+      padding-bottom: 0;
+    }
+  }
+
+  .formContent {
+    height: 99% !important;
+  }
+
+  #FlowContent > .flowContentBG {
+    background-color: @bg-global !important;
+  }
+
+  #GlobalFooter {
+    background-color: @bg-global;
+  }
+
+  #MyMaintenanceForm {
+    min-height: 90vh !important;
+  }
+
+  .linkedTabControlsContainer > .tabControl,
+  .tabControlsInnerContainer_LinkedTab > .tabControl {
+    height: 100%;
+  }
+
+  .hoverViewContainer .closeImageView span,
+  .linkCol,
+  .showPanelButton,
+  .tabbedControl.cardViewChildren .tabHandle > .editorLabel,
+  .thumbnailItem.ecmDocView .buttonGroup span,
+  a,
+  button.linkStyle {
+    color: hsl(200, 100%, 50%);
   }
 }
