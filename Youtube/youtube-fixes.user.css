@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Youtube fixes
 @namespace      github.com/tdanese/My-Stylus-Themes (https://github.com/tdanese/My-Stylus-Themes)
-@version        2026-06-28.0.1
+@version        2026-06-28.0.2
 @description    Fixes & style preferences
 @author         tdanese
 @homepageURL    https://github.com/tdanese/My-Stylus-Themes
@@ -79,5 +79,9 @@
 
   .badge-shape-style-type-verified-artist > badge-shape {
     background-color: transparent;
+  }
+
+  .fullscreen-controls-always-on .fullscreen-action-menu {
+    right: unset;
   }
 }
