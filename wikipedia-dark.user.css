@@ -1,0 +1,28 @@
+/* ==UserStyle==
+@name           Wikipedia dark
+@namespace      github.com/tdanese/My-Stylus-Themes (https://github.com/tdanese/My-Stylus-Themes)
+@version        2026-06-28.0.1
+@description    Less blue dark theme for wikipedia and related sites
+@author         tdanese
+@homepageURL    https://github.com/tdanese/My-Stylus-Themes
+@preprocessor   less
+@var color bg "Background colour" rgb(27, 24, 25)
+@var color font-colour "Primary font colour" silver
+@var color colour-emphasis "Emphasis colour" hsl(10, 10%, 80%)
+==/UserStyle== */
+@-moz-document domain("wikipedia.org"),
+domain("wikimedia.org") {
+  html.skin-theme-clientpref-night {
+    --background-color-base: @bg;
+    --color-base: @font-colour;
+    --color-emphasized: @colour-emphasis;
+  }
+
+  @media screen and (prefers-color-scheme: dark) {
+    html.skin-theme-clientpref-os {
+      --background-color-base: @bg;
+      --color-base: @font-colour;
+      --color-emphasized: @colour-emphasis;
+    }
+  }
+}

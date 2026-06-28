@@ -1,13 +1,41 @@
 /* ==UserStyle==
 @name           Unimelb
 @namespace      github.com/tdanese/My-Stylus-Themes (https://github.com/tdanese/My-Stylus-Themes)
-@version        2026-05-05.0.1
+@version        2026-06-28.0.1
 @description    unimelb.edu.au and subdomains excluding canvas.lms.unimelb.edu.au
 @author         tdanese
 @homepageURL    https://github.com/tdanese/My-Stylus-Themes
 @preprocessor   less
 @var color bg-global "Global background colour" bisque
 ==/UserStyle== */
+@-moz-document domain("eng.unimelb.edu.au"),
+domain("handbook.unimelb.edu.au"),
+domain("library.unimelb.edu.au"),
+domain("safety.unimelb.edu.au"),
+domain("services.unimelb.edu.au"),
+url-prefix("https://students.unimelb.edu.au/"),
+domain("www.unimelb.edu.au") {
+  :root {
+    --col-bg-alt-25: transparent;
+    --col-grey-light-25: rgba(255, 255, 255, 0.3);
+  }
+
+  .bg-white {
+    background-color: @bg-global !important;
+  }
+
+  .card,
+  .bg-gray-100,
+  html {
+    background-color: @bg-global;
+  }
+
+  .uomcontent .accordion {
+    --accordion-col-bg-content: transparent;
+    --accordion-col-bg-opened: var(--col-grey-light-25);
+  }
+}
+
 @-moz-document domain("my.unimelb.edu.au") {
   .bg-white {
     background-color: @bg-global !important;
@@ -48,36 +76,7 @@
   }
 }
 
-@-moz-document domain("eng.unimelb.edu.au"),
-domain("handbook.unimelb.edu.au"),
-domain("library.unimelb.edu.au"),
-domain("safety.unimelb.edu.au"),
-domain("services.unimelb.edu.au"),
-url-prefix("https://students.unimelb.edu.au/"),
-domain("www.unimelb.edu.au") {
-  :root {
-    --col-bg-alt-25: transparent;
-    --col-grey-light-25: rgba(255, 255, 255, 0.3);
-  }
-
-  .bg-white {
-    background-color: @bg-global !important;
-  }
-
-  .card,
-  .bg-gray-100,
-  html {
-    background-color: @bg-global;
-  }
-
-  .uomcontent .accordion {
-    --accordion-col-bg-content: transparent;
-    --accordion-col-bg-opened: var(--col-grey-light-25);
-  }
-}
-
 @-moz-document domain("captureme.unimelb.edu.au") {
-
   body,
   #container {
     background-color: @bg-global;
@@ -114,6 +113,16 @@ domain("www.unimelb.edu.au") {
     --col-bg-alt-25: @bg-global;
     --col-bg-light: @bg-global;
     background: @bg-global;
+  }
+}
+
+@-moz-document domain("specialconsideration.app.unimelb.edu.au") {
+  div#uBodyContainer {
+    background-color: @bg-global;
+  }
+
+  section.uRegion {
+    background: none;
   }
 }
 
@@ -186,6 +195,31 @@ domain("www.unimelb.edu.au") {
   }
 }
 
+@-moz-document domain("sls-bc.unimelb.edu.au") {
+  body {
+    background-color: hsl(from @bg-global h s calc(l * 0.95));
+  }
+
+  #blueOcean_header_content > explorance-top-navigation {
+    background-color: @bg-global;
+  }
+
+  #blueOcean_content {
+    padding-bottom: 10px;
+  }
+
+  #blueOcean_footer {
+    height: 40px;
+    width: 20%;
+    left: 40%;
+    padding: 0px;
+
+    .footer-copyright {
+      margin-bottom: 10px;
+    }
+  }
+}
+
 @-moz-document domain("your.unimelb.edu.au") {
   :root {
     --dxp-g-root: @bg-global;
@@ -196,8 +230,44 @@ domain("www.unimelb.edu.au") {
   }
 }
 
-@-moz-document domain("unimelb.service-now.com") {
+@-moz-document domain("unimelb.onthehub.com") {
+  body {
+    background-color: @bg-global;
+    font-family: 'ProximaNova-Regular';
+  }
 
+  label,
+  .admin-home .col .col-content ul li a {
+    font-family: unset;
+  }
+
+  .modal-content,
+  #e5-nav .nav.nav-tabs.product-filter-menu .dropdown-menu,
+  #e5-nav .nav.navbar-right .dropdown-menu {
+    background-color: @bg-global;
+  }
+
+  .form-control,
+  .list-group-item,
+  .nav-tabs > li.active > a,
+  .nav-tabs > li.active > a:is(:focus, :hover),
+  .product-wrapper .product-box,
+  .question-group input[type='text'] {
+    background-color: hsla(0, 0%, 100%, 0.7);
+  }
+
+  .card .card-body,
+  .modal-content .modal-body,
+  .nested-card .nested-card-body,
+  .panel,
+  .product-wrapper .product-box .product-name,
+  .tab-content.nested-card .section,
+  #header > header {
+    background: none;
+  }
+}
+
+@-moz-document domain("unimelb.service-now.com") {
   body,
   #catItemTop > .panel-default {
     background-color: @bg-global;

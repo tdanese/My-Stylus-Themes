@@ -1,39 +1,42 @@
 /* ==UserStyle==
 @name           Youtube fixes
 @namespace      github.com/tdanese/My-Stylus-Themes (https://github.com/tdanese/My-Stylus-Themes)
-@version        2026-05-05.0.1
+@version        2026-06-28.0.1
 @description    Fixes & style preferences
 @author         tdanese
 @homepageURL    https://github.com/tdanese/My-Stylus-Themes
 ==/UserStyle== */
 @-moz-document domain("youtube.com") {
-  tp-yt-paper-dialog.ytd-popup-container > ytd-engagement-panel-section-list-renderer.ytd-popup-container {
-    margin-bottom: 0px;
-  }
 
   .tp-yt-paper-checkbox[style-target="label"],
   tp-yt-paper-checkbox .tp-yt-paper-checkbox[style-target="label"] {
     padding-left: 6px;
   }
 
-  #actions.ytd-add-to-playlist-renderer ytd-button-renderer.ytd-add-to-playlist-renderer {
-    padding: 0px 8px;
-  }
-
-  #playlists.ytd-add-to-playlist-renderer {
-    padding: 0px 8px;
-
-    > .ytd-add-to-playlist-renderer:not(:last-child) {
-      margin-bottom: 6px;
+  .ytd-add-to-playlist-renderer {
+    &#actions ytd-button-renderer.ytd-add-to-playlist-renderer {
+      padding: 0px 8px;
     }
 
-    ytd-add-to-playlist-renderer[dialog] & {
-      max-height: 540px;
+    &#playlists {
+      padding: 0px 8px;
+
+      > .ytd-add-to-playlist-renderer:not(:last-child) {
+        margin-bottom: 6px;
+      }
+
+      ytd-add-to-playlist-renderer[dialog] & {
+        max-height: 540px;
+      }
     }
   }
 
   .ytdMenuTitleRendererHost {
     padding: 8px 24px;
+  }
+
+  tp-yt-paper-dialog.ytd-popup-container > ytd-engagement-panel-section-list-renderer.ytd-popup-container {
+    margin-bottom: 0px;
   }
 
   .ytd-popup-container:has(ytd-add-to-playlist-renderer) {

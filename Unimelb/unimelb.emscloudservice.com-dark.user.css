@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Unimelb DiBS dark
 @namespace      github.com/tdanese/My-Stylus-Themes (https://github.com/tdanese/My-Stylus-Themes)
-@version        2026-04-01.0.1
+@version        2026-06-28.0.1
 @description    Dark theme
 @author         tdanese
 @homepageURL    https://github.com/tdanese/My-Stylus-Themes
@@ -21,19 +21,16 @@
 
   .modal-footer a:not(.btn),
   .row a:not(.btn):not([role="tab"]):not([role="button"]):not(.thumbnail),
-  #book-grid-container .location,
-  #pc_forgotPasswordContainer > .lnk-password {
+  #book-grid-container .location {
     color: var(--link-font-colour);
   }
 
-  #pc_forgotPasswordContainer > .lnk-password:hover {
-    border-bottom-color: var(--link-font-colour);
-  }
+  #pc_forgotPasswordContainer > .lnk-password {
+    color: var(--link-font-colour);
 
-  .btn-primary:focus {
-    background-color: var(--link-font-colour);
-    border-color: var(--bg-inverse);
-    color: var(--bg-inverse);
+    &:hover {
+      border-bottom-color: var(--link-font-colour);
+    }
   }
 
   .btn-primary:active,
@@ -41,11 +38,17 @@
     background-color: var(--link-font-colour);
     border-color: var(--link-font-colour);
     color: var(--bg-inverse);
-  }
 
-  .btn-primary:hover {
-    border-color: var(--link-font-colour);
-    color: var(--bg-inverse);
+    &:focus {
+      background-color: var(--link-font-colour);
+      border-color: var(--bg-inverse);
+      color: var(--bg-inverse);
+    }
+
+    &:hover {
+      border-color: var(--link-font-colour);
+      color: var(--bg-inverse);
+    }
   }
 
   a.current-page {

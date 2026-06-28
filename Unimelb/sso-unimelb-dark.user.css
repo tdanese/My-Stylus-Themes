@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Unimelb SSO dark
 @namespace      github.com/tdanese/My-Stylus-Themes (https://github.com/tdanese/My-Stylus-Themes)
-@version        2026-05-05.0.1
+@version        2026-06-28.0.1
 @description    Dark theme for Unimelb's okta verify screen. Many rules have the important modifier due to their liberal use in the okta stylesheets.
 @author         tdanese
 @homepageURL    https://github.com/tdanese/My-Stylus-Themes
@@ -11,7 +11,6 @@
 ==/UserStyle== */
 @-moz-document domain("sso.unimelb.edu.au") {
   #okta-sign-in.auth-container > .auth-content {
-
     .focused-input,
     .link.help:focus,
     input[type="radio"]:focus + label,
@@ -83,7 +82,7 @@
   body,
   div,
   main {
-    /*   I don't know why they use so many borders when they are the same colour as the background */
+    /* I don't know why they use so many borders when they are the same colour as the background */
     background-color: @bg !important;
     border-color: transparent !important;
     color: @font-main !important;

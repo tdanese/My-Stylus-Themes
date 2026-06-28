@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Canvas dark
 @namespace      github.com/tdanese/My-Stylus-Themes (https://github.com/tdanese/My-Stylus-Themes)
-@version        2026-05-05.0.1
+@version        2026-06-28.0.1
 @description    Dark theme, including overrides for pages where styles are defined in the HTML
 @author         tdanese
 @homepageURL    https://github.com/tdanese/My-Stylus-Themes
@@ -240,7 +240,7 @@
     text-shadow: none;
   }
 
-  #content p > span[style*="background-color: #fbeeb8"] {
+  #content p > span[style*="background-color: #fbeeb8" i] {
     color: black;
   }
 
@@ -950,7 +950,7 @@
 
 /* Bioinstrumentation */
 @-moz-document url-prefix("https://canvas.lms.unimelb.edu.au/courses/235110/pages/using-intertek-inform-before-you-start") {
-  #wiki_page_show > .show-content.user_content > h5[style*="background: #B0DDE2;"] {
+  #wiki_page_show > .show-content.user_content > h5[style*="background: #B0DDE2;" i] {
     background-color: var(--global-bg-darker-30) !important;
     color: tan !important;
   }
@@ -958,12 +958,12 @@
 
 /* CIE */
 @-moz-document url-prefix("https://canvas.lms.unimelb.edu.au/courses/245724") {
-  div.border-trbl[style*="background-color: #f0f4f3"] {
+  div.border-trbl[style*="background-color: #f0f4f3" i] {
     background-color: var(--global-bg-darker-20) !important;
   }
 
-  #wiki_page_show > .show-content.user_content > p > span[style="background-color: #c2e0f4;"],
-  .pages.show .show-content span[style="background-color: #fbeeb8;"] {
+  #wiki_page_show > .show-content.user_content > p > span[style="background-color: #c2e0f4;" i],
+  .pages.show .show-content span[style="background-color: #fbeeb8;" i] {
     background-color: royalblue !important;
   }
 
@@ -973,7 +973,7 @@
     color: tan !important;
   }
 
-  .user_content > p > span[style*="color: #31465c"] {
+  .user_content > p > span[style*="color: #31465c" i] {
     color: var(--ic-brand-font-color-dark) !important;
   }
 

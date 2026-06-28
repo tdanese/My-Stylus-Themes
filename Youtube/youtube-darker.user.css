@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Youtube dark
 @namespace      github.com/tdanese/My-Stylus-Themes (https://github.com/tdanese/My-Stylus-Themes)
-@version        2026-05-05.0.1
+@version        2026-06-28.0.1
 @description    Darker dark theme, reduced saturation, reduced contrast of text to make it easier for me to read
 @author         tdanese
 @homepageURL    https://github.com/tdanese/My-Stylus-Themes
@@ -10,8 +10,7 @@
 
   :root,
   [dark],
-  html[dark]
-   {
+  html[dark] {
     --accent-color: #c00 !important;
     --classic-red-darker: #a00 !important;
     --icon-colour: hsl(0, 0%, 62%);
@@ -36,8 +35,12 @@
     scrollbar-color: grey transparent;
   }
 
-  ytd-author-comment-badge-renderer[creator] {
-    --ytd-author-comment-badge-background-color: var(--yt-spec-text-primary);
+  ytd-author-comment-badge-renderer {
+    --ytd-author-comment-badge-name-color: var(--yt-spec-text-primary);
+
+    &[creator] {
+      --ytd-author-comment-badge-background-color: var(--yt-spec-text-primary);
+    }
   }
 
   ytd-playlist-panel-renderer#playlist.ytd-watch-flexy {
@@ -84,43 +87,66 @@
     }
   }
 
-  .ytReelChannelBarViewModelChannelName a.yt-core-attributed-string__link.yt-core-attributed-string--link-inherit-color,
+  .yt-core-attributed-string__link--call-to-action-color {
+    color: var(--yt-spec-call-to-action);
+
+    span.yt-core-attributed-string--highlight-text-decorator > &:is(a) {
+      color: inherit !important;
+    }
+
+    &:is(span) {
+      color: var(--yt-spec-call-to-action);
+    }
+  }
+
   .ytReelChannelBarViewModelChannelName a.ytAttributedStringLinkInheritColor,
-  a.yt-core-attributed-string--link-inherit-color,
-  span.yt-core-attributed-string--highlight-text-decorator > a.yt-core-attributed-string__link--call-to-action-color,
-  span.yt-core-attributed-string--link-inherit-color,
   span.ytAttributedStringLinkInheritColor {
     color: inherit !important;
   }
 
-  a.yt-core-attributed-string--link-inherit-color:hover {
-    color: gainsboro !important;
+  span.yt-core-attributed-string--link-inherit-color,
+  .yt-core-attributed-string--link-inherit-color {
+    a.yt-core-attributed-string__link--call-to-action-color,
+    .yt-core-attributed-string__link--call-to-action-color {
+      color: var(--yt-spec-call-to-action);
+    }
+
+    .ytReelChannelBarViewModelChannelName &.yt-core-attributed-string__link:is(a),
+    &:is(a, span) {
+      color: inherit !important;
+    }
+
+    &:is(a):hover {
+      color: gainsboro !important;
+    }
   }
 
-  .yt-core-attributed-string__link--call-to-action-color,
-  .yt-core-attributed-string--link-inherit-color .yt-core-attributed-string__link--call-to-action-color,
   .yt-spec-button-shape-next--call-to-action.yt-spec-button-shape-next--text,
-  .ytAttributedStringLinkCallToActionColor,
-  .ytAttributedStringLinkInheritColor > a.ytAttributedStringLinkCallToActionColor.ytAttributedStringLink,
-  .ytSpecButtonShapeNextCallToAction.ytSpecButtonShapeNextOutline,
-  .ytSpecButtonShapeNextCallToAction.ytSpecButtonShapeNextText,
-  span.yt-core-attributed-string__link--call-to-action-color,
-  span.yt-core-attributed-string--link-inherit-color > a.yt-core-attributed-string__link--call-to-action-color {
+  .ytSpecButtonShapeNextCallToAction:is(.ytSpecButtonShapeNextOutline, .ytSpecButtonShapeNextText) {
     color: var(--yt-spec-call-to-action);
   }
 
-  .ytAttributedStringLinkCallToActionColor:hover,
-  .ytAttributedStringLinkInheritColor > a.ytAttributedStringLinkCallToActionColor.ytAttributedStringLink:hover,
-  a.yt-simple-endpoint.yt-formatted-string:hover {
-    color: var(--yt-attributed-string-link-hover-color);
+  .ytAttributedStringLinkCallToActionColor,
+  .ytAttributedStringLinkInheritColor > a.ytAttributedStringLinkCallToActionColor.ytAttributedStringLink,
+  a.yt-simple-endpoint.yt-formatted-string {
+    color: var(--yt-spec-call-to-action);
+
+    &:hover {
+      color: var(--yt-attributed-string-link-hover-color);
+    }
+
+    &[href^="/hashtag"],
+    #title &[href^="/@"] {
+      background-color: hsla(0, 0%, 0%, 25%);
+      color: var(--yt-spec-call-to-action);
+
+      &:hover {
+        color: var(--yt-attributed-string-link-hover-color);
+      }
+    }
   }
 
   #description-inner > #ytd-watch-info-text > #info-container #info.ytd-watch-info-text > a[style="color: rgb(62, 166, 255);"] {
-    color: var(--yt-spec-call-to-action) !important;
-  }
-
-  a[href^="/hashtag"] {
-    background-color: hsla(0, 0%, 0%, 25%);
     color: var(--yt-spec-call-to-action) !important;
   }
 
@@ -160,21 +186,14 @@
     color: lightgrey !important;
   }
 
-  :is(.ytAvatarStackViewModelAvatarStackText, .ytLockupMetadataViewModelHost) .ytAttributedStringLink.ytAttributedStringLinkCallToActionColor.ytAttributedStringLinkInheritColor:hover,
-  .button.ytd-text-inline-expander:hover,
+  .ytLockupMetadataViewModelHost .ytAttributedStringLink.ytAttributedStringLinkCallToActionColor.ytAttributedStringLinkInheritColor:hover,
   .yt-page-header-view-model__page-header-title,
-  .yt-simple-endpoint.ytd-about-channel-renderer:hover,
   .yt-tab-shape__tab--tab-selected,
-  .yt-truncated-text__absolute-button:hover,
   .ytChipShapeInactive,
   .ytp-modern-videowall-still-info-title,
   .ytp-videowall-still-info-content,
   .ytPageHeaderViewModelTitle,
   .ytTabShapeTabSelected,
-  .ytTruncatedTextAbsoluteButton:hover,
-  .ytTruncatedTextOverlay .ytTruncatedTextAbsoluteButton:hover,
-  .ytTruncatedTextOverlay .ytTruncatedTextBottomButton:hover,
-  .ytTruncatedTextOverlay .ytTruncatedTextInlineButton:hover,
   yt-formatted-string.style-scope.ytd-rich-grid-media {
     color: lightgrey;
   }
@@ -183,18 +202,27 @@
     color: grey;
   }
 
-  .button.ytd-text-inline-expander,
+  .ytTruncatedTextAbsoluteButton,
+  .ytTruncatedTextOverlay :is(.ytTruncatedTextAbsoluteButton, .ytTruncatedTextBottomButton, .ytTruncatedTextInlineButton),
+  .yt-truncated-text__absolute-button,
+  .yt-simple-endpoint.ytd-about-channel-renderer,
+  .ytAvatarStackViewModelAvatarStackText .ytAttributedStringLink.ytAttributedStringLinkCallToActionColor.ytAttributedStringLinkInheritColor,
+  .button.ytd-text-inline-expander {
+    color: var(--yt-spec-text-primary);
+    &:hover {
+      color: lightgrey;
+    }
+  }
+
   .fullscreen-action-menu .yt-core-attributed-string,
   .shortsLockupViewModelHostOutsideMetadataEndpoint,
   .title.ytd-comment-video-thumbnail-header-renderer,
+  .videoAttributesSectionViewModelTitle,
   .videoSummaryContentViewModelHost,
   .yt-lockup-metadata-view-model__title,
   .yt-page-header-view-model__page-header-attribution,
-  .yt-simple-endpoint.ytd-about-channel-renderer,
   .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--outline,
   .yt-spec-icon-badge-shape--type-notification .yt-spec-icon-badge-shape__icon,
-  .yt-truncated-text__absolute-button,
-  .ytAvatarStackViewModelAvatarStackText .ytAttributedStringLink.ytAttributedStringLinkCallToActionColor.ytAttributedStringLinkInheritColor,
   .ytBadgeShapeThumbnailBadge,
   .ytCarouselTitleViewModelTitle,
   .ytd-watch-metadata,
@@ -215,10 +243,7 @@
   .ytSuggestionComponentPersonalizedSuggestion,
   .ytSuggestionComponentSuggestion,
   .ytTextCarouselItemViewModelHost,
-  .ytTruncatedTextAbsoluteButton,
-  .ytTruncatedTextOverlay .ytTruncatedTextAbsoluteButton,
-  .ytTruncatedTextOverlay .ytTruncatedTextBottomButton,
-  .ytTruncatedTextOverlay .ytTruncatedTextInlineButton,
+  .ytVideoAttributeViewModelTitle,
   .ytwHowThisWasMadeSectionViewModelBodyHeader,
   .ytwHowThisWasMadeSectionViewModelSectionTitle,
   #about-container.ytd-about-channel-renderer,
@@ -235,7 +260,7 @@
   h4.ytd-playlist-panel-video-renderer,
   yt-formatted-string.title.ytd-playlist-panel-renderer > a.yt-simple-endpoint.style-scope.yt-formatted-string,
   yt-formatted-string.ytd-comments-header-renderer,
-  ytd-background-promo-renderer:is([renderer-style="adaptive-full-height"], [renderer-style="full-height"], [renderer-style="left-justified-no-padding"]) .ytd-background-promo-renderer:is(.promo-body-text, .promo-title),
+  ytd-background-promo-renderer:is([renderer-style="adaptive-full-height"], [renderer-style="full-height"], [renderer-style="left-justified-no-padding"]) .ytd-background-promo-renderer.style-scope:is(.promo-body-text, .promo-title),
   ytd-expandable-metadata-renderer[has-video-summary] .ytd-expandable-metadata-renderer:is(#collapsed-label, #expanded-title, #expanded-title-icon),
   ytd-simple-menu-header-renderer {
     color: var(--yt-spec-text-primary);
@@ -264,15 +289,14 @@
     background-color: var(--icon-colour) !important;
   }
 
-  .ytSubThreadHovered > .ytSubThreadThreadline .ytSubThreadConnection,
-  .ytSubThreadHovered > .ytSubThreadThreadline .ytSubThreadContinuation,
+  .ytSubThreadHovered > .ytSubThreadThreadline :is(.ytSubThreadConnection, .ytSubThreadContinuation),
   ytd-comment-view-model[hovered] .continuation.ytd-comment-view-model {
     border-color: var(--icon-colour);
   }
 
-  ytd-expandable-metadata-renderer[is-watch],
   .ytVideoMetadataCarouselViewModelHost,
   #description.ytd-watch-metadata,
+  ytd-expandable-metadata-renderer[is-watch],
   ytd-rich-metadata-renderer {
     background-color: hsla(0, 0%, 100%, 0.031);
   }
@@ -299,9 +323,8 @@
     background: var(--classic-red-darker);
   }
 
-  #icon.ytd-reel-shelf-renderer span.yt-icon div svg path:first-child,
-  #icon.ytd-rich-shelf-renderer span.yt-icon div svg path:first-child,
-  path[fill="#f03"] {
+  #icon:is(.ytd-reel-shelf-renderer, .ytd-rich-shelf-renderer) span.yt-icon div svg path:first-child,
+  path[fill="#f03" i] {
     fill: var(--classic-red-darker);
   }
 
@@ -312,8 +335,12 @@
 
   .ytp-svg-fill,
   .ytp-panel-menu path[fill="white"],
-  g > path[fill="rgb(255,255,255)"] {
+  g > path[fill="rgb(255,255,255)" i] {
     fill: currentColor;
+  }
+
+  .ytp-chrome-controls svg path:is([fill="white"], [fill="#fff" i]) {
+    fill: var(--yt-spec-text-primary);
   }
 
   .ytmVideoCoverThumbnail,

@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Scorptec Dark
 @namespace      github.com/tdanese/My-Stylus-Themes (https://github.com/tdanese/My-Stylus-Themes)
-@version        2026-04-13.0.1
+@version        2026-06-28.0.1
 @description    Dark theme for scorptec.com.au
 @author         tdanese
 @homepageURL    https://github.com/tdanese/My-Stylus-Themes
@@ -99,7 +99,11 @@
 
   .header-main #header-account a,
   .header-menu .header-menu-item {
-    color: gainsboro;
+    color: gainsboro !important;
+  }
+
+  .header-menu .header-menu-item {
+    background-color: transparent !important;
   }
 
   a {
@@ -140,6 +144,10 @@
   h1,
   h2 {
     color: @font-colour;
+  }
+
+  .tech_spec_wrap {
+    color: @font-colour !important;
   }
 
   .product-page-left #product-page-tab-wrapper.product-page-tabs {
