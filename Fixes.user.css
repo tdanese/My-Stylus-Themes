@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Fixes
 @namespace      github.com/tdanese/My-Stylus-Themes (https://github.com/tdanese/My-Stylus-Themes)
-@version        2026-04-13.0.1
+@version        2026-06-28.0.1
 @description    Fixes that are too small to dedicate a whole file
 @author         tdanese
 @homepageURL    https://github.com/tdanese/My-Stylus-Themes
@@ -39,8 +39,9 @@
     overflow-y: auto !important;
   }
 
-  [data-pagelet="IGDOpenMessageList"] > div > div > div > div > div,
-  [aria-label="Chats"] > div > div > div {
+  [aria-label="Chats"] > div > div > div,
+  [data-pagelet="IGDOpenMessageList"] > div > div > div > div > div
+   {
     scrollbar-width: thin;
   }
 }
@@ -57,11 +58,10 @@
   #react-root-footer a:hover,
   .footer a:not([href]):not([class]) {
     text-decoration: underline !important;
-  }
 
-  #react-root-footer a,
-  .footer a:not([href]):not([class]):hover {
-    text-decoration: none !important;
+    &:hover {
+      text-decoration: none !important;
+    }
   }
 
   #compare-bar {
@@ -70,6 +70,17 @@
 
   div[data-testid="navigation-menu-dropdown-menu"] {
     max-height: fit-content;
+  }
+
+  .refinement-container,
+  .search-refinement-container {
+    &.scrollFix .sticky-filters {
+      margin: 5px 15px 0;
+    }
+
+    .refinement-mobile-filter {
+      margin-bottom: 0;
+    }
   }
 }
 
@@ -94,8 +105,8 @@
   }
 
   .body_trail_container {
-    padding: unset;
     background: unset;
+    padding: unset;
   }
 
   body.-has_usernav #sticky_container .dropdown-menu {
@@ -111,10 +122,10 @@
   }
 
   .img__part,
-  #products .productList--detailed .td__name .td__image,
-  #partlist .partlist table tbody tr td.td__image a {
-    padding: 1px;
+  #partlist .partlist table tbody tr td.td__image a,
+  #products .productList--detailed .td__name .td__image {
     border: none;
+    padding: 1px;
   }
 
   .button {
@@ -123,22 +134,25 @@
 }
 
 @-moz-document domain("store.steampowered.com") {
-  body.v6 #footer {
-    padding: 0px;
-  }
+  body.v6 {
+    #footer {
+      padding: 0px;
 
-  body.v6 #footer_spacer {
-    height: 120px;
-  }
+      .footer_content {
+        padding-bottom: 16px;
+      }
+    }
 
-  body.v6 #footer .footer_content {
-    padding-bottom: 16px;
+    #footer_spacer {
+      height: 120px;
+    }
   }
 }
 
 @-moz-document domain("supremecourt.vic.gov.au") {
   .site-footer .footer-top {
-    /* Colour sampled from other elements on the site. They used a white font so if the background image doesn't load, you can't see the text. */
+    /* Colour sampled from other elements on the site.
+    They used a white font so if the background image doesn't load, you can't see the text. */
     background: #981e32;
   }
 }
@@ -148,8 +162,8 @@
     margin: 0;
   }
 
-  body::before,
-  body::after {
+  body::after,
+  body::before {
     display: none !important;
   }
 }
