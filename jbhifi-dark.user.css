@@ -1,0 +1,171 @@
+/* ==UserStyle==
+@name           JB Hi-Fi Dark
+@namespace      github.com/tdanese/My-Stylus-Themes (https://github.com/tdanese/My-Stylus-Themes)
+@version        2026-07-01.0.1
+@description    Includes darker yellow brand colour
+@author         tdanese
+@homepageURL    https://github.com/tdanese/My-Stylus-Themes
+@preprocessor   less
+@var color brand-yellow "Brand colour" hsl(55.3, 60%, 40%)
+@var color font-colour "Primary font colour" silver
+==/UserStyle== */
+@-moz-document domain("jbhifi.com.au") {
+  :root {
+    --grey-10: hsl(0, 0%, 10%);
+    --grey-15: hsl(0, 0%, 15%);
+    --grey-20: hsl(0, 0%, 20%);
+    --grey-5: hsl(0, 0%, 5%);
+    --palette-primary-light__1yqyf5p4: transparent !important;
+    --palette-primary-main__1yqyf5p1: @brand-yellow !important;
+    --palette-secondary-main__1yqyf5p7: transparent !important;
+    --typography-p-color__1yqyf5p2g: @font-colour !important;
+    background-color: var(--grey-10);
+    color: @font-colour;
+  }
+
+  ::selection {
+    background-color: @brand-yellow;
+  }
+
+  .ProductCard {
+    background-color: var(--grey-15);
+    box-shadow: 0 0 1px silver;
+    color: @font-colour;
+  }
+
+  .body-container .page-container,
+  body {
+    background-color: var(--grey-10);
+    color: @font-colour;
+  }
+
+  .refinement-container.scrollFix,
+  .search-refinement-container.scrollFix {
+    background-color: transparent;
+    border: none;
+  }
+
+  .main-content,
+  .main-content.account-page,
+  .main-content.login-page,
+  .main-content.register-page,
+  .main-content.reset-page,
+  .refinement-container,
+  .search-refinement-container,
+  #collection-container > div:first-child::before,
+  #react-root-footer > div > div {
+    background-color: transparent;
+  }
+
+  .swiper-slide > div {
+    background-color: transparent !important;
+
+    a {
+      color: @font-colour;
+
+      &:focus {
+        color: var(--grey-20);
+      }
+
+      > div {
+        background-color: transparent;
+      }
+    }
+  }
+
+  #main-content > div {
+
+    h1,
+    h2,
+    h3,
+    p {
+      color: @font-colour !important;
+    }
+
+    > div:last-child,
+    div[style*="background-color: rgb(245, 245, 245);" i],
+    div[style="background-color: rgb(0, 153, 255);" i] {
+      background-color: transparent !important;
+    }
+  }
+
+  #facets-container > div::after,
+  #facets-container > div::before {
+    background-color: var(--grey-10);
+  }
+
+  [data-testid="mini-cart-slideout"],
+  #header-nav-container > nav ul > li [data-testid="navigation-menu-dropdown"] {
+    background-color: var(--grey-10) !important;
+  }
+
+  #react-root-footer > div {
+    background-color: var(--grey-5);
+    border-color: @brand-yellow;
+  }
+
+  .page-container-main h2,
+  .page-header.account-header h1,
+  .page-size-list a,
+  .refinement-container .page-size-container .page-size-list span,
+  .search-refinement-container .page-size-container .page-size-list span,
+  .swiper,
+  .Typography-module_jbclTyp__p__b6kYq,
+  #header-nav-container nav button,
+  a.ProductCard_imageLink,
+  p {
+    color: @font-colour;
+  }
+
+  .wishlist-footer-message {
+    color: black;
+  }
+}
+
+@-moz-document domain("auth.jbhifi.com.au") {
+  .header {
+    border-color: @brand-yellow;
+  }
+
+  .form-control,
+  .form-control:focus,
+  .textInput.form-control {
+    background-color: var(--grey-15);
+    color: @font-colour;
+  }
+
+  a {
+    color: @font-colour;
+
+    &:hover {
+      color: grey;
+    }
+  }
+
+  .card {
+    background-color: var(--grey-10);
+  }
+
+  .btn-primary,
+  .btn-primary:focus,
+  .btn-primary:not(.disabled):not(:disabled):is(.active, :active) {
+    background-color: var(--grey-5);
+    border-color: @font-colour;
+    color: @font-colour;
+  }
+
+  .btn-secondary,
+  .btn-secondary:focus,
+  .btn-secondary:not(.disabled):not(:disabled):is(.active, :active) {
+    background-color: var(--grey-15);
+    border-color: @font-colour;
+    color: @font-colour;
+  }
+
+  .btn-primary:hover,
+  .btn-secondary:hover {
+    background-color: var(--grey-20);
+    border-color: @font-colour;
+    color: @font-colour;
+  }
+}
