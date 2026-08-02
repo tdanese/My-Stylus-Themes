@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Canvas fixes
 @namespace      github.com/tdanese/My-Stylus-Themes (https://github.com/tdanese/My-Stylus-Themes)
-@version        2026-06-28.0.1
+@version        2026-08-02.0.1
 @description    Fixes, increase useful screen area, slightly darker background colour
 @author         tdanese
 @homepageURL    https://github.com/tdanese/My-Stylus-Themes
@@ -322,6 +322,22 @@
   }
 
   #content-wrapper {
+    > .ic-Layout-contentMain > div > div[class$="-view"] {
+      background: none;
+
+      > div[data-testid="dashboard-tabs"] > div[class$="-view-tabs__container"] {
+        background: none;
+
+        div[class*="-view-panel__content"] {
+          background: none;
+
+          section {
+            background: none;
+          }
+        }
+      }
+    }
+
     .fc-basic-view .fc-body .fc-row {
       height: 120px !important;
     }
