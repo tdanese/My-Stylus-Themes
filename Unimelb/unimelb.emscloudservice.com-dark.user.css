@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Unimelb DiBS dark
 @namespace      github.com/tdanese/My-Stylus-Themes (https://github.com/tdanese/My-Stylus-Themes)
-@version        2026-06-28.0.1
+@version        2026-08-19.0.1
 @description    Dark theme
 @author         tdanese
 @homepageURL    https://github.com/tdanese/My-Stylus-Themes
@@ -69,11 +69,12 @@
     background-color: var(--bg-plus-15) !important;
   }
 
-  .time-box-overflow,
-  .column-container .column:nth-child(2n) {
+  .column-container .column:nth-child(2n),
+  .time-box-overflow {
     background-color: @bg;
   }
 
+  .bootstrap-datetimepicker-widget.dropdown-menu,
   .modal-content,
   body {
     background-color: @bg !important;
@@ -91,7 +92,9 @@
     background-color: var(--bg-minus-5);
   }
 
-  .navbar {
+  .navbar,
+  .panel-default > .panel-heading,
+  #bookings #filter-result-row #result-columns .result-container-header {
     background-color: var(--bg-plus-5);
     color: var(--bg-inverse);
   }
@@ -116,7 +119,10 @@
   }
 
   .form-control,
-  .grid-container .grid-row:nth-child(2n) {
+  .grid-container .grid-row:nth-child(2n),
+  .panel,
+  #bookings #filter-result-row .panel #date-time-collapse .time-container,
+  #room-request-container .main-header-row {
     background-color: transparent;
   }
 

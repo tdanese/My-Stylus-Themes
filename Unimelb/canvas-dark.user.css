@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Canvas dark
 @namespace      github.com/tdanese/My-Stylus-Themes (https://github.com/tdanese/My-Stylus-Themes)
-@version        2026-06-28.0.2
+@version        2026-08-19.0.1
 @description    Dark theme, including overrides for pages where styles are defined in the HTML
 @author         tdanese
 @homepageURL    https://github.com/tdanese/My-Stylus-Themes
@@ -100,6 +100,7 @@
     background-color: var(--global-bg-lighter-50) !important;
   }
 
+  .student-groups .student-group-students,
   span[data-testid="conversationListItem-Item"] span[color="brand"] {
     color: var(--ic-brand-font-color-dark);
   }
@@ -419,6 +420,10 @@
     &.ui-tabs-active {
       background-color: var(--ic-brand-global-nav-bgd);
       border-color: silver !important;
+
+      &.ui-state-focus {
+        background-color: var(--ic-brand-global-nav-bgd);
+      }
     }
 
     &:hover {
@@ -676,12 +681,13 @@
     color: skyblue;
   }
 
-  .css-3n7xhb-view-alert,
   .css-1owtdyg-radioInput__control,
   .css-3n7xhb-view-alert,
   .ic-app-header__menu-list-item.ic-app-header__menu-list-item--active .ic-app-header__menu-list-link,
   .ic-Search > input.ic-Input.ic-Search-input,
-  [class$="-textInput__facade"] {
+  .ic-Table.ic-Table--striped tbody tr:nth-child(2n+1),
+  [class$="-textInput__facade"],
+  select {
     background-color: var(--global-bg-darker-25);
   }
 
@@ -730,6 +736,7 @@
   .discussions-container__wrapper .ic-discussion-row,
   .display_question,
   .Pages,
+  .student-groups.show-body .student-group-header,
   .ui-widget-content,
   [role="menu"] [role="menuitem"]:hover,
   #calendar-app .fc-event,
