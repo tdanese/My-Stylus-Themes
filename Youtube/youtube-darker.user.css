@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Youtube dark
 @namespace      github.com/tdanese/My-Stylus-Themes (https://github.com/tdanese/My-Stylus-Themes)
-@version        2026-06-28.0.2
+@version        2026-08-19.0.1
 @description    Darker dark theme, reduced saturation, reduced contrast of text to make it easier for me to read
 @author         tdanese
 @homepageURL    https://github.com/tdanese/My-Stylus-Themes
@@ -53,8 +53,8 @@
     --yt-saturated-raised-background: hsla(0, 0%, 100%, 0.07) !important;
   }
 
-  ytd-reel-video-renderer[extract-overlay],
-  ytd-reel-video-renderer {
+  ytd-reel-video-renderer,
+  ytd-reel-video-renderer[extract-overlay] {
     --reel-metadata-color: var(--yt-spec-text-primary);
   }
 
@@ -77,6 +77,7 @@
     color: var(--yt-spec-text-primary);
   }
 
+  .ytReelChannelBarViewModelReelSubscribeButton button.ytSpecButtonShapeNextFilled,
   .ytSpecButtonShapeNextOverlay.ytSpecButtonShapeNextFilled,
   yt-button-shape#subscribe-button-shape > button {
     background-color: grey;
@@ -104,8 +105,8 @@
     color: inherit !important;
   }
 
-  span.yt-core-attributed-string--link-inherit-color,
-  .yt-core-attributed-string--link-inherit-color {
+  .yt-core-attributed-string--link-inherit-color,
+  span.yt-core-attributed-string--link-inherit-color {
     a.yt-core-attributed-string__link--call-to-action-color,
     .yt-core-attributed-string__link--call-to-action-color {
       color: var(--yt-spec-call-to-action);
@@ -209,6 +210,7 @@
   .ytTruncatedTextAbsoluteButton,
   .ytTruncatedTextOverlay :is(.ytTruncatedTextAbsoluteButton, .ytTruncatedTextBottomButton, .ytTruncatedTextInlineButton) {
     color: var(--yt-spec-text-primary);
+
     &:hover {
       color: lightgrey;
     }
@@ -263,8 +265,13 @@
   yt-formatted-string.ytd-comments-header-renderer,
   ytd-background-promo-renderer:is([renderer-style="adaptive-full-height"], [renderer-style="full-height"], [renderer-style="left-justified-no-padding"]) .ytd-background-promo-renderer.style-scope:is(.promo-body-text, .promo-title),
   ytd-expandable-metadata-renderer[has-video-summary] .ytd-expandable-metadata-renderer:is(#collapsed-label, #expanded-title, #expanded-title-icon),
-  ytd-simple-menu-header-renderer {
+  ytd-simple-menu-header-renderer,
+  ytd-text-inline-expander[engagement-panel] {
     color: var(--yt-spec-text-primary);
+  }
+
+  .ytReelCarouselViewModelHost a .ytSpecButtonShapeNextIcon > span {
+    color: var(--yt-spec-text-primary) !important;
   }
 
   .ytp-volume-slider-handle,

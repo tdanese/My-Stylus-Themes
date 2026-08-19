@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Canvas fixes
 @namespace      github.com/tdanese/My-Stylus-Themes (https://github.com/tdanese/My-Stylus-Themes)
-@version        2026-08-02.0.1
+@version        2026-08-19.0.1
 @description    Fixes, increase useful screen area, slightly darker background colour
 @author         tdanese
 @homepageURL    https://github.com/tdanese/My-Stylus-Themes
@@ -271,6 +271,7 @@
   .context_module_item.context_module_item_hover,
   .item-group-container,
   .question,
+  .ui-tabs .ui-tabs-panel,
   [aria-label="Assignment Weights"] > table.summary > tbody > tr :is(td, th),
   #announcementWrapper .ic-notification__content,
   #announcementWrapper [class*="-view-alert"],
