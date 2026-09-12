@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Youtube dark
 @namespace      github.com/tdanese/My-Stylus-Themes (https://github.com/tdanese/My-Stylus-Themes)
-@version        2026-08-19.0.1
+@version        2026-09-12.0.1
 @description    Darker dark theme, reduced saturation, reduced contrast of text to make it easier for me to read
 @author         tdanese
 @homepageURL    https://github.com/tdanese/My-Stylus-Themes
@@ -79,6 +79,7 @@
 
   .ytReelChannelBarViewModelReelSubscribeButton button.ytSpecButtonShapeNextFilled,
   .ytSpecButtonShapeNextOverlay.ytSpecButtonShapeNextFilled,
+  .ytSubscribeButtonViewModelHost .ytSubscribeButtonViewModelContainer > button,
   yt-button-shape#subscribe-button-shape > button {
     background-color: grey;
     color: hsl(0, 0%, 15%);
@@ -265,13 +266,22 @@
   yt-formatted-string.ytd-comments-header-renderer,
   ytd-background-promo-renderer:is([renderer-style="adaptive-full-height"], [renderer-style="full-height"], [renderer-style="left-justified-no-padding"]) .ytd-background-promo-renderer.style-scope:is(.promo-body-text, .promo-title),
   ytd-expandable-metadata-renderer[has-video-summary] .ytd-expandable-metadata-renderer:is(#collapsed-label, #expanded-title, #expanded-title-icon),
+  ytd-expander[should-use-number-of-lines][collapsed] > #content.ytd-expander,
   ytd-simple-menu-header-renderer,
   ytd-text-inline-expander[engagement-panel] {
     color: var(--yt-spec-text-primary);
   }
 
+  #input-container.ytd-commentbox {
+    --paper-input-container-underline-focus-color: var(--yt-spec-text-primary);
+  }
+
   .ytReelCarouselViewModelHost a .ytSpecButtonShapeNextIcon > span {
     color: var(--yt-spec-text-primary) !important;
+  }
+
+  #title.ytd-channel-video-player-renderer {
+    --yt-endpoint-color: var(--yt-spec-text-primary);
   }
 
   .ytp-volume-slider-handle,
