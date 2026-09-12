@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Canvas dark
 @namespace      github.com/tdanese/My-Stylus-Themes (https://github.com/tdanese/My-Stylus-Themes)
-@version        2026-08-19.0.1
+@version        2026-09-12.0.1
 @description    Dark theme, including overrides for pages where styles are defined in the HTML
 @author         tdanese
 @homepageURL    https://github.com/tdanese/My-Stylus-Themes
@@ -14,6 +14,10 @@
 @-moz-document domain("unimelb.h5p.com") {
   .h5p-content {
     background-color: @bg-global !important;
+
+    a {
+      color: @link-colour;
+    }
   }
 
   .h5p-confirmation-dialog-body,
@@ -53,10 +57,6 @@
 
   .h5p-accordion .h5p-panel-title:is(:active, :focus-within, :hover) {
     color: @uom-brand;
-  }
-
-  .h5p-content a {
-    color: @link-colour;
   }
 }
 
@@ -237,6 +237,7 @@
 
   #quiz_show > .muted-notice {
     background-color: var(--global-bg-darker-25);
+    background-image: none;
     border: none;
     text-shadow: none;
   }
@@ -420,6 +421,10 @@
     &.ui-tabs-active {
       background-color: var(--ic-brand-global-nav-bgd);
       border-color: silver !important;
+
+      a {
+        color: var(--ic-brand-font-color-dark);
+      }
 
       &.ui-state-focus {
         background-color: var(--ic-brand-global-nav-bgd);
